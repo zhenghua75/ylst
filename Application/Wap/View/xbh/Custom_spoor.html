@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>提交记录</title>
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<!--<link href="__PUBLIC__/wap/common/card/style/style.css" rel="stylesheet" type="text/css">-->
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/wap/common/card/js/accordian.pack.js" type="text/javascript"></script>
+
+<!-- Bootstrap -->
+    <link href="__PUBLIC__/wap/common/335/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/wap/common/335/js/ios-orientationchange-fix.min.js"></script>
+    <script src="__PUBLIC__/wap/common/335/js/jquery.qrcode.js"></script>
+    <script src="__PUBLIC__/wap/common/335/js/qrcode.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body style="background:url(__PUBLIC__/wap/common/335/img/13.jpg);filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale');  
+-moz-background-size:100% 100%;  
+    background-size:100% 100%; ">
+<div class="container" style="margin-top:300px;">
+
+<volist name="list" id="item" key="key">
+<div class="row ">
+<div class="col-md-2 col-sm-2 col-xs-2 text-center"></div><div class="col-md-8 col-sm-8 col-xs-8 text-center"><p class="btn-danger">{$item.add_time|date='Y-m-d H:i',###}</p></div><div class="col-md-2 col-sm-2 col-xs-2 text-center"></div></div>
+
+<div class="row"><div class="col-md-2 col-sm-2 col-xs-2 text-center"></div><div class="col-md-8 col-sm-8 col-xs-8 text-center">
+<volist name="item['sub_info']" id="info">
+			<p>		
+				{$info.name}:
+				{$info.value}	
+			</p>	
+            <if condition="$info.name eq '报名序列号'">
+            <p>		
+                <div id="qrcodeCanvas"></div>
+                <script>
+                    jQuery('#qrcodeCanvas').qrcode({
+                        text	: '{$info.value}',
+                        width   : 100,
+                        height  : 100,
+                    });	
+                </script>
+					
+			</p>
+            </if>
+		</volist>
+</div><div class="col-md-2 col-sm-2 col-xs-2 text-center"></div></div>
+
+</volist>
+</div>
+</body>
+</html>

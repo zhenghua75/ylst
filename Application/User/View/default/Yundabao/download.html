@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<script type="text/javascript" src="__PUBLIC__/web/js/jquery-1.9.1.min.js"></script>
+		<title>APP下载</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/group_edit.css"/>
+	</head>
+	<body>
+		<table>
+			<if condition="$downloadUrl">
+				<tr>
+					<td width="100%" align="center">手机浏览器扫描二维码下载（建议不要使用微信扫码）</td>
+				</tr>
+				<tr>
+					<td width="100%" align="center">
+						<img src="<?php echo U("User/Yundabao/QRcode",array('token'=>$token,'AppId'=>$now_app['web_app_id']));?>" style="width:200px;"/>
+					</td>
+				</tr>
+				<tr>
+					<td width="100%" align="center"><a href="{$downloadUrl}" target="_blank">下载到电脑</a></td>
+				</tr>
+			<else/>
+				<tr>
+					<td width="100%" align="center">{$err_msg}</td>
+				</tr>
+			</if>
+		</table>
+		<if condition="$downloadUrl">
+		<else/>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				daojishi();
+			});
+			var jishi = <?php echo $jishi?$jishi:0;?>;
+			function daojishi(){
+				jishi--;
+				if(jishi < 0){
+					location.reload();
+				}else{
+					$('#jishi').html(jishi);
+					setTimeout("daojishi()",1000);
+				}
+			}
+		</script>
+		</if>
+	</body>
+</html>

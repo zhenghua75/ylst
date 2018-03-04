@@ -1,0 +1,48 @@
+<include file="Public:head" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/cymain.css" />
+<link href="__PUBLIC__/web/css/activity.css" rel="stylesheet" type="text/css">
+<script src="__PUBLIC__/web/js/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/web/js/artDialog/plugins/iframeTools.js"></script>
+<script src="__PUBLIC__/web/js/upyun.js"></script>
+<div class="content">
+<div class="cLineB">
+<h4 class="left">微调研</h4>
+<div class="clr"></div>
+</div>
+<!--tab start-->
+<div class="tab">
+<ul>
+<li class="current tabli" id="tab0"><a href="{:U('Research/index', array('token' => $token))}">调研列表</a></li>
+<li class="tabli" id="tab0"><a href="{:U('Research/saveInfo', array('token' => $token))}">调研操作</a></li>
+</ul>
+</div>
+<!--tab end-->
+<div class="msgWrap">
+<form method="post" action="" id="info">
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+	<tr>
+		<th width="100">问题</th>
+		<th width="200">选项</th>
+		<th width="120">选择次数</th>
+	</tr>
+</thead>
+<tbody>
+<tr></tr>
+<volist name="list" id="tablelist"> 
+	<volist name="tablelist['answer']" id="answer" key="k">
+	<tr>
+		<if condition="$k eq 1">
+		<td rowspan="{$tablelist['rowspan']}">{$tablelist['name']}</td>
+		</if>
+		<td>{$answer['name']}</td>
+		<td>{$answer['nums']}</td>
+	</tr>
+	</volist>
+</volist>
+</tbody>
+</table>
+</form>
+</div>
+</div>
+<include file="Public:footer"/>

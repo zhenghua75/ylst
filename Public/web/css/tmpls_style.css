@@ -1,0 +1,108 @@
+
+#tagContent li {
+	position: relative;
+}
+
+.cateradio {
+	padding-top: 20px;
+}
+.cateradio li {
+	float:left;
+	width:170px;
+	height:383px;
+	text-align:center;
+	background:url(../images/radio_iphone0.png) no-repeat center top;
+	position: relative;
+}
+.cateradio li:hover {
+	background:url(../images/radio_iphone.png) no-repeat center top;
+}
+.cateradio li:active {
+	background:url(../images/radio_iphone.png) no-repeat center top;
+}
+.cateradio li.active {
+	background:url(../images/radio_iphone.png) no-repeat center top;
+}
+li .mbtip {
+	display:none
+}
+li:hover .mbtip {
+	position:absolute;
+	top:60px;
+	right:160px;
+	display:block;
+	width:130px;
+	padding:6px;
+	background-color:#000;
+	color:#FFF;
+	border-radius: 7px;
+	text-align:left;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	box-shadow:0 0 10px 2px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow:0 0 10px 2px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow:0 0 10px 2px rgba(0, 0, 0, 0.15);
+	z-index:999
+}
+.cateradio2 {
+	padding-top: 20px;
+}
+.cateradio2 li {
+	float:left;
+	margin:0 0 20px 20px;
+	width:170px;
+	height:383px;
+	text-align:center;
+	background:url(../images/radio_iphone0.png) no-repeat center top;
+}
+.cateradio2 li:hover {
+	background:url(../images/radio_iphone.png) no-repeat center top;
+}
+.cateradio2 li:active {
+	background:url(../images/radio_iphone.png) no-repeat center top;
+}
+.cateradio2 li.active {
+	background:url(../images/radio_iphone.png) no-repeat center top;
+}
+.cateradio3 {
+	padding-top: 20px;
+}
+.cateradio3 li {
+	float:left;
+	margin:0 0 20px 20px;
+	width:170px;
+	height:383px;
+	text-align:center;
+	background:url(../images/radio_iphone0.png) no-repeat center top;
+}
+.cateradio3 li:hover {
+	background:url(../images/radio_iphone.png) no-repeat center top;
+}
+.cateradio3 li:active {
+	background:url(../images/radio_iphone.png) no-repeat center top;
+}
+.cateradio3 li.active {
+	background:url(../images/radio_iphone.png) no-repeat center top;
+}
+
+
+.tagContent fieldset {
+
+}
+
+
+#tagContent {
+	display:block
+}
+.tagContent {
+	DISPLAY: none;
+}
+#tagContent DIV.selectTag {
+	DISPLAY: block
+}
+.cateradio4 {
+	padding:20px
+}
+.cateradio4 h3 {
+	font-size:16px;
+	color: #333333;
+}

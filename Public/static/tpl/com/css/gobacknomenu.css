@@ -1,0 +1,4 @@
+#gg { position:fixed; bottom:0; width:32px; height:32px; line-height:32px; z-index:9999; opacity:0.8;
+filter:alpha(opacity=80); _bottom:auto; _width:100%; _position:fixed;bottom:55px;
+}
+#gg a { font-size:13px; letter-spacing:2px; }

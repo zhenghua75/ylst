@@ -1,0 +1,21 @@
+
+
+    <div class="copyright" >
+    <if condition="$iscopyright eq 1">
+    <center>{$homeInfo.copyright}</center>
+    <else/>
+    <center>{$siteCopyright} </center>
+    </if>
+    </div>
+
+<script type="text/javascript">
+window.shareData = {
+            "moduleName":"Car",
+            "moduleID":"0",
+            "imgUrl": "",
+            "sendFriendLink": "{$f_siteUrl}{:U('Car/index',array('token'=>$token))}",
+            "tTitle": "微汽车",
+            "tContent": "微汽车"
+        };
+</script>
+{$shareScript}

@@ -1,0 +1,133 @@
+<include file="Public:head"/> 
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/cymain.css" />
+<script src="__PUBLIC__/web/js/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/web/js/artDialog/plugins/iframeTools.js"></script>
+<!--fancyBox-->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/js/fancyBox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/js/fancyBox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/js/fancyBox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="__PUBLIC__/web/js/fancyBox/lib/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/fancyBox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/fancyBox/source/jquery.fancybox.js?v=2.1.5"></script>
+<script type="text/javascript" type="text/javascript" src="__PUBLIC__/web/js/fancyBox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/fancyBox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/fancyBox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<!--fancyBox-->
+<div class="content" <if condition="session('isQcloud') eq true">style="float:center;"</if>>
+<div class="cLineB">
+<h4 class="left">讨论社区管理</h4>
+<div class="searchbar right">
+
+
+<script>
+$(function(){
+	$(".fancybox").fancybox();
+});
+function selectall(name) {
+	var checkItems=$('.cbitem');
+	if ($("#check_box").attr('checked')==false) {
+		$.each(checkItems, function(i,val){
+			val.checked=false;
+		});
+		
+	} else {
+		$.each(checkItems, function(i,val){
+			val.checked=true;
+		});
+	}
+}
+</script>
+
+
+</div>
+<div class="clr"></div>
+</div>
+
+<!--tab start-->
+<div class="tab">
+<ul>
+<include file="tabs"/> 
+</ul>
+</div>
+<!--tab end-->
+<div class="msgWrap">
+<form method="post" action="{:U('Forum/checkTopics')}" id="info">
+<div class="cLine">
+<div class="pageNavigator left"> <a href="###" onclick="$('#info').submit()" title="批量审核" class="btnGrayS vm bigbtn"><if condition="$usertplid eq 2"><i class="fa fa-hand-o-right"></i><else /><img src="__PUBLIC__/web/images/arrow_switch.png" class="vm"></if> 批量审核</a></div>
+<div class="clr"></div>
+</div>
+
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+<tr>
+<th class="select"><input type="checkbox" value="" id="check_box" onclick="selectall('id[]');"></th>
+<th width="50">编号</th>
+<th width="80">发帖人</th>
+<th width="100">标题</th>
+<th class="210">内容</th>
+<th width="50">赞</th>
+<th class="50">喜欢</th>
+<th class="50">图片</th>
+<th width="130">创建时间</th>
+<th class="40">状态</th>
+
+<th width="80" class="norightborder">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr></tr>
+
+	<volist name="list" id="t"> 
+		<tr>
+			<td><input type="checkbox" value="{$t.id}" class="cbitem" name="id[]"></td>
+			<td>{$t.id}</td>
+			<td>{$t.uname}</td>
+			<td>{$t.title}</td>
+			<td>{$t.content|htmlspecialchars_decode}</td>
+			<td><if condition="$t['favourid'] neq NULL">{:count(explode(',',$t['favourid']))}<else />0</if></td>
+			<td><if condition="$t['likeid'] neq NULL">{:count(explode(',',$t['likeid']))}<else />0</if></td>
+			<td>
+			<?php 
+			$photos_array = explode(',',$t['photos']);
+			if($photos_array[0] != ''){
+				foreach($photos_array as $pk=>$pv){
+					echo "<a class='fancybox' href='".$pv."'>查看图片".($pk+1)."</a><br/>";
+				}
+			}else{
+				echo "无";
+			}
+			?>
+			</td>
+			<td>{$t.createtime|date="Y-m-d H:i:s",###}</td>
+			<td><if condition="$t['status'] eq 1">正常显示<elseif condition="$t['status'] eq -1" /><font color="red">未审核</font><else /><font color="red">已被删除</font></if></td> 
+			<td class="norightborder">
+				<if condition="$t['status'] eq -1">
+					<a href="{:U('Forum/checkTopics',array('token'=>$_GET['token'],'id'=>$t['id']))}">通过审核</a> &nbsp;  &nbsp; 
+				</if>
+				<a href="javascript:drop_confirm('您确定要删除吗?', '{:U('Forum/delTopics',array('token'=>$_GET['token'],'id'=>$t['id']))}');">删除</a>
+				
+			</td>
+		</tr>
+	</volist>
+</tbody>
+</table>
+<input type="hidden" name="token" value="{$_GET['token']}" />
+
+</form>
+
+
+
+   <script>
+
+</script>
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>
+<if condition="session('isQcloud') neq true">
+</if>

@@ -1,0 +1,187 @@
+<include file="Public:head" />
+<script src="__PUBLIC__/web/js/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/web/js/artDialog/plugins/iframeTools.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/web/js/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="__PUBLIC__/web/js/kindeditor/plugins/code/prettify.css" />
+<script src="__PUBLIC__/web/js/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="__PUBLIC__/web/js/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="__PUBLIC__/web/js/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<link href="__PUBLIC__/web/css/index.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/cymain.css" />
+<script src="__PUBLIC__/web/js/upyun.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/formcheck.js"></script>
+<style>
+.ioshelp{display:none}
+</style>
+<script>
+$(document).ready(function(){
+	$("form").submit(function () {
+		return sub();
+	});
+	$('input[name=apptype]').click(function(){
+		apptype = $(this).val();
+		if(apptype == 1){
+			$('.ioshelp').show();
+			$('#hellsize').html('640(宽)*960(高)');
+		}else if(apptype == 0){
+			$('.ioshelp').hide();
+			$('#hellsize').html('780(宽)*1280(高)');
+		}
+	});
+});
+function sub(){
+	var is_error = true;
+	var is_error_msg = "";
+	var is_error_array = new Array();
+	var i_error = 0;
+	
+	var name = $('#name').val().length;
+	if(name > 10 || name < 1){
+		is_error_msg += "应用名称1至10个字！\n";
+		buterror("#name");
+		is_error = false;
+		is_error_array[i_error] = '#name';
+		i_error++;
+	}
+	var weburl = $('#weburl').val();
+	if(weburl == ''){
+		is_error_msg += "请填写应用链接！\n";
+		buterror("#weburl");
+		is_error = false;
+		is_error_array[i_error] = '#weburl';
+		i_error++;
+	}
+	var icopic = $('#icopic').val();
+	if(icopic == ''){
+		is_error_msg += "请填写应用图标！\n";
+		buterror("#icopic");
+		is_error = false;
+		is_error_array[i_error] = '#icopic';
+		i_error++;
+	}
+	var hellopic = $('#hellopic').val();
+	if(hellopic == ''){
+		is_error_msg += "请填写欢迎图！\n";
+		buterror("#hellopic");
+		is_error = false;
+		is_error_array[i_error] = '#hellopic';
+		i_error++;
+	}
+	if(is_error == false){
+		alert(is_error_msg);
+		$("html,body").animate({scrollTop: $(is_error_array[0]).offset().top}, 500);
+		return false;
+	}else{
+		return true;
+	}
+}
+function buterror(id){
+	$(id).css("border","2px solid red");
+	$(id).css("background-color","rgb(255, 223, 221)");
+	$(id).focus(function(){
+		$(id).css("background-color","#fff");
+		$(id).css("border","1px solid");
+		$(id).css("border-color","#848484 #E0E0E0 #E0E0E0 #848484");
+	});
+}
+</script>
+<style>
+</style>
+<form class="form" method="post"   action=""  target="_top" enctype="multipart/form-data">
+	<div class="content" id="content1">
+		<div style="background:#fefbe4;border:1px solid #f3ecb9;color:#993300;padding:10px;margin-bottom:5px;font-size:12px;">
+			温馨提示：1.APP云打包功能，可以将一个手机网站打包成一个可以直接安装到手机里的应用软件。<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			2.由于安装后的应用软件运行于浏览器环境，使用APP云打包功能暂不支持类似需要使用微信授权功能的网站和需要使用微信支付功能的网站。
+		</div>
+		<div class="cLineB">
+			<h4 class="left">创建应用</h4>
+		</div>
+		<div class="msgWrap bgfc">
+			<table class="userinfoArea" style=" margin:0;" border="0" cellSpacing="0" cellPadding="0" width="100%">
+				<tr>
+					<th valign="top"><span class="red">*</span>应用名称：</th>
+					<td>
+						<input type="input" class="px" id="name" value="" name="name" style="width:400px" />
+						应用名称1至10个字。手机桌面上的应用名称
+					</td>
+				</tr>
+				<tr>
+					<th valign="top">应用简介：</th>
+					<td>
+						<textarea  class="px" id="intro" name="intro"  style="width:400px; height:125px" ></textarea>
+					</td>
+				</tr>
+				<tr>
+					<th valign="top"><span class="red">*</span>应用链接：</th>
+					<td>
+						<input type="input" class="px" id="weburl" value="" name="weburl" style="width:400px" /><a href="###" onclick="addLink('weburl',0)" class="a_choose">从功能库添加</a>
+						<br/>
+						可以从功能库中选择链接，也可以添加其他链接如http://www.baidu.com
+					</td>
+				</tr>
+				<tr>
+					<th valign="top"><span class="red">*</span>应用类别：</th>
+					<td>
+						<input type="radio" name="apptype" id="apptype0" value="0" checked ><label for="apptype0">安卓</label>
+						&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="apptype" id="apptype1" value="1" ><label for="apptype1">IOS</label>
+						&nbsp;&nbsp;&nbsp;
+						<span class="ioshelp">ios只能生成一个软件，新生成的会覆盖以前生成的。ios只支持越狱版。</span>
+					</td>
+				</tr>
+				<tr>
+					<th valign="top"><span class="red">*</span>应用图标：</th>
+					<td>
+						<input type="input" class="px" id="icopic"  name="icopic" value=""  style="width:250px"/>
+						<a href="###" onclick="upyunPicUpload('icopic',200,200,'{$token}')" class="a_upload">上传</a>
+						&nbsp;
+						<a href="###" onclick="viewImg('icopic')">预览</a>
+						<br/>
+						必须上传大小为 200(宽)*200(高) 像素的 <span class="red">png格式</span> 图片！否则生成应用会提示失败。
+					</td>
+				</tr>
+				<tr>
+					<th valign="top"><span class="red">*</span>欢迎图：</th>
+					<td>
+						<input type="input" class="px" id="hellopic"  name="hellopic" value=""  style="width:250px"/>
+						<a href="###" onclick="upyunPicUpload('hellopic',0,0,'{$token}')" class="a_upload">上传</a>
+						&nbsp;
+						<a href="###" onclick="viewImg('hellopic')">预览</a>
+						<br/>
+						为达最佳显示效果请选择大小为 <span id="hellsize">780(宽)*1280(高)</span> 像素的 <span class="red">png格式</span> 图片！（注意：安卓和IOS图片大小不一样）
+					</td>
+				</tr>
+				<tr>
+					<th valign="top"><span class="red">*</span>隐藏标题栏：</th>
+					<td>
+						<input type="radio" name="hidetop" id="hidetop0" value="0" checked ><label for="hidetop0">否</label>
+						&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="hidetop" id="hidetop1" value="1" ><label for="hidetop1">是</label>
+						&nbsp;&nbsp;&nbsp;
+						是否显示系统的标题栏
+					</td>
+				</tr>
+				<tr>
+					<th valign="top"><span class="red">*</span>横竖屏：</th>
+					<td>
+						<input type="radio" name="screen" id="screen0" value="0" checked ><label for="screen0">竖屏</label>
+						&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="screen" id="screen1" value="1" ><label for="screen1">横屏</label>
+						&nbsp;&nbsp;&nbsp;
+						打开应用哪种方式展现，手机一般为竖屏，Pad一般为横屏
+					</td>
+				</tr>
+				<tr>    
+					<th valign="top"></th>     
+					<td>
+						<button type="submit" name="button" class="btnGreen">保存</button>
+						&nbsp;&nbsp;&nbsp; 
+						<button type="reset" class="btnGreen" style="background-color:#D5D5D5 !important">重置</button>
+					</td> 
+				</tr>
+			</table>
+		</div>
+	</div>
+</form>
+<include file="Public:footer"/>

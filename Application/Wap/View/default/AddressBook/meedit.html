@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>会员资料修改</title>
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="__PUBLIC__/wap/common/css/style/css/hotels.css" rel="stylesheet" type="text/css">
+<script src="__PUBLIC__/wap/common/css/style/js/jquery.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/static/artDialog/plugins/iframeTools.js"></script>
+<script src="__PUBLIC__/static/upyun.js?2013"></script>
+
+</head>
+
+<body id="wrap">
+<style>
+.round li.address {
+    background: url("__PUBLIC__/wap/common/card/images/addr.png") no-repeat scroll 11px center / 22px 22px rgba(0, 0, 0, 0);
+    line-height: 22px;
+    padding-left: 40px;
+}
+.deploy_ctype_tip{z-index:1001;width:100%;text-align:center;position:fixed;top:50%;margin-top:-23px;left:0;}.deploy_ctype_tip p{display:inline-block;padding:13px 24px;border:solid #d6d482 1px;background:#f5f4c5;font-size:16px;color:#8f772f;line-height:18px;border-radius:3px;}
+textarea{
+    border: 1px solid #E8E8E8;
+}
+.nob tr{
+	width:100px;
+}
+</style>
+
+
+<if condition="$submitted neq 1">
+<form method="post" action="" id="form">   
+<ul class="round">
+<li class="title mb"><span class="none">个人名片</span></li>
+<li class="nob">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="kuang">
+		<tr style="display:none;"><th>真实姓名</th>
+			<td><input type="text" class="px" id="truename" name="truename" value="{$userextinfo.truename}" readonly="true"></td>
+		</tr>
+		<tr><th>邮箱</th>
+			<td><input type="text" class="px" id="email" name="email" value="{$userextinfo.email}"></td>
+		</tr>
+		<tr><th>个人电话</th>
+			<td><input type="text" class="px" id="tel" name="tel" value="{$userextinfo.tel}"></td>
+		</tr>
+	</table>
+</li>                                                  
+</ul>
+<ul class="round" style="display:none;">
+<li class="title mb"><span class="none">商业信息</span></li>
+<li class="nob">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="kuang">
+		<tr><th>擅长/经验</th>
+			<td><input type="text" class="px" id="skillexp" name="skillexp" value="{$userextinfo.skillexp}"></td>
+		</tr>
+		<tr><th>所在行业</th>
+			<td>
+			<select name="indus" class="dropdown-select" id="indus">
+			<option  class="dropdown-option">请选择你所在行业</option>
+			<volist name='induscat' id='vo'>
+				<option value="{$vo.id}" <if condition="$userextinfo['industry'] eq $vo['id']">selected</if>>{$vo.name}</option>
+			</volist>
+			</select>
+			</td>
+		</tr>
+		<tr><th>企业介绍</th>
+			<td><input type="text" class="px" id="compintro" name="compintro" value="{$userextinfo.compintro}">
+			</td>
+		</tr>
+		<tr><th>关注行业</th>
+			<td><input type="text" class="px" id="focusindus" name="focusindus" value="{$userextinfo.focusindus}"></td>
+		</tr>
+	</table>
+</li>                                                  
+</ul>
+<ul class="round" style="display:none;">
+<li class="title mb"><span class="none">个人信息</span></li>
+<li class="nob">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="kuang">
+		<tr><th>自我介绍</th>
+			<td><input type="text" class="px" id="selfintro" name="selfintro" value="{$userextinfo.selfintro}"></td>
+		</tr>
+		<tr><th>社会职务</th>
+			<td><input type="text" class="px" id="socialduty" name="socialduty" value="{$userextinfo.socialduty}"></td>
+		</tr>
+		<tr><th>兴趣爱好</th>
+			<td><input type="text" class="px" id="hobby" name="hobby" value="{$userextinfo.hobby}"></td>
+		</tr>
+		<tr><th>城市</th>
+			<td><input type="text" class="px" id="city" name="city" value="{$userinfo.city}"></td>
+		</tr>
+		<tr><th>学习经历</th>
+			<td><input type="text" class="px" id="learnexp" name="learnexp" value="{$userextinfo.learnexp}"></td>
+		</tr>
+	</table>
+</li>                                                  
+</ul>
+<div class="footReturn" style="text-align:center">
+<if condition="$submitted neq 1">
+<input type="submit" style="margin:0 auto 20px auto;width:90%"  class="submit3" value="提交信息" />
+</if>
+<input type="button" style="margin:0 auto 20px auto;width:90%"  class="submit3" value="返  回" onclick="javascript:window.history.go(-1)" />
+</div>
+</form>
+</if>
+
+</div>
+<div class="copyright" style="text-align:center;padding:10px 0">
+<if condition="$iscopyright eq 1">
+{$homeInfo.copyright}
+<else/>
+{$siteCopyright}
+</if>
+</div>
+<include file="Index:styleInclude"/><include file="$cateMenuFileName"/> <include file="Index:kcdh"/> 
+<script type="text/javascript">
+window.shareData = {  
+            "moduleName":"AddressBook",
+            "moduleID":"{$thisForm.set_id}",
+            "imgUrl": "{$thisForm.top_pic}", 
+            "sendFriendLink": "{$f_siteUrl}{:U('AddressBook/index',array('token'=>$token,'id'=>$thisForm['set_id']))}",
+            "tTitle": "{$thisForm.title}",
+            "tContent": "{$thisForm.intro}"
+        };
+</script>
+</body>
+{$shareScript}
+</html>

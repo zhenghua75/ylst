@@ -1,0 +1,29 @@
+<params 
+	AjaxReturnPrizeUrl = "{:U('ShakeLottery/AjaxReturnPrize',array('token'=>$actioninfo['token'],'id'=>$actioninfo['id']))}"
+	enddate = "<?php echo date('m/d/Y H:i:s', $actioninfo['endtime'])?>"
+	starttime = "<?php echo date('m/d/Y H:i:s', $actioninfo['starttime'])?>"
+	notice_content = '{$notice_content}'
+	staticPath = '{$staticPath}'
+	aid		   = '{$actioninfo['id']}';
+	token		   = '{$actioninfo['token']}'
+	user_id		   = '{$user_id}'
+	MyRecordUrl 	= "{:U('ShakeLottery/LotteryMyRecord',array('token'=>$actioninfo['token']))}"
+	OtherRecordUrl 	= "{:U('ShakeLottery/LotteryRecord',array('token'=>$actioninfo['token'],'record_nums'=>$actioninfo['record_nums']))}"
+/>
+<div class="weiba-footer"><div class="weiba-copyright"></div></div>
+<script>
+window.shareData = {  
+	"moduleName":"ShakeLottery",
+	"moduleID":"{$actioninfo.id}",
+	"imgUrl": "{$actioninfo.reply_pic}", 
+	"timeLineLink": "{$f_siteUrl}{:U('ShakeLottery/index',array('token'=>$actioninfo['token'],'id'=>$actioninfo['id']))}",
+	"sendFriendLink": "{$f_siteUrl}{:U('ShakeLottery/index',array('token'=>$actioninfo['token'],'id'=>$actioninfo['id']))}",
+	"weiboLink": "{$f_siteUrl}{:U('ShakeLottery/index',array('token'=>$actioninfo['token'],'id'=>$actioninfo['id']))}",
+	"tTitle": "{$actioninfo['custom_sharetitle']|shareFilter}",
+	"tContent": "{$actioninfo['custom_sharedsc']|shareFilter}",
+	"fTitle": "{$actioninfo['custom_sharedsc']|shareFilter}",
+	"isShareNum":1,
+	"ShareNumData":"shakelottery,id,{$actioninfo.id},share_count",
+};
+</script>
+{$shareScript}

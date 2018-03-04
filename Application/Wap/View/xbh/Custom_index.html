@@ -1,0 +1,187 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{$thisForm.title}</title>
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<!--<link href="__PUBLIC__/wap/common/335/css/hotels.css" rel="stylesheet" type="text/css">-->
+<script src="__PUBLIC__/wap/common/css/style/js/jquery.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/wap/common/js/date/WdatePicker.js"></script>
+
+<!-- Bootstrap -->
+    <link href="__PUBLIC__/wap/common/335/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/wap/common/335/js/ios-orientationchange-fix.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style>
+.kuang{ width: auto;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center}
+.kuang th {
+    color: #333333;padding:0; font-size:16px; font-weight:normal;text-align: left;width: 79px;
+}
+.kuang td {
+    color: #999999;padding:0;
+}
+.kuang th.thtop{ padding:10px 0 0 0}
+.kuang td.userinfo{
+    padding:10px;
+}
+.round li span .kuang td.userinfo{
+    padding:0 0 1px 10px;color: #666666;
+}
+.kuang td.title{
+    padding:10px 0;color: #333333;
+}
+.kuang td.price{
+	color: #FF6600; font-size:16px;
+}
+.kuang td.price2{
+	color: #1CC200; font-size:16px;
+}
+.kuang td.pm{
+    font-size:14px;
+	line-height:20px;
+}
+/*login*/
+.px {
+	
+}
+
+.px[type="text"] {
+    width:140px;
+}
+.px[type="password"] {
+}
+.px[type="button"] {
+}
+</style>  
+</head>
+
+<body id="wrap" style="background:url(__PUBLIC__/wap/common/335/img/13.jpg);filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale');  
+-moz-background-size:100% 100%;  
+    background-size:100% 100%; ">
+<style>
+.deploy_ctype_tip{z-index:1001;width:100%;text-align:center;position:fixed;top:50%;margin-top:-23px;left:0;}.deploy_ctype_tip p{display:inline-block;padding:13px 24px;border:solid #d6d482 1px;background:#f5f4c5;font-size:16px;color:#8f772f;line-height:18px;border-radius:3px;}
+</style>
+<div class="container" style="margin-top:300px;">
+<if condition="$_GET['success'] eq 1">
+<ul class="round roundyellow" id="success">
+<li style="height:40px;line-height:40px; font-size:16px; text-align:center">{$thisForm.successtip}</li>
+</ul>
+<script type="text/javascript">
+$(function() {
+	$('#success').show().delay(1600).slideUp(1600);
+	return;
+});
+</script>
+</if>
+<!--
+<if condition="($spoor neq 0) and ($wecha_id neq 'null')">
+<script type="text/javascript">
+$(function() {
+    window.location="{:U('Custom/spoor',array('token'=>$token,'id'=>$thisForm['set_id'],'wecha_id'=>$wecha_id,'id'=>$thisForm['set_id']))}";
+});
+</script>
+
+<ul>
+	<li class="nob">
+		<a href="{:U('Custom/spoor',array('token'=>$token,'id'=>$thisForm['set_id'],'wecha_id'=>$wecha_id,'id'=>$thisForm['set_id']))}">
+			<div class="beizhu">查看提交记录({$spoor})</div>
+		</a>
+	</li>
+</ul>
+
+</if>
+-->
+<form method="post" action="" id="form" onSubmit="return tgSubmit()">   
+<div class="row"><div class="col-md-2 col-sm-2 col-xs-2 text-center"></div><div class="col-md-8 col-sm-8 col-xs-8 text-center"><p class="btn-danger">填写报名信息</p></div><div class="col-md-2 col-sm-2 col-xs-2 text-center"></div></div>
+<div class="row"><div class="col-md-2 col-sm-2 col-xs-2 text-center"></div><div class="col-md-8 col-sm-8 col-xs-8 text-center">{$formData}</div><div class="col-md-2 col-sm-2 col-xs-2 text-center"></div></div>
+<div class="row"><div class="col-md-6 col-sm-6 col-xs-6 text-center"></div><div class="col-md-4 col-sm-4 col-xs-4 text-right">
+
+<input type="submit"  class="btn btn-danger" value="下一步" />
+
+</div><div class="col-md-2 col-sm-2 col-xs-2 text-center"></div></div>
+</form>
+
+<script>
+function showTip(tipTxt) {
+	var div = document.createElement('div');
+	div.innerHTML = '<div class="deploy_ctype_tip"><p>' + tipTxt + '</p></div>';
+	var tipNode = div.firstChild;
+	$("#wrap").after(tipNode);
+	setTimeout(function () {
+		$(tipNode).remove();
+	}, 1500);
+}
+function tgSubmit(){
+ 	<volist name="verify" id="item">
+ 		
+ 		<if condition="$item['type'] eq 'checkbox'">			
+ 				var ck =  $("#{$item['id']}:checked").length; 
+ 			 	<if condition="$item['is_empty'] eq 1">
+					if(ck == 0){
+						showTip("{$item['name']}不能为空")
+						return false;
+					}
+				</if>			
+ 		<elseif condition="$item['type'] eq 'radio'" />
+ 			/*
+ 			<if condition="$item['is_empty'] eq 1">
+					if($("#{$item['id']}:checked").val() == undif){
+						showTip("{$item['name']}不能为空")
+						return false;
+					}
+			</if>
+			*/
+ 		<elseif condition="$item['type'] eq 'textarea'" />	
+ 			<if condition="$item['is_empty'] eq 1">
+					if($.trim($("#{$item['id']}").val()) == ""){
+						showTip("{$item['name']}不能为空")
+						return false;
+					}
+			</if>
+ 		<else />
+ 			var values = $("#{$item['id']}").val();	
+ 				<if condition="$item['is_empty'] eq 1">
+					if($.trim(values) == ""){
+						showTip("{$item['name']}不能为空")
+						return false;
+					}
+				</if>
+
+				<if condition="$item['match'] neq ''">
+					var regu = /{$item['match']}/; 
+					var re = new RegExp(regu); 
+					if (!re.test($.trim(values))) {
+						showTip("{$item['err_info']}")
+						return false;
+					}
+				</if>			
+ 		</if>
+ 	</volist>
+}
+	</script>
+</div>
+
+<script type="text/javascript">
+window.shareData = {  
+            "moduleName":"Custom",
+            "moduleID":"{$thisForm.set_id}",
+            "imgUrl": "{$thisForm.top_pic}", 
+            "sendFriendLink": "{$f_siteUrl}{:U('Custom/index',array('token'=>$token,'id'=>$thisForm['set_id']))}",
+            "tTitle": "{$thisForm.title}",
+            "tContent": "{$thisForm.intro}"
+        };
+</script>
+{$shareScript}
+</body>
+</html>

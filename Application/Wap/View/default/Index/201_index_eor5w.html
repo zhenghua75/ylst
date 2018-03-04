@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>    
+<head>
+       <if condition="$zd['status'] eq 1">
+            {$zd['code']}
+        </if>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{$tpl.wxname}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link href="__PUBLIC__/static/tpl/201/css/cate.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/wap/common/css/121/reset.css" media="all">
+<!--<link rel="stylesheet" type="text/css" href="__PUBLIC__/wap/common/css/121/font-awesome.css" media="all">-->
+<!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/wap/common/css/121/home-43.css" media="all"> -->
+<script type="text/javascript" src="__PUBLIC__/wap/common/css/116/jQuery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/wap/common/css/121/zepto.js"></script>
+<script type="text/javascript" src="__PUBLIC__/wap/common/css/121/swipe.js"></script>
+</head>
+<body onselectstart="return true;" ondragstart="return false;"> <!--背景音乐-->
+
+<include file="Search:header"/>
+
+<if condition="$homeInfo['musicurl'] neq false">
+<include file="Index:music"/>
+</if>
+<div class="body">
+    <section>
+    <div style="-webkit-transform:translate3d(0,0,0);">
+        <div id="banner_box" class="box_swipe" style="visibility: visible;">
+            <ul style="list-style: none;transition: 0ms; -webkit-transition: 0ms; -webkit-transform: translate3d(0, 0, 0);">
+            <volist name="flash" id="so">
+                <li style="vertical-align: top;">
+                    <a href="{$so.url}">
+                            <img src="{$so.img}" style="width:100%;height:130px;">
+                    </a>
+                </li>
+            </volist>                    
+            </ul>
+        </div>
+    </div>
+        <script>
+        $(function(){
+            new Swipe(document.getElementById('banner_box'), {
+                speed:500,
+                auto:3000,
+                callback: function(){
+                    var lis = $(this.element).next("ol").children();
+                    lis.removeClass("on").eq(this.index).addClass("on");
+                }
+            });
+        });
+    </script>
+        <div>
+            <ul class="list_ul">
+                <li class="box">
+                <volist name="info" id="vo">
+                    <if condition="$i lt 5">
+                    <dl>
+                    <a href="<if condition="$vo['url'] eq ''">{:U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{$vo.url|htmlspecialchars_decode}</if>">
+                        <dd>
+                        <div>
+                            <span>
+                            <img src="{$vo.img}" style="width:55px;height:55px;">
+                            </span>
+                        </div>
+                        </dd>
+                         <dt style="text-align:center;font-size:9px;"><span>{$vo.name}</span></dt>
+                    </a>
+                   
+                    </dl>
+                    </if>
+                </volist>
+                </li>
+                <li class="box">
+                <volist name="info" id="vo">
+                    <if condition="($i gt 4) and ($i lt 9)">
+                   <dl>
+                    <a href="<if condition="$vo['url'] eq ''">{:U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{$vo.url|htmlspecialchars_decode}</if>">
+                        <dd>
+                        <div>
+                            <span>
+                            <img src="{$vo.img}" style="width:55px;height:55px;">
+                            </span>
+                        </div>
+                        </dd>
+                            <dt style="text-align:center;font-size:9px;"><span>{$vo.name}</span></dt>
+                    </a>
+                    </dl>
+                    </if>
+                </volist>
+                    
+                </li>
+            </ul>
+        </div>
+<script type="text/javascript"> 
+ var SysSecond; 
+ var InterValObj; 
+  
+ $(document).ready(function() {
+  var dtcur = new Date();
+  var dttom = new Date();
+  var dayOfMonth = dtcur.getDate();
+  dttom.setDate(dayOfMonth + 1);
+  dttom.setHours(10,0,0);
+  if (dtcur.getHours()>=10){
+      var dayOfMonth = dtcur.getDate();
+      dttom.setDate(dayOfMonth + 1);
+      dttom.setHours(10,0,0);
+  }else{
+      dttom.setHours(10,0,0);
+  }
+  SysSecond = (Math.abs(dttom - dtcur))/1000; //这里获取倒计时的起始时间
+  InterValObj = window.setInterval(SetRemainTime, 1000); //间隔函数，1秒执行 
+ }); 
+ 
+ //将时间减去1秒，计算天、时、分、秒 
+ function SetRemainTime() { 
+  if (SysSecond > 0) { 
+   SysSecond = SysSecond - 1; 
+   var second = Math.floor(SysSecond % 60);             // 计算秒     
+   var minite = Math.floor((SysSecond / 60) % 60);      //计算分 
+   var hour = Math.floor((SysSecond / 3600) % 24);      //计算小时 
+   var day = Math.floor((SysSecond / 3600) / 24);        //计算天 
+   var strsecond="0";
+   if(second<10){
+    strsecond="<span class='spantime'>0</span><span class='spansep'></span><span class='spantime'>"+String(second)+"</span>";
+   }
+   else{
+    strsecond="<span class='spantime'>"+String(second).substring(0,1)+"</span><span class='spansep'></span><span class='spantime'>"+String(second).substring(1,2)+"</span>";
+   }
+   var strminite="0";
+   if(minite<10){
+    strminite="<span class='spantime'>0</span><span class='spansep'></span><span class='spantime'>"+String(minite)+"</span>";
+   }
+   else{
+    strminite="<span class='spantime'>"+String(minite).substring(0,1)+"</span><span class='spansep'></span><span class='spantime'>"+String(minite).substring(1,2)+"</span>";
+   }
+   var strhour="0";
+   if(hour<10){
+    strhour="<span class='spantime'>0</span><span class='spansep'></span><span class='spantime'>"+String(hour)+"</span>";
+   }
+   else{
+    strhour="<span class='spantime'>"+String(hour).substring(0,1)+"</span><span class='spansep'></span><span class='spantime'>"+String(hour).substring(1,2)+"</span>";
+   }
+   var timedec=strhour+"<span class='spanm'>:</span>"+strminite+"<span class='spanm'>:</span>"+strsecond;
+   //$("#remainTime").html(hour + ":" + minite + ":" + second);
+   $("#remainTime").html(timedec);
+  } else {//剩余时间小于或等于0的时候，就停止间隔函数 
+   window.clearInterval(InterValObj);
+   //这里可以添加倒计时时间为0后需要执行的事件 
+   dtcur = new Date();
+   dttom = new Date();
+   dayOfMonth = dtcur.getDate();
+   dttom.setDate(dayOfMonth + 1);
+   dttom.setHours(10,0,0);
+   if (dtcur.getHours()>=10){
+      var dayOfMonth = dtcur.getDate();
+      dttom.setDate(dayOfMonth + 1);
+      dttom.setHours(10,0,0);
+   }else{
+      dttom.setHours(10,0,0);
+   }
+   SysSecond = (Math.abs(dttom - dtcur))/1000; //这里获取倒计时的起始时间 
+   InterValObj = window.setInterval(SetRemainTime, 1000);
+  } 
+ } 
+</script>         
+        <div class="list_card">
+             <volist name="info" id="vo">
+                <if condition="($i gt 8) and ($i lt 12)">
+                    <switch name="i">
+                        <case value="9">
+                            <a href="<if condition="$vo['url'] eq ''">{:U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{$vo.url|htmlspecialchars_decode}</if>">
+                            <div class="list_card_1">
+                            <div style="width:100%;height:100%;position:absolute;"><img src="{$vo.img}" style="width:100%;height:100%;"></div>
+                            <div style="width:100%;z-index:2;position:absolute;text-align:right;padding-top:15px;">
+                            <span id="remainTime" style="font-size:18px;font-weight:800;color:white;padding-right:15px;"></span></div>
+                            </div>
+                            </a>
+                        </case>
+                        <case value="10">
+                            <a href="<if condition="$vo['url'] eq ''">{:U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{$vo.url|htmlspecialchars_decode}</if>">
+                            <div class="list_card_2"><img src="{$vo.img}" style="width:100%;height:100%;"></div>
+                            </a>
+                        </case>
+                        <case value="11">
+                            <a href="<if condition="$vo['url'] eq ''">{:U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{$vo.url|htmlspecialchars_decode}</if>">
+                            <div class="list_card_3"><img src="{$vo.img}" style="width:100%;height:100%;"></div>
+                            </a>
+                        </case>
+                        <default />default
+                    </switch>
+                </if>
+             </volist>
+        </div>
+        <div class="bbarfull1">
+            <div style="float:left;width:50%;text-align:left;height:19px;line-height:19px;"><span style="padding-left:15px;">猜你喜欢</span></div>
+            <div style="float:right;width:50%;text-align:right;height:19px;line-height:19px;"><a href="###" style="padding-right:15px;color: white;">>></a></div>
+        </div>
+        <div class="list_card">
+             <volist name="info" id="vo">
+                <if condition="($i gt 11) and ($i lt 15)">
+                    <switch name="i">
+                        <case value="12">
+                            <a href="<if condition="$vo['url'] eq ''">{:U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{$vo.url|htmlspecialchars_decode}</if>">
+                            <div class="list_card_4"><img src="{$vo.img}" style="width:100%;height:100%;"></div>
+                            </a>
+                        </case>
+                        <case value="13">
+                            <a href="<if condition="$vo['url'] eq ''">{:U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{$vo.url|htmlspecialchars_decode}</if>">
+                            <div class="list_card_5"><img src="{$vo.img}" style="width:100%;height:100%;"></div>
+                            </a>
+                        </case>
+                        <case value="14">
+                            <a href="<if condition="$vo['url'] eq ''">{:U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{$vo.url|htmlspecialchars_decode}</if>">
+                            <div class="list_card_6"><img src="{$vo.img}" style="width:100%;height:100%;"></div>
+                            </a>
+                        </case>
+                        <default />default
+                    </switch>
+                </if>
+             </volist>
+        </div>
+        <volist name="info" id="vo">
+            <if condition="($i gt 14) and ($i lt 21)">
+                <div class="bbarfull2">
+                    <div style="float:left;width:50%;text-align:left;height:19px;line-height:19px;"><span style="padding-left:15px;">{$vo.name}</span></div>
+                    <div style="float:right;width:50%;text-align:right;height:19px;line-height:19px;"><a href="###" style="padding-right:15px;color: white;">>></a></div>
+                </div>
+                <div class="list_card">
+                <div class="vbardis_{$i}">
+                <div style="-webkit-transform:translate3d(0,0,0);">
+                    <div id="banner_box_{$i}" class="box_swipe" style="visibility: visible;">
+                        <ul style="list-style: none;transition: 0ms; -webkit-transition: 0ms; -webkit-transform: translate3d(0, 0, 0);">
+                        <foreach name="flashclsfy" item="so">
+                            <if condition="$vo['id'] eq $so['did']">
+                            <li style="vertical-align: top;">
+                                <a href="{$so.url}">
+                                    <img src="{$so.img}" style="width:100%;height:150px;">
+                                </a>
+                            </li>
+                            </if>
+                        </foreach>                  
+                        </ul>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </if>
+        </volist>
+        <div style="clear:both"></div>
+
+        <script>
+            $(function(){
+                new Swipe(document.getElementById('banner_box_15'), {
+                    speed:500,
+                    auto:3000,
+                    callback: function(){
+                        var lis = $(this.element).next("ol").children();
+                        lis.removeClass("on").eq(this.index).addClass("on");
+                    }
+                });
+            });
+            $(function(){
+                new Swipe(document.getElementById('banner_box_16'), {
+                    speed:500,
+                    auto:3000,
+                    callback: function(){
+                        var lis = $(this.element).next("ol").children();
+                        lis.removeClass("on").eq(this.index).addClass("on");
+                    }
+                });
+            });
+            $(function(){
+                new Swipe(document.getElementById('banner_box_17'), {
+                    speed:500,
+                    auto:3000,
+                    callback: function(){
+                        var lis = $(this.element).next("ol").children();
+                        lis.removeClass("on").eq(this.index).addClass("on");
+                    }
+                });
+            });
+                        $(function(){
+                new Swipe(document.getElementById('banner_box_18'), {
+                    speed:500,
+                    auto:3000,
+                    callback: function(){
+                        var lis = $(this.element).next("ol").children();
+                        lis.removeClass("on").eq(this.index).addClass("on");
+                    }
+                });
+            });
+            $(function(){
+                new Swipe(document.getElementById('banner_box_19'), {
+                    speed:500,
+                    auto:3000,
+                    callback: function(){
+                        var lis = $(this.element).next("ol").children();
+                        lis.removeClass("on").eq(this.index).addClass("on");
+                    }
+                });
+            });
+            $(function(){
+                new Swipe(document.getElementById('banner_box_20'), {
+                    speed:500,
+                    auto:3000,
+                    callback: function(){
+                        var lis = $(this.element).next("ol").children();
+                        lis.removeClass("on").eq(this.index).addClass("on");
+                    }
+                });
+            });
+        </script>
+    </section>
+
+
+
+<div class="copyright" style="text-align:center;padding:10px 0">
+<if condition="$iscopyright eq 1">
+{$homeInfo.copyright}
+<else/>
+{$siteCopyright}
+</if>
+</div>
+</div>
+
+                    
+<include file="Index:styleInclude"/><include file="$cateMenuFileName"/> <include file="Index:kcdh"/>   
+<!-- share -->
+<include file="Index:share" />
+</body>
+</html>

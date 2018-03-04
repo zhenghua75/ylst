@@ -1,0 +1,168 @@
+<!--悬浮框-->
+            <div id="leftsead">
+                <ul>
+                    <if condition="$agentid eq 0">
+                        <li>
+                            <a href="javascript:void(0)" class="youhui">
+                                <img src="__PUBLIC__/web/images/l02.png" width="47" height="49" class="shows" />
+                                <img src="__PUBLIC__/web/images/a.png" width="57" height="49" class="hides"/>
+                                <img src="{:C('sitetwm')}" width="145" class="2wm" style="display:none;margin:-100px 57px 0 0"/>
+                                <map name="taklhtml"><area shape="rect" coords="26,273,115,300 " href="#" /></map>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://wpa.qq.com/msgrd?v=3&uin={$Think.config.qq)}&site=qq&menu=yes" target="_blank">
+                                <div class="hides" style="width:161px;display:none;" id="qq">
+                                    <div class="hides" id="p1">
+                                        <img src="__PUBLIC__/web/images/ll04.png">
+                                    </div>
+                                    <if condition="C('qq') eq ''">
+                                        <div class="hides" id="p2">
+                                            <span style="color:#FFF;font-size:13px">xxxxxxxxxxx</span>
+                                        </div>
+                                    <else/>
+                                        <volist name=":explode(',',C('qq'))" id="vo">
+        	                                <div class="hides" id="p2">
+        	                                    <span style="color:#FFF;font-size:13px">{$vo}</span>
+        	                                </div>
+        	                            </volist>
+                                    </if>
+                                </div>
+                                <img src="__PUBLIC__/web/images/l04.png" width="47" height="49" class="shows" />
+                            </a>
+                        </li>
+                        <li id="tel">
+                            <a href="javascript:void(0)">
+                                <div class="hides" style="width:161px;display:none" id="tels"/>
+                                    <div class="hides" id="p1">
+                                        <img src="__PUBLIC__/web/images/ll05.png">
+                                    </div>
+                                    <if condition="C('mp') eq ''">
+                                        <div class="hides" id="p3">
+                                            <span style="color:#FFF;font-size:12px">xxxxxxxxxxx</span>
+                                        </div>
+                                    <else />
+                                        <volist name=":explode(',',C('mp'))" id="vo">
+        	                                <div class="hides" id="p3">
+        	                                    <span style="color:#FFF;font-size:12px">{$vo}</span>
+        	                                </div>
+                                        </volist>
+                                    </if>
+                                </div>
+                                <img src="__PUBLIC__/web/images/l05.png" width="47" height="49" class="shows" />
+                            </a>
+                        </li>
+                    <else />
+                        <li>
+                            <a href="javascript:void(0)" class="youhui">
+                                <img src="__PUBLIC__/web/images/l02.png" width="47" height="49" class="shows" />
+                                <img src="__PUBLIC__/web/images/a.png" width="57" height="49" class="hides"/>
+                                <img src="{$qrcode}" width="145" class="2wm" style="display:none;margin:-100px 57px 0 0"/>
+                                <map name="taklhtml"><area shape="rect" coords="26,273,115,300 " href="#" /></map>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://wpa.qq.com/msgrd?v=3&uin={:C('qq')}&site=qq&menu=yes" target="_blank">
+                                <div class="hides" style="width:161px;display:none;" id="qq">
+                                    <div class="hides" id="p1">
+                                        <img src="__PUBLIC__/web/images/ll04.png">
+                                    </div>
+                                    <if condition="C('qq') eq ''">
+                                        <div class="hides" id="p2">
+                                            <span style="color:#FFF;font-size:13px">xxxxxxxxxxx</span>
+                                        </div>
+                                    <else/>
+                                        <volist name=":explode(',',C('qq'))" id="vo">
+                                            <div class="hides" id="p2">
+                                                <span style="color:#FFF;font-size:13px">{$vo}</span>
+                                            </div>
+                                        </volist>
+                                    </if>
+                                </div>
+                                <img src="__PUBLIC__/web/images/l04.png" width="47" height="49" class="shows" />
+                            </a>
+                        </li>
+                        <li id="tel">
+                            <a href="javascript:void(0)">
+                                <div class="hides" style="width:161px;display:none" id="tels"/>
+                                    <div class="hides" id="p1">
+                                        <img src="__PUBLIC__/web/images/ll05.png">
+                                    </div>
+                                    <if condition="C('mp') eq ''">
+                                        <div class="hides" id="p3">
+                                            <span style="color:#FFF;font-size:12px">xxxxxxxxxxx</span>
+                                        </div>
+                                    <else />
+                                        <volist name=":explode(',',C('mp'))" id="vo">
+                                            <div class="hides" id="p3">
+                                                <span style="color:#FFF;font-size:12px">{$vo}</span>
+                                            </div>
+                                        </volist>
+                                    </if>
+                                </div>
+                                <img src="__PUBLIC__/web/images/l05.png" width="47" height="49" class="shows" />
+                            </a>
+                        </li>
+                    </if>
+                    <li id="btn">
+                        <a id="top_btn">
+                        <div class="hides" style="width:161px;display:none"><img src="__PUBLIC__/web/images/ll06.png" width="161" height="49" /></div>
+                        <img src="__PUBLIC__/web/images/l06.png" width="47" height="49" class="shows" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        	<!--leftsead end-->
+        </div>
+        <!--startof footer-->
+        <div class="footer clr" style="padding-bottom:10px;padding-top:10px;position:fixed;bottom:0;z-index:3;">
+        	<div class="last clr">
+            	<P style="padding-bottom: 0px;">© {:date('Y',time())} <if condition="$agenturl neq ''">{$agenturl}<else/>{:C('servertopdomain')}</if>   <if condition="C('copyright') eq ''">{:C('copyright')}<else/>{:C('copyright')}</if></P>
+            	<?php
+            	if (C('servertopdomain')=='pigcms.cn'){
+            		echo '<P style="padding:20px 0 0 0;"><a  key ="549258c23b05a3da0fbc6eb3"  logo_size="83x30"  logo_type="realname"  href="http://www.anquan.org" ><script src="http://static.anquan.org/static/outer/js/aq_auth.js"></script></a></p>';
+            	}
+            	?>
+            	
+            </div>
+        </div>
+    <script type="text/javascript">
+        //功能更新
+        $(".tuPian").mouseover(function(){
+          $(this).children().children(".tubiao").hide();
+          $(this).children().children(".tubiao1").show();
+        });
+        $(".tuPian").mouseout(function(){
+          $(this).children().children(".tubiao").show();
+          $(this).children().children(".tubiao1").hide();
+        });
+        //右侧导航 - 二维码
+        $(".youhui").mouseover(function(){
+            $(this).children(".2wm").show();
+        })
+        $(".youhui").mouseout(function(){
+            $(this).children(".2wm").hide();
+        });
+        //右侧导航 - QQ
+        var ndiv = $("#qq").children().length;;
+        var npx = ((ndiv-2)*49)+"px";
+        $("#qq").mouseover(function(){
+            $("#tel").css("margin-top",npx);
+        })
+        $("#qq").mouseout(function(){
+            $("#tel").css("margin-top","0px");
+        })
+        //右侧导航 - 电话
+        var ndiv = $("#tels").children().length;
+        var npx1 = ((ndiv-2)*49)+"px";
+        $("#tels").mouseover(function(){
+            $("#btn").css("margin-top",npx1);
+        })
+        $("#tels").mouseout(function(){
+            $("#btn").css("margin-top","0px");
+        })
+    </script>
+    	<div style="display:none">{:C('countsz')}</div>
+</div><span style="display:none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255156937'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255156937%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</span>

@@ -1,0 +1,74 @@
+.body{
+    max-width:640px;
+    margin:auto;
+    min-height:100%;
+    background-color:rgba(11, 106, 207, 0.47);
+    position:relative;
+}
+
+
+
+/******************************/
+.list_ul li{
+    
+}
+.list_ul dl{
+    text-align:center;
+    line-height:20px;
+    border-bottom:1px solid #dadada;
+    /*width:50%;*/
+}
+.list_ul dl a{
+    padding:5px 0;
+    display:block;
+    color:#909090;
+    background-color:rgba(11, 106, 207, 0.47);
+    /*background:-webkit-gradient(linear, 0 0, 0 100%, from(#fffbfc), to(#f0f0ee));*/
+}
+.list_ul dl:nth-of-type(2){
+    border-right:1px solid #dadada;
+}
+.list_ul dd{
+    width:50px;
+    display:table;
+    margin:auto;
+    border-radius:45px;
+}
+
+.list_ul li dt{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.list_ul div{
+    color:#ffffff;
+    width:100%;
+    text-align:center;
+    height:50px;
+    vertical-align: middle;
+    display:table-cell;
+    font-size:30px;
+}
+
+.list_card li dl{
+    width:50%;
+    padding:10px 0 0 0;
+}
+.list_card li dl:only-child{
+    width:50%;
+    margin-left:-50%;
+}
+
+.list_card li dl a{
+    display:block;
+    width:150px;
+    height:90px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:5px;
+}
+
+.list_card li dl a img{
+    width:100%;
+    min-height:90px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{$res.title}-{$tpl.wxname}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+<meta name="viewport" content="initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta charset="utf-8">
+<link href="__PUBLIC__/wap/common/css/ktv/style.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/static/tpl/com/css/gobacknomenu.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="content">
+	<span class="marginb">
+		<h3>{$res.title}</h3>
+		<span id="post-date">{$res.createtime|date="y-m-d",###}</span>
+	</span>
+	
+	<eq name="res.showpic" value="1">
+<div class="showpic"><img src="{$res.pic}" /></div> 
+</eq>
+	<php>echo htmlspecialchars_decode($res['info'])</php>
+
+</div>
+
+<div style="display:none"><php>echo htmlspecialchars_decode($tpl['tongji'])</php></div>
+<div style="width:100%;float:left;">
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_24x24"><span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_weixin"></a>
+<a class="jiathis_button_renren"></a>
+<a href="http://www.jiathis.com/share?uid=2037225" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=2037225" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</div>
+<div class="copyright">
+<if condition="$iscopyright eq 1">
+{$homeInfo.copyright}
+<else/>
+{$siteCopyright}
+</if>
+</div> 
+<include file="Public:goback"/>
+<include file="Index:styleInclude"/><include file="$cateMenuFileName"/> 
+<!-- share -->
+<include file="Index:content_share" />
+</body>
+</html>

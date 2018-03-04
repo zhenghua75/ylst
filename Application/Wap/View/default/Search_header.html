@@ -1,0 +1,40 @@
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/static/tpl/search/css/style_touch.css">
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/static/tpl/search/style/{$productSet['headerid']}.css">
+<script>
+$(document).ready(function(){
+	$(".m-hd .cat").parent('div').click( function() {
+	    var docH=$(document).height();
+	  	$('.sub-menu-list').toggle();
+	    $(".m-right-pop-bg2").addClass("on").css('min-height',docH);
+	});
+	$(".m-right-pop-bg2").click( function() {
+	    $('.sub-menu-list').hide();
+		$(".m-right-pop-bg2").removeClass("on").removeAttr("style");
+	});
+});
+</script>
+<script type="text/javascript">
+$(function() {
+	$('#search_form').submit(function() {
+		var search_name = $('#search_name').val();
+		if (search_name == '') {
+			return false;
+		}
+	});
+});
+</script>
+<div id="top"></div>
+<div id="scnhtm5" class="m-body">
+<div class="m-detail-mainout">
+<table class="m-hd">
+	<tr>
+    <td class="logo"><img src="{$homeInfo.logo}"/></td>
+    <form id="search_form" name="search_form" action="" method="post">
+        <input type="hidden" name="wecha_id" value="{$wecha_id}" />
+        <input type="hidden" name="token" value="{$token}" />
+        <input type="hidden" name="twid" value="{$twid}" /> 
+        <td class="searchtxt"><input id="search_name" class="inp-search" name="search_name" type="search" value="" placeholder="输入关键字搜索" /></td>
+        <td class="searchbtn"><input class="btn-search" name="search-btn" type="submit" value="" /></td>
+    </form>
+    </tr>
+</table>

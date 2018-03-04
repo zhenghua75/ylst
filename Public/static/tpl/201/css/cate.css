@@ -1,0 +1,316 @@
+.body{
+    max-width:960px;
+    margin:0 auto;
+    min-height:100%;
+    background-color:#e1e0de;
+    position:relative;
+}
+
+
+
+/******************************/
+.list_ul li{
+
+}
+.list_ul dl{
+    text-align:center;
+    line-height:20px;
+    border-bottom:1px solid #dadada;
+    /*width:50%;*/
+}
+.list_ul dl a{
+    padding:5px 0;
+    display:block;
+    color:#909090;
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#fffbfc), to(#f0f0ee));
+}
+
+.list_ul dd{
+    /*background:#f28e74;*/
+    width:55px;
+    height:55px;
+    display:table;
+    margin:0 auto;
+    /*border:1px solid #fff;*/
+    /*-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);*/
+    /*border-radius:45px;*/
+}
+
+.list_ul li dt{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    course: hand;
+    font-weight:bold;
+}
+.list_ul div{
+    color:#ffffff;
+    width:100%;
+    text-align:center;
+    height:50px;
+    vertical-align: middle;
+    display:table-cell;
+    font-size:30px;
+}
+
+/************
+.list_ul li:nth-of-type(1) dl:nth-of-type(1) dd{background:#f28e74;}
+.list_ul li:nth-of-type(1) dl:nth-of-type(2) dd{background:#a8d691;}
+.list_ul li:nth-of-type(1) dl:nth-of-type(3) dd{background:#4fd2be;}
+.list_ul li:nth-of-type(1) dl:nth-of-type(4) dd{background:#f7ba5b;}
+
+.list_ul li:nth-of-type(2) dl:nth-of-type(1) dd{background:#4fd2be;}
+.list_ul li:nth-of-type(2) dl:nth-of-type(2) dd{background:#f28e74;}
+.list_ul li:nth-of-type(2) dl:nth-of-type(3) dd{background:#f7ba5b;}
+.list_ul li:nth-of-type(2) dl:nth-of-type(4) dd{background:#a8d691;}
+*********************/
+
+.list_card{
+    width:100%;
+    height:150px;
+    float:left;
+    background-color:white;
+    position:relative;
+    font-size:10px;
+    text-align: center;
+    border-bottom:1px solid #dadada;
+}
+.list_card_1{
+    width:49.5%;
+    height:100%;
+    float:left;
+    border-right:1px solid #dadada;
+    color:red;
+    background-color: white;  
+    position:relative;
+}
+.list_card_2{
+    width:49.6%;
+    height:49.6%;
+    float:left;
+    background-color: white;
+    border-bottom:1px solid #dadada;
+}
+.list_card_3{
+    width:49.6%;
+    height:49.6%;
+    float:left;
+    background-color: white;
+}
+.bbarfull1{
+    width: 100%;
+    height: 20px;
+    float:left;
+    background-color: #58d5b5;
+    position:relative;
+    font-size:14px;
+    color: white;
+    font-weight: bold;
+    border-bottom:1px solid #dadada;
+}
+.bbarfull2{
+    width: 100%;
+    height: 20px;
+    float:left;
+    background-color: #87c524;
+    position:relative;
+    font-size:14px;
+    color: white;
+    font-weight: bold;
+    border-bottom:1px solid #dadada;
+}
+.list_card_4{
+    width:32.6%;
+    height:99.9%;
+    float:left;
+    border-right:1px solid #dadada;
+    color:blue;
+    background-color: white;
+}
+.list_card_5{
+    width:32.6%;
+    height:99.9%;
+    float:left;
+    border-right:1px solid #dadada;
+    background-color: white;
+}
+.list_card_6{
+    width:32.6%;
+    height:99.9%;
+    float:left;
+    background-color: white;
+}
+.topsearch{
+    text-align:center;  
+    margin:0 auto;  
+    padding:0;  
+    clear:both; 
+    background-color: #8AFD68; 
+    height: 30px;
+}
+.toplogo{
+    width:20%;
+    text-align: right;  
+    margin:0;  
+    padding:0;  
+    display:inline-block;  
+    _display:inline;  
+    *display:inline;  
+    zoom:1;  
+}
+.searchtext{
+    margin:0;  
+    padding:0;  
+    display:inline-block;  
+    _display:inline;  
+    *display:inline;  
+    zoom:1;
+    width:38%;
+    height: 25px;
+    background-image: url(../image/insearch.png);
+    background-size: 100%;
+    BACKGROUND-REPEAT: no-repeat;
+}
+.searchtext input{
+    margin-left:23px;
+    height: 20px;
+    width:90%;
+    font-size: 16px;
+    background-color: transparent;
+    border: 0;
+    text-align: left;
+}
+.subBtndiv{
+    margin:0;  
+    padding:0;  
+    display:inline-block;  
+    _display:inline;  
+    *display:inline;  
+    zoom:1;
+    height:23px;
+    width:45%;
+    text-align: left;
+}
+.subBtn1{
+    width:40px;
+    margin:0;  
+    padding:0;  
+    display:inline-block;  
+    _display:inline;  
+    *display:inline;  
+    zoom:1;
+    color: white;
+    background-color:transparent;
+    border:0;
+}
+.vbarheight_15{
+    width: 20px;
+    height: 100%;
+    background-color:#fe8922;
+    color: white;
+    float: left;
+    line-height:24px;
+}
+.vbardis_15{
+    width: 99%;
+    height: 100%;
+    background-color:#D1D3D3;
+    color: white;
+    float: left;
+}
+.vbarpic{
+    width: 9%;
+    height: 145px;
+    float: left;
+}
+.vbarheight_16{
+    width: 20px;
+    height: 100%;
+    background-color:#7986ef;
+    color: white;
+    float: left;
+    line-height:24px;
+}
+.vbardis_16{
+    width: 96%;
+    height: 100%;
+    background-color:#D1D3D3;
+    color: white;
+    float: left;
+}
+.vbarheight_17{
+    width: 20px;
+    height: 100%;
+    background-color:#e86740;
+    color: white;
+    float: left;
+    line-height:24px;
+}
+.vbardis_17{
+    width: 96%;
+    height: 100%;
+    background-color:#D1D3D3;
+    color: white;
+    float: left;
+}
+.vbarheight_18{
+    width: 20px;
+    height: 100%;
+    background-color:#4ed2bd;
+    color: white;
+    float: left;
+    line-height:24px;
+}
+.vbardis_18{
+    width: 96%;
+    height: 100%;
+    background-color:#D1D3D3;
+    color: white;
+    float: left;
+}
+.vbarheight_19{
+    width: 20px;
+    height: 100%;
+    background-color:#3ED99B;
+    color: white;
+    float: left;
+    line-height:24px;
+}
+.vbardis_19{
+    width: 96%;
+    height: 100%;
+    background-color:#D1D3D3;
+    color: white;
+    float: left;
+}
+.vbarheight_20{
+    width: 20px;
+    height: 100%;
+    background-color:#3ED99B;
+    color: white;
+    float: left;
+    line-height:24px;
+}
+.vbardis_20{
+    width: 96%;
+    height: 100%;
+    background-color:#D1D3D3;
+    color: white;
+    float: left;
+}
+.spantime{
+    background-color: red;
+    font-size:12px;
+}
+.spansep{
+    background-color: white;
+    color: white;
+    padding-right: 1px;
+}
+.spanm{
+    color: red;
+    padding:0 3px 0 3px;
+    font-size:12px;
+}

@@ -1,0 +1,3063 @@
+{
+	"DEFAULT_THEME"			 : "default",
+	"TMPL_LOAD_DEFAULTTHEME" : true,
+	"SHOW_PAGE_TRACE"        : true,
+	"DEFAULT_FILTER"         : "strip_tags,htmlspecialchars,trim",
+	"DB_TYPE"   			 : "mysqli",
+	"DB_HOST"   			 : "localhost",
+	"DB_NAME"   			 : "ylsttest",
+	"DB_USER"   			 : "root",
+	"DB_PWD"    			 : "root",
+	"DB_PORT"   			 : 3306,
+	"DB_PREFIX" 			 : "ylst_",
+	"DB_CHARSET"			 : "utf8",
+	"DB_DEBUG"  			 : true,
+	"sitename" 			 : "意路视通",
+	"sitetitle"			 : "意路视通",
+	"site_my"			 : "意路视通",
+	"sitelogo" 			 : "http://vpn.kmdx.cn/uploads/a/admin/3/9/8/2/thumb_54b7c16a9b9a3.png",
+	"metakeywords"   			 : "意路视通",
+	"metades"   			 : "“意路视通让生意更轻松”！ “创业路上，若有意路视通相伴，感动与惊喜随之而来”！拥有意路视通，傍大款（BAT）很成功！",
+	"qq"   			 : "454836950",
+	"copyright"       			 : "滇ICP备11001821号-1",
+	"site_url"  			 : "http://kmdx.xicp.net",
+	"regneedmp"			 : true,
+	"ischeckuser"			 : false,
+	"regvaliddays"			 : 3,
+	"reggid"			 : 1,
+	"mp"   			 : "18669032733",
+	"agent_version"			 : true,
+	"qrcode":"/Public/web/images/ewm2.jpg",
+	"minGroupid":1,
+	"countsz":"",
+	"sitetwm":"",
+	"server_topdomain":"kmdx.cn",
+    "VAR_MODULE"            :  "g",
+    "VAR_CONTROLLER"        :  "m",
+    "AUTOLOAD_NAMESPACE"    :  {"Extend":"/var/www/html/Extend"},
+    "URL_MODEL"  : "0",
+	"ClassifyTpls":[
+		{
+			"tpltypeid":1,
+			"tplview":"cate1.png",
+			"tpltypename":"101_index",
+			"tpldesinfo":"",
+			"attr":"thumb focu bgs other",
+			"sort":1
+		},
+		{
+			"tpltypeid":2,
+			"tplview":"cate2.png",
+			"tpltypename":"102_index",
+			"tpldesinfo":"列表式图片模版，缩略图建议使用150*150或近似尺寸比例的图片。",
+			"attr":"focu bgs lis other",
+			"sort":2
+		},
+		{
+			"tpltypeid":3,
+			"tplview":"cate3.png",
+			"tpltypename":"103_index",
+			"tpldesinfo":"列表式图片模版，缩略图建议使用150*150或近似尺寸比例的图片。",
+			"attr":"focu bgs lis other",
+			"sort":3
+		},
+		{
+			"tpltypeid":4,
+			"tplview":"cate4.png",
+			"tpltypename":"104_index",
+			"tpldesinfo":"列表式图片模版，缩略图建议使用150*150或近似尺寸比例的图片。",
+			"attr":"thumb focu bgs lis other",
+			"sort":4
+		},
+		{
+			"tpltypeid":5,
+			"tplview":"cate9.png",
+			"tpltypename":"105_index",
+			"tpldesinfo":"文字标签式模版，顶部幻灯片尺寸为640*320或近似等比例图片。",
+			"attr":"focu bgs hotel other",
+			"sort":5
+		},
+		{
+			"tpltypeid":6,
+			"tplview":"cate106.png",
+			"tpltypename":"106_index_ydkds",
+			"tpldesinfo":"",
+			"attr":"focu thumb bgs other",
+			"sort":6
+		},
+		{
+			"tpltypeid":7,
+			"tplview":"cate107.png",
+			"tpltypename":"107_index_2d8si",
+			"tpldesinfo":"",
+			"attr":"focu thumb bgs other",
+			"sort":7
+		},
+		{
+			"tpltypeid":8,
+			"tplview":"cate108.png",
+			"tpltypename":"108_index_giw93x",
+			"tpldesinfo":"",
+			"attr":"filt focu bgs other",
+			"sort":8
+		},
+		{
+			"tpltypeid":9,
+			"tplview":"cate109.png",
+			"tpltypename":"109_index_0fdis",
+			"tpldesinfo":"",
+			"attr":"focu bgs other",
+			"sort":9
+		},
+		{
+			"tpltypeid":10,
+			"tplview":"cate110.png",
+			"tpltypename":"110_index_2skz7",
+			"tpldesinfo":"",
+			"attr":"bgs focu thumb other",
+			"sort":10
+		},
+		{
+			"tpltypeid":11,
+			"tplview":"cate111.png",
+			"tpltypename":"111_index_78yus",
+			"tpldesinfo":"左右图文式模版，顶部幻灯片建议使用尺寸为640*320或近似等比例图片；分类图片建议使用450*300或近似等比例图片，请不要使用高度大于或接近于宽度的图片。",
+			"attr":"bgs focu thumb other",
+			"sort":11
+		},
+		{
+			"tpltypeid":12,
+			"tplview":"cate112.png",
+			"tpltypename":"112_index_kj7y5",
+			"tpldesinfo":"",
+			"attr":"bg bgs filt wedding other",
+			"sort":12
+		},
+		{
+			"tpltypeid":13,
+			"tplview":"cate113.png",
+			"tpltypename":"113_index_jks6z",
+			"tpldesinfo":"",
+			"attr":"bg bgs filt other",
+			"sort":13
+		},
+		{
+			"tpltypeid":14,
+			"tplview":"cate114.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"",
+			"attr":"thumb filt bg bgs other",
+			"sort":14
+		},
+		{
+			"tpltypeid":15,
+			"tplview":"cate115.png",
+			"tpltypename":"115_index_ms76x",
+			"tpldesinfo":"",
+			"attr":"bgs bg filt other",
+			"sort":15
+		},
+		{
+			"tpltypeid":16,
+			"tplview":"cate116.png",
+			"tpltypename":"116_index_ms76x",
+			"tpldesinfo":"图片式模板，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片，文字为分类名称及分类描述，名称建议4个字符，描述限制10个字符以内；图片为分类封面，建议尺寸为宽165*高100或近似等比例图片",
+			"attr":"thumb focu bgs other",
+			"sort":16
+		},
+		{
+			"tpltypeid":17,
+			"tplview":"cate117.png",
+			"tpltypename":"117_index_usn3x",
+			"tpldesinfo":"图标式模板",
+			"attr":"thumb filt bg bgs other",
+			"sort":17
+		},
+		{
+			"tpltypeid":18,
+			"tplview":"cate118.png",
+			"tpltypename":"118_index_jge3",
+			"tpldesinfo":"图标式模板，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片。",
+			"attr":"thumb focu bgs other",
+			"sort":18
+		},
+		{
+			"tpltypeid":19,
+			"tplview":"cate119.png",
+			"tpltypename":"119_index_jsg2",
+			"tpldesinfo":"图标式模板，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片。",
+			"attr":"focu thumb bgs other",
+			"sort":19
+		},
+		{
+			"tpltypeid":20,
+			"tplview":"cate120.png",
+			"tpltypename":"120_index_pfs9",
+			"tpldesinfo":"支持二级分类，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片，幻灯下4个图标为分类管理的前4个分类，图标下第一块内容为第五个分类的分类封面、分类名称及子分类名称，建议尺寸300*300或1:1图片，下面依次类推。",
+			"attr":"focu thumb bgs other",
+			"sort":20
+		},
+		{
+			"tpltypeid":21,
+			"tplview":"cate121.png",
+			"tpltypename":"121_index_eor5w",
+			"tpldesinfo":"图标式模板，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片，分类前8个为图标及文字展示，后面分类为图片展示，建议尺寸为宽150*高90或等比例图片。",
+			"attr":"focu bgs thumb other",
+			"sort":21
+		},
+		{
+			"tpltypeid":22,
+			"tplview":"cate122.png",
+			"tpltypename":"122_index_pgj9d",
+			"tpldesinfo":"图标式模板，按分类顺序依次展现，有图片显示的分类，大图尺寸建议为宽150*85高或的等比例图片。小图尺寸为宽高3:2的比例",
+			"attr":"bgs thumb other",
+			"sort":22
+		},
+		{
+			"tpltypeid":23,
+			"tplview":"cate123.png",
+			"tpltypename":"123_index_jge4s",
+			"tpldesinfo":"汽车行业专属模板，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片，幻灯下4个图标为分类管理的前4个分类，后面分类依次展示，图片建议尺寸为宽302*高233或等比例图片，logo图标为官网logo，需等比尺寸的png格式图片。",
+			"attr":"focu bgs other",
+			"sort":23
+		},
+		{
+			"tpltypeid":24,
+			"tplview":"cate124.png",
+			"tpltypename":"124_index_ghe5s",
+			"tpldesinfo":"此模板适合做简单版纯展示的会员卡，头部图片就是首页封面图，宽720高随便，如果用幻灯片记住一定要相同的尺寸。小图标尺寸是正方形300x300,一个分类一页显示8个二级分类。",
+			"attr":"sub focu bgs thumb other",
+			"sort":24
+		},
+		{
+			"tpltypeid":25,
+			"tplview":"cate125.png",
+			"tpltypename":"125_index_gjnh4",
+			"tpldesinfo":"左右双栏模版，顶部幻灯片尺寸为640*320或近似等比例图片，如使用正方形图片会使得页面不美观；分类图片建议使用300*200或近似等比例图片，使用宽度小于高度的(如200*300)尺寸图片将使页面惨不忍睹。",
+			"attr":"bgs focu thumb other",
+			"sort":25
+		},
+		{
+			"tpltypeid":26,
+			"tplview":"cate126.png",
+			"tpltypename":"126_index_gjj0f",
+			"tpldesinfo":"图标式模版，顶部幻灯片建议使用尺寸为640*320或近似等比例图片；分类图片请使用正方形尺寸的图片。",
+			"attr":"focu thumb bgs other",
+			"sort":26
+		},
+		{
+			"tpltypeid":27,
+			"tplview":"cate127.png",
+			"tpltypename":"127_index_jpr4g",
+			"tpldesinfo":"分类图片宽高比例为3:2",
+			"attr":"focu bgs thumb other",
+			"sort":27
+		},
+		{
+			"tpltypeid":28,
+			"tplview":"cate128.png",
+			"tpltypename":"128_index_pgj3f",
+			"tpldesinfo":"图标式模版，顶部幻灯片建议使用尺寸为640*320或近似等比例图片；分类图片请使用正方形尺寸的图片。",
+			"attr":"focu bgs thumb other",
+			"sort":28
+		},
+		{
+			"tpltypeid":29,
+			"tplview":"cate129.png",
+			"tpltypename":"129_index_fds3f",
+			"tpldesinfo":"图标式模版，顶部幻灯片建议使用尺寸为640*320或近似等比例图片；分类图片请使用正方形尺寸的图片。",
+			"attr":"focu bgs thumb other",
+			"sort":29
+		},
+		{
+			"tpltypeid":30,
+			"tplview":"cate130.png",
+			"tpltypename":"130_index_ves7g",
+			"tpldesinfo":"图标式模版，顶部幻灯片建议使用尺寸为640*320或近似等比例图片；分类图片请使用正方形尺寸的图片。",
+			"attr":"focu bgs thumb other",
+			"sort":30
+		},
+		{
+			"tpltypeid":31,
+			"tplview":"cate131.png",
+			"tpltypename":"131_index_win6a",
+			"tpldesinfo":"此模板适合做简单版纯展示的会员卡，头部图片就是首页封面图，宽720高随便，如果用幻灯片记住一定要相同的尺寸。小图标尺寸是正方形300x300,一个分类一页显示8个二级分类。",
+			"attr":"sub focu bgs thumb other",
+			"sort":31
+		},
+		{
+			"tpltypeid":32,
+			"tplview":"cate132.png",
+			"tpltypename":"132_index_wio1a",
+			"tpldesinfo":"此模板适合做简单版纯展示的会员卡，头部图片就是首页封面图，宽720高随便，如果用幻灯片记住一定要相同的尺寸。小图标尺寸是正方形300x300,一个分类一页显示6个二级分类。",
+			"attr":"sub focu bgs thumb other",
+			"sort":32
+		},
+		{
+			"tpltypeid":33,
+			"tplview":"cate133.png",
+			"tpltypename":"133_index_wis2a",
+			"tpldesinfo":"此模板支持二级分类，适合分类比较多的地方公众号，小图标为正方形300x300px。",
+			"attr":"sub focu bgs thumb other",
+			"sort":33
+		},
+		{
+			"tpltypeid":34,
+			"tplview":"cate134.png",
+			"tpltypename":"134_index_viw3a",
+			"tpldesinfo":"此模板支持二级分类，适合分类比较多的地方公众号，小图标为正方形300x300px。",
+			"attr":"sub focu bgs thumb other",
+			"sort":34
+		},
+		{
+			"tpltypeid":35,
+			"tplview":"cate135.png",
+			"tpltypename":"135_index_you4a",
+			"tpldesinfo":"此模板支持二级分类，适合分类比较多的地方公众号，前4个一级分类可以突出显示，小图标",
+			"attr":"focu bgs thumb other",
+			"sort":35
+		},
+		{
+			"tpltypeid":36,
+			"tplview":"cate136.png",
+			"tpltypename":"136_index_esfsd344",
+			"tpldesinfo":"",
+			"attr":"thumb bg bgs filt estate",
+			"sort":36
+		},
+		{
+			"tpltypeid":37,
+			"tplview":"list1.png",
+			"tpltypename":"yl_list",
+			"tpldesinfo":"",
+			"attr":"lis",
+			"sort":37
+		},
+		{
+			"tpltypeid":38,
+			"tplview":"list4.png",
+			"tpltypename":"ktv_list",
+			"tpldesinfo":"",
+			"attr":"lis",
+			"sort":38
+		},
+		{
+			"tpltypeid":39,
+			"tplview":"cate139.png",
+			"tpltypename":"139_index_ktv",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"focu thumb filt other",
+			"sort":39
+		},
+		{
+			"tpltypeid":40,
+			"tplview":"cate140.png",
+			"tpltypename":"140_index_qesf",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"focu thumb bgs other",
+			"sort":40
+		},
+		{
+			"tpltypeid":41,
+			"tplview":"cate141.png",
+			"tpltypename":"141_index_654d",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"focu thumb bgs other",
+			"sort":41
+		},
+		{
+			"tpltypeid":42,
+			"tplview":"cate142.png",
+			"tpltypename":"142_index_6uid",
+			"tpldesinfo":"无头部幻灯片，小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs filt bg thumb estate",
+			"sort":42
+		},
+		{
+			"tpltypeid":43,
+			"tplview":"cate143.png",
+			"tpltypename":"143_index_53sd",
+			"tpldesinfo":"无头部幻灯片，小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs filt bg thumb estate",
+			"sort":43
+		},
+		{
+			"tpltypeid":44,
+			"tplview":"cate144.png",
+			"tpltypename":"144_index_bfst",
+			"tpldesinfo":"无头部幻灯片，小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs bg thumb other",
+			"sort":44
+		},
+		{
+			"tpltypeid":45,
+			"tplview":"cate145.png",
+			"tpltypename":"145_index_vbws",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu edu",
+			"sort":45
+		},
+		{
+			"tpltypeid":46,
+			"tplview":"cate146.png",
+			"tpltypename":"146_index_58sv",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":46
+		},
+		{
+			"tpltypeid":47,
+			"tplview":"cate147.png",
+			"tpltypename":"147_index_verm",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":47
+		},
+		{
+			"tpltypeid":48,
+			"tplview":"cate148.png",
+			"tpltypename":"148_index_bleu",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":48
+		},
+		{
+			"tpltypeid":49,
+			"tplview":"cate149.png",
+			"tpltypename":"149_index_28ad",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":49
+		},
+		{
+			"tpltypeid":50,
+			"tplview":"cate150.png",
+			"tpltypename":"150_index_28sv",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":50
+		},
+		{
+			"tpltypeid":51,
+			"tplview":"cate151.png",
+			"tpltypename":"151_index_ve4y",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":51
+		},
+		{
+			"tpltypeid":52,
+			"tplview":"cate152.png",
+			"tpltypename":"152_index_v82x",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":52
+		},
+		{
+			"tpltypeid":53,
+			"tplview":"cate153.png",
+			"tpltypename":"153_index_58sdf",
+			"tpldesinfo":"诺基亚X风格，披着wp外衣的android，不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":53
+		},
+		{
+			"tpltypeid":54,
+			"tplview":"cate154.png",
+			"tpltypename":"154_index_f78d1",
+			"tpldesinfo":"诺基亚X风格2，不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":54
+		},
+		{
+			"tpltypeid":55,
+			"tplview":"cate155.png",
+			"tpltypename":"155_index_xym7",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":55
+		},
+		{
+			"tpltypeid":56,
+			"tplview":"cate156.png",
+			"tpltypename":"156_index_64ay",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":56
+		},
+		{
+			"tpltypeid":57,
+			"tplview":"cate157.png",
+			"tpltypename":"157_index_dgeh7",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":57
+		},
+		{
+			"tpltypeid":58,
+			"tplview":"cate158.png",
+			"tpltypename":"158_index_ffy4",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":58
+		},
+		{
+			"tpltypeid":59,
+			"tplview":"cate159.png",
+			"tpltypename":"159_index_fgft",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":59
+		},
+		{
+			"tpltypeid":60,
+			"tplview":"cate160.png",
+			"tpltypename":"160_index_674f",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":60
+		},
+		{
+			"tpltypeid":61,
+			"tplview":"cate161.png",
+			"tpltypename":"161_index_df3t",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":61
+		},
+		{
+			"tpltypeid":62,
+			"tplview":"cate162.png",
+			"tpltypename":"162_index_xffe",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":62
+		},
+		{
+			"tpltypeid":63,
+			"tplview":"cate163.png",
+			"tpltypename":"163_index_cve3",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":63
+		},
+		{
+			"tpltypeid":64,
+			"tplview":"cate164.png",
+			"tpltypename":"164_index_5366",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu filt lis other",
+			"sort":64
+		},
+		{
+			"tpltypeid":65,
+			"tplview":"cate165.png",
+			"tpltypename":"165_index_6dgbf",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":65
+		},
+		{
+			"tpltypeid":66,
+			"tplview":"cate166.png",
+			"tpltypename":"166_index_6dgbf",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":66
+		},
+		{
+			"tpltypeid":67,
+			"tplview":"cate167.png",
+			"tpltypename":"167_index_6dgbf",
+			"tpldesinfo":"小图标为正方形300x300px，图片建议360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":67
+		},
+		{
+			"tpltypeid":68,
+			"tplview":"cate168.png",
+			"tpltypename":"168_index_6dgbf",
+			"tpldesinfo":"小图标为正方形300x300px，图片建议360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":68
+		},
+		{
+			"tpltypeid":69,
+			"tplview":"cate169.png",
+			"tpltypename":"169_index_6dgbf",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":69
+		},
+		{
+			"tpltypeid":70,
+			"tplview":"cate170.png",
+			"tpltypename":"170_index_6dgbf",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":70
+		},
+		{
+			"tpltypeid":71,
+			"tplview":"cate171.png",
+			"tpltypename":"171_index_stbn",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":71
+		},
+		{
+			"tpltypeid":72,
+			"tplview":"cate172.png",
+			"tpltypename":"172_index_44g3",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":72
+		},
+		{
+			"tpltypeid":73,
+			"tplview":"cate173.png",
+			"tpltypename":"173_index_6dff",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":73
+		},
+		{
+			"tpltypeid":74,
+			"tplview":"cate174.png",
+			"tpltypename":"174_index_gh46",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":74
+		},
+		{
+			"tpltypeid":75,
+			"tplview":"cate175.png",
+			"tpltypename":"175_index_6deh",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":75
+		},
+		{
+			"tpltypeid":76,
+			"tplview":"cate176.png",
+			"tpltypename":"176_index_sda3",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":76
+		},
+		{
+			"tpltypeid":77,
+			"tplview":"cate177.png",
+			"tpltypename":"177_index_gh5f",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":77
+		},
+		{
+			"tpltypeid":78,
+			"tplview":"cate178.png",
+			"tpltypename":"178_index_shfr",
+			"tpldesinfo":"不支持更换颜色风格",
+			"attr":"bgs focu lis other",
+			"sort":78
+		},
+		{
+			"tpltypeid":79,
+			"tplview":"cate179.png",
+			"tpltypename":"179_index_4g4f",
+			"tpldesinfo":"不支持更换颜色风格",
+			"attr":"bgs focu lis other",
+			"sort":79
+		},
+		{
+			"tpltypeid":80,
+			"tplview":"cate180.png",
+			"tpltypename":"180_index_zfg4",
+			"tpldesinfo":"不支持更换颜色风格",
+			"attr":"bgs focu lis other",
+			"sort":80
+		},
+		{
+			"tpltypeid":81,
+			"tplview":"cate181.png",
+			"tpltypename":"181_index_dfg3",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":81
+		},
+		{
+			"tpltypeid":82,
+			"tplview":"cate182.png",
+			"tpltypename":"182_index_sd3v",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":82
+		},
+		{
+			"tpltypeid":83,
+			"tplview":"cate183.png",
+			"tpltypename":"183_index_zdfe",
+			"tpldesinfo":"图片高度100，宽度不小于360px。不支持更换颜色风格",
+			"attr":"bgs thumb focu hotel beauty",
+			"sort":83
+		},
+		{
+			"tpltypeid":84,
+			"tplview":"cate184.png",
+			"tpltypename":"184_index_sdf3",
+			"tpldesinfo":"图片高度100，宽度不小于360px。不支持更换颜色风格",
+			"attr":"bgs thumb focu hotel beauty",
+			"sort":84
+		},
+		{
+			"tpltypeid":85,
+			"tplview":"cate185.png",
+			"tpltypename":"185_index_gjerf",
+			"tpldesinfo":"图片高度75，宽度不小于360px。不支持更换颜色风格",
+			"attr":"bgs thumb focu hotel beauty",
+			"sort":85
+		},
+		{
+			"tpltypeid":86,
+			"tplview":"cate186.png",
+			"tpltypename":"186_index_aasd",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu car",
+			"sort":86
+		},
+		{
+			"tpltypeid":87,
+			"tplview":"cate187.png",
+			"tpltypename":"187_index_4d8fw",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu car",
+			"sort":87
+		},
+		{
+			"tpltypeid":88,
+			"tplview":"cate188.png",
+			"tpltypename":"188_index_gcbr5",
+			"tpldesinfo":"图标为正方形300x300px，图片建议360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu car",
+			"sort":88
+		},
+		{
+			"tpltypeid":89,
+			"tplview":"cate189.png",
+			"tpltypename":"189_index_xcv2",
+			"tpldesinfo":"图标为正方形300x300px，图片建议360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu car",
+			"sort":89
+		},
+		{
+			"tpltypeid":90,
+			"tplview":"cate190.png",
+			"tpltypename":"190_index_xj643",
+			"tpldesinfo":"不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":90
+		},
+		{
+			"tpltypeid":91,
+			"tplview":"cate191.png",
+			"tpltypename":"191_index_zedv",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":91
+		},
+		{
+			"tpltypeid":92,
+			"tplview":"cate192.png",
+			"tpltypename":"192_index_vbrn",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":92
+		},
+		{
+			"tpltypeid":93,
+			"tplview":"cate193.png",
+			"tpltypename":"193_index_b4bt",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":93
+		},
+		{
+			"tpltypeid":94,
+			"tplview":"cate194.png",
+			"tpltypename":"194_index_sc23",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":94
+		},
+		{
+			"tpltypeid":95,
+			"tplview":"cate195.png",
+			"tpltypename":"195_index_xrb54",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":95
+		},
+		{
+			"tpltypeid":96,
+			"tplview":"cate196.png",
+			"tpltypename":"196_index_sdf3",
+			"tpldesinfo":"图片要么都是正方形300x300px，要么都是360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu health",
+			"sort":96
+		},
+		{
+			"tpltypeid":97,
+			"tplview":"cate197.png",
+			"tpltypename":"197_index_cvrj",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":97
+		},
+		{
+			"tpltypeid":98,
+			"tplview":"cate198.png",
+			"tpltypename":"198_index_xcwh",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu wedding",
+			"sort":98
+		},
+		{
+			"tpltypeid":99,
+			"tplview":"cate199.png",
+			"tpltypename":"199_index_asdw",
+			"tpldesinfo":"图标为正方形300x300px，图片高度90，宽度不小于360px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":99
+		},
+		{
+			"tpltypeid":100,
+			"tplview":"cate1100.png",
+			"tpltypename":"1100_index_btj5",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu bg filt slip estate",
+			"sort":100
+		},
+		{
+			"tpltypeid":101,
+			"tplview":"cate1101.png",
+			"tpltypename":"1101_index_sd3h",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu bg filt slip estate",
+			"sort":101
+		},
+		{
+			"tpltypeid":102,
+			"tplview":"cate1102.png",
+			"tpltypename":"1102_index_cvb5u",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu bg filt slip estate",
+			"sort":102
+		},
+		{
+			"tpltypeid":103,
+			"tplview":"cate1103.png",
+			"tpltypename":"1103_index_xfe5",
+			"tpldesinfo":"图标为正方形300x300px，图片建议360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu restaurant",
+			"sort":103
+		},
+		{
+			"tpltypeid":104,
+			"tplview":"cate1104.png",
+			"tpltypename":"1104_index_xcvhk",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb filt bg other",
+			"sort":104
+		},
+		{
+			"tpltypeid":105,
+			"tplview":"cate1105.png",
+			"tpltypename":"1105_index_fxfg",
+			"tpldesinfo":"图标为正方形300x300px，图片建议360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu hotel tour estate",
+			"sort":105
+		},
+		{
+			"tpltypeid":106,
+			"tplview":"cate1106.png",
+			"tpltypename":"1106_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu other",
+			"sort":106
+		},
+		{
+			"tpltypeid":107,
+			"tplview":"cate1107.png",
+			"tpltypename":"1107_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip other",
+			"sort":107
+		},
+		{
+			"tpltypeid":108,
+			"tplview":"cate1108.png",
+			"tpltypename":"1108_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip other",
+			"sort":108
+		},
+		{
+			"tpltypeid":109,
+			"tplview":"cate1109.png",
+			"tpltypename":"1109_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip other",
+			"sort":109
+		},
+		{
+			"tpltypeid":110,
+			"tplview":"cate1110.png",
+			"tpltypename":"1110_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip beauty",
+			"sort":110
+		},
+		{
+			"tpltypeid":111,
+			"tplview":"cate1111.png",
+			"tpltypename":"1111_index_cveg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip hotel",
+			"sort":111
+		},
+		{
+			"tpltypeid":112,
+			"tplview":"cate1112.png",
+			"tpltypename":"1112_index_xghx",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip other",
+			"sort":112
+		},
+		{
+			"tpltypeid":113,
+			"tplview":"cate1113.png",
+			"tpltypename":"1113_index_cxve",
+			"tpldesinfo":"支持二级分类，并且一级分类和子分类支持左右滑屏显示。前8个一级分类可以突出显示，小图标为正方形300x300px，图片要么都是正方形300x300px，要么都是360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu sub slip restaurant",
+			"sort":113
+		},
+		{
+			"tpltypeid":114,
+			"tplview":"cate1114.png",
+			"tpltypename":"1114_index_vbtd",
+			"tpldesinfo":"支持二级分类，并且一级分类和子分类支持左右滑屏显示。适合分类比较多的地方公众号，前4个一级分类可以突出显示，小图标为正方形300x300px，图片要么都是正方形300x300px，要么都是360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu sub slip restaurant",
+			"sort":114
+		},
+		{
+			"tpltypeid":115,
+			"tplview":"cate1115.png",
+			"tpltypename":"1115_index_v3yh",
+			"tpldesinfo":"支持二级分类，并且一级分类和子分类支持左右滑屏显示。适合分类比较多的地方公众号，前4个一级分类可以突出显示，小图标为正方形300x300px；图片要么都是正方形300x300px，要么都是360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu sub slip restaurant",
+			"sort":115
+		},
+		{
+			"tpltypeid":116,
+			"tplview":"cate1116.png",
+			"tpltypename":"1116_index_cv4y",
+			"tpldesinfo":"支持二级分类，并且一级分类和子分类支持左右滑屏显示。适合分类比较多的地方公众号，前4个一级分类可以突出显示，图片要么都是正方形300x300px，要么都是360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu sub slip tour",
+			"sort":116
+		},
+		{
+			"tpltypeid":117,
+			"tplview":"cate1117.png",
+			"tpltypename":"1117_index_35y5",
+			"tpldesinfo":"顶级最多显示6个分类，二级最多显示3个分类，不支持更换颜色风格",
+			"attr":"sub bg other",
+			"sort":117
+		},
+		{
+			"tpltypeid":118,
+			"tplview":"cate1118.png",
+			"tpltypename":"1118_index_sdsc",
+			"tpldesinfo":"可自定义背景轮播图，不支持更换颜色风格",
+			"attr":"bg bgs filt lis other",
+			"sort":118
+		},
+		{
+			"tpltypeid":119,
+			"tplview":"cate1119.png",
+			"tpltypename":"1119_index_asd52",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":119
+		},
+		{
+			"tpltypeid":120,
+			"tplview":"cate1120.png",
+			"tpltypename":"1120_index_ghg6",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":120
+		},
+		{
+			"tpltypeid":121,
+			"tplview":"cate1121.png",
+			"tpltypename":"1121_index_8sd55",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":121
+		},
+		{
+			"tpltypeid":122,
+			"tplview":"cate1122.png",
+			"tpltypename":"1122_index_5sd2",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":122
+		},
+		{
+			"tpltypeid":123,
+			"tplview":"cate1123.png",
+			"tpltypename":"1123_index_cvrn",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":123
+		},
+		{
+			"tpltypeid":124,
+			"tplview":"cate1124.png",
+			"tpltypename":"1124_index_xegb",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":124
+		},
+		{
+			"tpltypeid":125,
+			"tplview":"cate1125.png",
+			"tpltypename":"1125_index_xcvy",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":125
+		},
+		{
+			"tpltypeid":126,
+			"tplview":"cate1126.png",
+			"tpltypename":"1126_index_85vvb",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":126
+		},
+		{
+			"tpltypeid":127,
+			"tplview":"cate1127.png",
+			"tpltypename":"1127_index_klgh",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":127
+		},
+		{
+			"tpltypeid":128,
+			"tplview":"cate1128.png",
+			"tpltypename":"1128_index_vner",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":128
+		},
+		{
+			"tpltypeid":129,
+			"tplview":"cate1129.png",
+			"tpltypename":"1129_index_vner",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":129
+		},
+		{
+			"tpltypeid":130,
+			"tplview":"cate1130.png",
+			"tpltypename":"1130_index_85xc",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":130
+		},
+		{
+			"tpltypeid":131,
+			"tplview":"cate1131.png",
+			"tpltypename":"1131_index_nr34",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":131
+		},
+		{
+			"tpltypeid":132,
+			"tplview":"cate1132.png",
+			"tpltypename":"1132_index_mng5",
+			"tpldesinfo":"适合在列表页使用，不支持更换颜色风格",
+			"attr":"lis thumb other",
+			"sort":132
+		},
+		{
+			"tpltypeid":133,
+			"tplview":"cate1133.png",
+			"tpltypename":"1133_index_rgcv",
+			"tpldesinfo":"不支持更换颜色风格",
+			"attr":"focu thumb bgs other",
+			"sort":133
+		},
+		{
+			"tpltypeid":134,
+			"tplview":"cate1134.png",
+			"tpltypename":"1134_index_cv4s",
+			"tpldesinfo":"支持二级分类，并且一级分类和子分类支持左右滑屏显示。头部图片尺寸推荐360x45，中间的大图就是一级分类图片，尺寸推荐360x100，不支持更换颜色风格",
+			"attr":"focu thumb bgs sub car",
+			"sort":134
+		},
+		{
+			"tpltypeid":135,
+			"tplview":"cate1135.png",
+			"tpltypename":"1135_index_xcev",
+			"tpldesinfo":"支持二级分类，并且一级分类和子分类支持左右滑屏显示。头部图片尺寸推荐360x45，中间的大图就是一级分类图片，尺寸推荐360x100，二级分类图片尺寸推荐360x200px，不支持更换颜色风格",
+			"attr":"focu thumb bgs sub car",
+			"sort":135
+		},
+		{
+			"tpltypeid":136,
+			"tplview":"cate1136.png",
+			"tpltypename":"1136_index_n4fb",
+			"tpldesinfo":"windowsphone风格，无幻灯片。分类的图片为300x300正方形图片，记住一定要相同的尺寸，都是300x300。",
+			"attr":"thumb other",
+			"sort":136
+		},
+		{
+			"tpltypeid":137,
+			"tplview":"cate1137.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的酒店模板",
+			"attr":"thumb filt bg bgs hotel estate",
+			"sort":137
+		},
+		{
+			"tpltypeid":138,
+			"tplview":"cate1138.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的酒店模板",
+			"attr":"thumb filt bg bgs hotel tour estate",
+			"sort":138
+		},
+		{
+			"tpltypeid":139,
+			"tplview":"cate1139.png",
+			"tpltypename":"1108_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip hotel",
+			"sort":139
+		},
+		{
+			"tpltypeid":140,
+			"tplview":"cate1140.png",
+			"tpltypename":"1110_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip hotel",
+			"sort":140
+		},
+		{
+			"tpltypeid":141,
+			"tplview":"cate1141.png",
+			"tpltypename":"111_index_78yus",
+			"tpldesinfo":"左右图文式模版，顶部幻灯片建议使用尺寸为640*320或近似等比例图片；分类图片建议使用450*300或近似等比例图片，请不要使用高度大于或接近于宽度的图片。",
+			"attr":"hotel tour bgs focu thumb",
+			"sort":141
+		},
+		{
+			"tpltypeid":142,
+			"tplview":"cate1142.png",
+			"tpltypename":"1104_index_xcvhk",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb filt bg hotel",
+			"sort":142
+		},
+		{
+			"tpltypeid":143,
+			"tplview":"cate1143.png",
+			"tpltypename":"115_index_ms76x",
+			"tpldesinfo":"大气精美的酒店模板",
+			"attr":"hotel tour bgs bg filt",
+			"sort":143
+		},
+		{
+			"tpltypeid":144,
+			"tplview":"cate1144.png",
+			"tpltypename":"112_index_kj7y5",
+			"tpldesinfo":"大气精美的酒店模板",
+			"attr":"bg bgs filt hotel tour",
+			"sort":144
+		},
+		{
+			"tpltypeid":145,
+			"tplview":"cate1145.png",
+			"tpltypename":"101_index",
+			"tpldesinfo":"大气精美的酒店模板",
+			"attr":"hotel tour thumb focu bgs",
+			"sort":145
+		},
+		{
+			"tpltypeid":146,
+			"tplview":"cate1146.png",
+			"tpltypename":"192_index_vbrn",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu hotel tour estate",
+			"sort":146
+		},
+		{
+			"tpltypeid":147,
+			"tplview":"cate1147.png",
+			"tpltypename":"196_index_sdf3",
+			"tpldesinfo":"图片要么都是正方形300x300px，要么都是360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu hotel estate",
+			"sort":147
+		},
+		{
+			"tpltypeid":148,
+			"tplview":"cate1148.png",
+			"tpltypename":"182_index_sd3v",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu hotel",
+			"sort":148
+		},
+		{
+			"tpltypeid":149,
+			"tplview":"cate1149.png",
+			"tpltypename":"195_index_xrb54",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu hotel tour",
+			"sort":149
+		},
+		{
+			"tpltypeid":150,
+			"tplview":"cate1150.png",
+			"tpltypename":"194_index_sc23",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu hotel tour",
+			"sort":150
+		},
+		{
+			"tpltypeid":151,
+			"tplview":"cate1151.png",
+			"tpltypename":"192_index_vbrn",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu hotel estate",
+			"sort":151
+		},
+		{
+			"tpltypeid":152,
+			"tplview":"cate1152.png",
+			"tpltypename":"115_index_ms76x",
+			"tpldesinfo":"大气精美的汽车行业模板",
+			"attr":"car bgs bg filt",
+			"sort":152
+		},
+		{
+			"tpltypeid":153,
+			"tplview":"cate1153.png",
+			"tpltypename":"179_index_4g4f",
+			"tpldesinfo":"大气精美的汽车行业模板",
+			"attr":"bgs focu lis car",
+			"sort":153
+		},
+		{
+			"tpltypeid":154,
+			"tplview":"cate1154.png",
+			"tpltypename":"106_index_ydkds",
+			"tpldesinfo":"大气精美的汽车行业模板",
+			"attr":"focu thumb bgs car",
+			"sort":154
+		},
+		{
+			"tpltypeid":155,
+			"tplview":"cate1155.png",
+			"tpltypename":"1104_index_xcvhk",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb filt bg car",
+			"sort":155
+		},
+		{
+			"tpltypeid":156,
+			"tplview":"cate1156.png",
+			"tpltypename":"123_index_jge4s",
+			"tpldesinfo":"汽车行业专属模板，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片，幻灯下4个图标为分类管理的前4个分类，后面分类依次展示，图片建议尺寸为宽302*高233或等比例图片，logo图标为官网logo，需等比尺寸的png格式图片。",
+			"attr":"focu bgs car",
+			"sort":156
+		},
+		{
+			"tpltypeid":157,
+			"tplview":"cate1157.png",
+			"tpltypename":"180_index_zfg4",
+			"tpldesinfo":"大气精美的汽车行业模板",
+			"attr":"bgs focu lis car",
+			"sort":157
+		},
+		{
+			"tpltypeid":158,
+			"tplview":"cate1158.png",
+			"tpltypename":"1110_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip car",
+			"sort":158
+		},
+		{
+			"tpltypeid":159,
+			"tplview":"cate1159.png",
+			"tpltypename":"1107_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip car",
+			"sort":159
+		},
+		{
+			"tpltypeid":160,
+			"tplview":"cate1160.png",
+			"tpltypename":"178_index_shfr",
+			"tpldesinfo":"大气精美的汽车行业模板",
+			"attr":"bgs focu lis car",
+			"sort":160
+		},
+		{
+			"tpltypeid":161,
+			"tplview":"cate1161.png",
+			"tpltypename":"136_index_esfsd344",
+			"tpldesinfo":"大气精美的汽车行业模板",
+			"attr":"thumb bg bgs filt car",
+			"sort":161
+		},
+		{
+			"tpltypeid":162,
+			"tplview":"cate1162.png",
+			"tpltypename":"111_index_78yus",
+			"tpldesinfo":"左右图文式模版，顶部幻灯片建议使用尺寸为640*320或近似等比例图片；分类图片建议使用450*300或近似等比例图片，请不要使用高度大于或接近于宽度的图片。",
+			"attr":"car bgs focu thumb",
+			"sort":162
+		},
+		{
+			"tpltypeid":163,
+			"tplview":"cate1163.png",
+			"tpltypename":"164_index_5366",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu filt lis tour",
+			"sort":163
+		},
+		{
+			"tpltypeid":164,
+			"tplview":"cate1164.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的旅游行业模板",
+			"attr":"thumb filt bg bgs tour",
+			"sort":164
+		},
+		{
+			"tpltypeid":165,
+			"tplview":"cate1165.png",
+			"tpltypename":"121_index_eor5w",
+			"tpldesinfo":"图标式模板，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片，分类前8个为图标及文字展示，后面分类为图片展示，建议尺寸为宽150*高90或等比例图片。",
+			"attr":"focu bgs thumb tour",
+			"sort":165
+		},
+		{
+			"tpltypeid":166,
+			"tplview":"cate1166.png",
+			"tpltypename":"195_index_xrb54",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu tour estate",
+			"sort":166
+		},
+		{
+			"tpltypeid":167,
+			"tplview":"cate1167.png",
+			"tpltypename":"136_index_esfsd344",
+			"tpldesinfo":"大气精美的旅游行业模板",
+			"attr":"thumb bg bgs filt tour",
+			"sort":167
+		},
+		{
+			"tpltypeid":168,
+			"tplview":"cate1168.png",
+			"tpltypename":"112_index_kj7y5",
+			"tpldesinfo":"大气精美的旅游行业模板",
+			"attr":"bg bgs filt tour estate",
+			"sort":168
+		},
+		{
+			"tpltypeid":169,
+			"tplview":"cate1169.png",
+			"tpltypename":"101_index",
+			"tpldesinfo":"大气精美的旅游行业模板",
+			"attr":"tour thumb focu bgs",
+			"sort":169
+		},
+		{
+			"tpltypeid":170,
+			"tplview":"cate1170.png",
+			"tpltypename":"167_index_6dgbf",
+			"tpldesinfo":"小图标为正方形300x300px，图片建议360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu tour",
+			"sort":170
+		},
+		{
+			"tpltypeid":171,
+			"tplview":"cate1171.png",
+			"tpltypename":"168_index_6dgbf",
+			"tpldesinfo":"小图标为正方形300x300px，图片建议360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu tour",
+			"sort":171
+		},
+		{
+			"tpltypeid":172,
+			"tplview":"cate1172.png",
+			"tpltypename":"179_index_4g4f",
+			"tpldesinfo":"大气精美的旅游行业模板",
+			"attr":"bgs focu lis tour",
+			"sort":172
+		},
+		{
+			"tpltypeid":173,
+			"tplview":"cate1173.png",
+			"tpltypename":"180_index_zfg4",
+			"tpldesinfo":"大气精美的旅游行业模板",
+			"attr":"bgs focu lis tour",
+			"sort":173
+		},
+		{
+			"tpltypeid":174,
+			"tplview":"cate1174.png",
+			"tpltypename":"121_index_eor5w",
+			"tpldesinfo":"图标式模板，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片，分类前8个为图标及文字展示，后面分类为图片展示，建议尺寸为宽150*高90或等比例图片。",
+			"attr":"focu bgs thumb restaurant",
+			"sort":174
+		},
+		{
+			"tpltypeid":175,
+			"tplview":"cate1175.png",
+			"tpltypename":"1133_index_rgcv",
+			"tpldesinfo":"大气精美的餐饮行业模板",
+			"attr":"focu thumb bgs restaurant",
+			"sort":175
+		},
+		{
+			"tpltypeid":176,
+			"tplview":"cate1176.png",
+			"tpltypename":"1110_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip restaurant",
+			"sort":176
+		},
+		{
+			"tpltypeid":177,
+			"tplview":"cate1177.png",
+			"tpltypename":"1108_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip restaurant",
+			"sort":177
+		},
+		{
+			"tpltypeid":178,
+			"tplview":"cate1178.png",
+			"tpltypename":"1107_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip restaurant",
+			"sort":178
+		},
+		{
+			"tpltypeid":179,
+			"tplview":"cate1179.png",
+			"tpltypename":"1105_index_fxfg",
+			"tpldesinfo":"图标为正方形300x300px，图片建议360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu restaurant",
+			"sort":179
+		},
+		{
+			"tpltypeid":180,
+			"tplview":"cate1180.png",
+			"tpltypename":"1104_index_xcvhk",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb filt bg restaurant",
+			"sort":180
+		},
+		{
+			"tpltypeid":181,
+			"tplview":"cate1181.png",
+			"tpltypename":"193_index_b4bt",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu restaurant",
+			"sort":181
+		},
+		{
+			"tpltypeid":182,
+			"tplview":"cate1182.png",
+			"tpltypename":"192_index_vbrn",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu restaurant",
+			"sort":182
+		},
+		{
+			"tpltypeid":183,
+			"tplview":"cate1183.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的餐饮行业模板",
+			"attr":"thumb filt bg bgs restaurant",
+			"sort":183
+		},
+		{
+			"tpltypeid":184,
+			"tplview":"cate1184.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的餐饮行业模板",
+			"attr":"thumb filt bg bgs restaurant",
+			"sort":184
+		},
+		{
+			"tpltypeid":185,
+			"tplview":"cate1185.png",
+			"tpltypename":"112_index_kj7y5",
+			"tpldesinfo":"大气精美的餐饮行业模板",
+			"attr":"bg bgs filt restaurant",
+			"sort":185
+		},
+		{
+			"tpltypeid":186,
+			"tplview":"cate1186.png",
+			"tpltypename":"115_index_ms76x",
+			"tpldesinfo":"大气精美的餐饮行业模板",
+			"attr":"restaurant bgs bg filt",
+			"sort":186
+		},
+		{
+			"tpltypeid":187,
+			"tplview":"cate1187.png",
+			"tpltypename":"111_index_78yus",
+			"tpldesinfo":"左右图文式模版，顶部幻灯片建议使用尺寸为640*320或近似等比例图片；分类图片建议使用450*300或近似等比例图片，请不要使用高度大于或接近于宽度的图片。",
+			"attr":"restaurant bgs focu thumb",
+			"sort":187
+		},
+		{
+			"tpltypeid":188,
+			"tplview":"cate1188.png",
+			"tpltypename":"111_index_78yus",
+			"tpldesinfo":"左右图文式模版，顶部幻灯片建议使用尺寸为640*320或近似等比例图片；分类图片建议使用450*300或近似等比例图片，请不要使用高度大于或接近于宽度的图片。",
+			"attr":"restaurant bgs focu thumb",
+			"sort":188
+		},
+		{
+			"tpltypeid":189,
+			"tplview":"cate1189.png",
+			"tpltypename":"101_index",
+			"tpldesinfo":"大气精美的餐饮行业模板",
+			"attr":"restaurant thumb focu bgs",
+			"sort":189
+		},
+		{
+			"tpltypeid":190,
+			"tplview":"cate1190.png",
+			"tpltypename":"107_index_2d8si",
+			"tpldesinfo":"大气精美的餐饮行业模板",
+			"attr":"focu thumb bgs restaurant",
+			"sort":190
+		},
+		{
+			"tpltypeid":191,
+			"tplview":"cate1191.png",
+			"tpltypename":"1133_index_rgcv",
+			"tpldesinfo":"大气精美的房地产行业模板",
+			"attr":"focu thumb bgs estate",
+			"sort":191
+		},
+		{
+			"tpltypeid":192,
+			"tplview":"cate1192.png",
+			"tpltypename":"187_index_4d8fw",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu estate",
+			"sort":192
+		},
+		{
+			"tpltypeid":193,
+			"tplview":"cate1193.png",
+			"tpltypename":"178_index_shfr",
+			"tpldesinfo":"大气精美的房地产行业模板",
+			"attr":"bgs focu lis beauty",
+			"sort":193
+		},
+		{
+			"tpltypeid":194,
+			"tplview":"cate1194.png",
+			"tpltypename":"179_index_4g4f",
+			"tpldesinfo":"大气精美的房地产行业模板",
+			"attr":"bgs focu lis estate",
+			"sort":194
+		},
+		{
+			"tpltypeid":195,
+			"tplview":"cate1195.png",
+			"tpltypename":"179_index_4g4f",
+			"tpldesinfo":"大气精美的房地产行业模板",
+			"attr":"bgs focu lis estate",
+			"sort":195
+		},
+		{
+			"tpltypeid":196,
+			"tplview":"cate1196.png",
+			"tpltypename":"177_index_gh5f",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu estate",
+			"sort":196
+		},
+		{
+			"tpltypeid":197,
+			"tplview":"cate1197.png",
+			"tpltypename":"164_index_5366",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu filt lis estate",
+			"sort":197
+		},
+		{
+			"tpltypeid":198,
+			"tplview":"cate1198.png",
+			"tpltypename":"160_index_674f",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu estate",
+			"sort":198
+		},
+		{
+			"tpltypeid":199,
+			"tplview":"cate1199.png",
+			"tpltypename":"136_index_esfsd344",
+			"tpldesinfo":"大气精美的房地产行业模板",
+			"attr":"thumb bg bgs filt estate",
+			"sort":199
+		},
+		{
+			"tpltypeid":200,
+			"tplview":"cate1200.png",
+			"tpltypename":"115_index_ms76x",
+			"tpldesinfo":"大气精美的房地产行业模板",
+			"attr":"estate bgs bg filt",
+			"sort":200
+		},
+		{
+			"tpltypeid":201,
+			"tplview":"cate1201.png",
+			"tpltypename":"181_index_dfg3",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"bgs thumb focu health",
+			"sort":201
+		},
+		{
+			"tpltypeid":202,
+			"tplview":"cate1202.png",
+			"tpltypename":"180_index_zfg4",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"bgs focu lis health",
+			"sort":202
+		},
+		{
+			"tpltypeid":203,
+			"tplview":"cate1203.png",
+			"tpltypename":"179_index_4g4f",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"bgs focu lis health",
+			"sort":203
+		},
+		{
+			"tpltypeid":204,
+			"tplview":"cate1204.png",
+			"tpltypename":"165_index_6dgbf",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"bgs thumb focu health",
+			"sort":204
+		},
+		{
+			"tpltypeid":205,
+			"tplview":"cate1205.png",
+			"tpltypename":"145_index_vbws",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"bgs thumb focu health",
+			"sort":205
+		},
+		{
+			"tpltypeid":206,
+			"tplview":"cate1206.png",
+			"tpltypename":"141_index_654d",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"focu thumb bgs health",
+			"sort":206
+		},
+		{
+			"tpltypeid":207,
+			"tplview":"cate1207.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"thumb filt bg bgs health",
+			"sort":207
+		},
+		{
+			"tpltypeid":208,
+			"tplview":"cate1208.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"thumb filt bg bgs health",
+			"sort":208
+		},
+		{
+			"tpltypeid":209,
+			"tplview":"cate1209.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"thumb filt bg bgs health",
+			"sort":209
+		},
+		{
+			"tpltypeid":210,
+			"tplview":"cate1210.png",
+			"tpltypename":"115_index_ms76x",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"health bgs bg filt",
+			"sort":210
+		},
+		{
+			"tpltypeid":211,
+			"tplview":"cate1211.png",
+			"tpltypename":"112_index_kj7y5",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"bg bgs filt health",
+			"sort":211
+		},
+		{
+			"tpltypeid":212,
+			"tplview":"cate1212.png",
+			"tpltypename":"115_index_ms76x",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"health bgs bg filt",
+			"sort":212
+		},
+		{
+			"tpltypeid":213,
+			"tplview":"cate1213.png",
+			"tpltypename":"112_index_kj7y5",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"bg bgs filt health",
+			"sort":213
+		},
+		{
+			"tpltypeid":214,
+			"tplview":"cate1214.png",
+			"tpltypename":"111_index_78yus",
+			"tpldesinfo":"左右图文式模版，顶部幻灯片建议使用尺寸为640*320或近似等比例图片；分类图片建议使用450*300或近似等比例图片，请不要使用高度大于或接近于宽度的图片。",
+			"attr":"health bgs focu thumb",
+			"sort":214
+		},
+		{
+			"tpltypeid":215,
+			"tplview":"cate1215.png",
+			"tpltypename":"104_index",
+			"tpldesinfo":"列表式图片模版，缩略图建议使用150*150或近似尺寸比例的图片。",
+			"attr":"health thumb focu bgs lis",
+			"sort":215
+		},
+		{
+			"tpltypeid":216,
+			"tplview":"cate1216.png",
+			"tpltypename":"107_index_2d8si",
+			"tpldesinfo":"大气精美的医疗保健行业模板",
+			"attr":"focu thumb bgs health",
+			"sort":216
+		},
+		{
+			"tpltypeid":217,
+			"tplview":"cate1217.png",
+			"tpltypename":"121_index_eor5w",
+			"tpldesinfo":"图标式模板，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片，分类前8个为图标及文字展示，后面分类为图片展示，建议尺寸为宽150*高90或等比例图片。",
+			"attr":"focu bgs thumb edu",
+			"sort":217
+		},
+		{
+			"tpltypeid":218,
+			"tplview":"cate1218.png",
+			"tpltypename":"1107_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip beauty",
+			"sort":218
+		},
+		{
+			"tpltypeid":219,
+			"tplview":"cate1219.png",
+			"tpltypename":"1105_index_fxfg",
+			"tpldesinfo":"图标为正方形300x300px，图片建议360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu edu",
+			"sort":219
+		},
+		{
+			"tpltypeid":220,
+			"tplview":"cate1220.png",
+			"tpltypename":"198_index_xcwh",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu beauty",
+			"sort":220
+		},
+		{
+			"tpltypeid":221,
+			"tplview":"cate1221.png",
+			"tpltypename":"197_index_cvrj",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu beauty",
+			"sort":221
+		},
+		{
+			"tpltypeid":222,
+			"tplview":"cate1222.png",
+			"tpltypename":"196_index_sdf3",
+			"tpldesinfo":"图片要么都是正方形300x300px，要么都是360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu beauty",
+			"sort":222
+		},
+		{
+			"tpltypeid":223,
+			"tplview":"cate1223.png",
+			"tpltypename":"194_index_sc23",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu edu",
+			"sort":223
+		},
+		{
+			"tpltypeid":224,
+			"tplview":"cate1224.png",
+			"tpltypename":"195_index_xrb54",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu beauty",
+			"sort":224
+		},
+		{
+			"tpltypeid":225,
+			"tplview":"cate1225.png",
+			"tpltypename":"193_index_b4bt",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu beauty",
+			"sort":225
+		},
+		{
+			"tpltypeid":226,
+			"tplview":"cate1226.png",
+			"tpltypename":"191_index_zedv",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu beauty",
+			"sort":226
+		},
+		{
+			"tpltypeid":227,
+			"tplview":"cate1227.png",
+			"tpltypename":"190_index_xj643",
+			"tpldesinfo":"大气精美的教育行业模板",
+			"attr":"beauty bgs thumb focu",
+			"sort":227
+		},
+		{
+			"tpltypeid":228,
+			"tplview":"cate1228.png",
+			"tpltypename":"162_index_xffe",
+			"tpldesinfo":"大气精美的教育行业模板",
+			"attr":"bgs thumb focu edu",
+			"sort":228
+		},
+		{
+			"tpltypeid":229,
+			"tplview":"cate1229.png",
+			"tpltypename":"157_index_dgeh7",
+			"tpldesinfo":"大气精美的教育行业模板",
+			"attr":"bgs thumb focu edu",
+			"sort":229
+		},
+		{
+			"tpltypeid":230,
+			"tplview":"cate1230.png",
+			"tpltypename":"136_index_esfsd344",
+			"tpldesinfo":"大气精美的教育行业模板",
+			"attr":"thumb bg bgs filt edu",
+			"sort":230
+		},
+		{
+			"tpltypeid":231,
+			"tplview":"cate1231.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的教育行业模板",
+			"attr":"thumb filt bg bgs edu",
+			"sort":231
+		},
+		{
+			"tpltypeid":232,
+			"tplview":"cate1232.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的教育行业模板",
+			"attr":"thumb filt bg bgs edu",
+			"sort":232
+		},
+		{
+			"tpltypeid":233,
+			"tplview":"cate1233.png",
+			"tpltypename":"115_index_ms76x",
+			"tpldesinfo":"大气精美的教育行业模板",
+			"attr":"edu bgs bg filt",
+			"sort":233
+		},
+		{
+			"tpltypeid":234,
+			"tplview":"cate1234.png",
+			"tpltypename":"112_index_kj7y5",
+			"tpldesinfo":"大气精美的教育行业模板",
+			"attr":"bg bgs filt edu",
+			"sort":234
+		},
+		{
+			"tpltypeid":235,
+			"tplview":"cate1235.png",
+			"tpltypename":"112_index_kj7y5",
+			"tpldesinfo":"大气精美的教育行业模板",
+			"attr":"bg bgs filt edu",
+			"sort":235
+		},
+		{
+			"tpltypeid":236,
+			"tplview":"cate1236.png",
+			"tpltypename":"121_index_eor5w",
+			"tpldesinfo":"图标式模板，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片，分类前8个为图标及文字展示，后面分类为图片展示，建议尺寸为宽150*高90或等比例图片。",
+			"attr":"focu bgs thumb beauty",
+			"sort":236
+		},
+		{
+			"tpltypeid":237,
+			"tplview":"cate1237.png",
+			"tpltypename":"1112_index_xghx",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu slip beauty",
+			"sort":237
+		},
+		{
+			"tpltypeid":238,
+			"tplview":"cate1238.png",
+			"tpltypename":"180_index_zfg4",
+			"tpldesinfo":"大气精美的健身美容行业模板",
+			"attr":"bgs focu lis beauty",
+			"sort":238
+		},
+		{
+			"tpltypeid":239,
+			"tplview":"cate1239.png",
+			"tpltypename":"121_index_eor5w",
+			"tpldesinfo":"图标式模板，顶部幻灯片建议尺寸为宽640*高320或近似等比例的图片，分类前8个为图标及文字展示，后面分类为图片展示，建议尺寸为宽150*高90或等比例图片。",
+			"attr":"focu bgs thumb wedding",
+			"sort":239
+		},
+		{
+			"tpltypeid":240,
+			"tplview":"cate1240.png",
+			"tpltypename":"1133_index_rgcv",
+			"tpldesinfo":"大气精美的婚纱摄影行业模板",
+			"attr":"focu thumb bgs wedding",
+			"sort":240
+		},
+		{
+			"tpltypeid":241,
+			"tplview":"cate1241.png",
+			"tpltypename":"1106_index_fxfg",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu wedding",
+			"sort":241
+		},
+		{
+			"tpltypeid":242,
+			"tplview":"cate1242.png",
+			"tpltypename":"1104_index_xcvhk",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb filt bg wedding",
+			"sort":242
+		},
+		{
+			"tpltypeid":243,
+			"tplview":"cate1243.png",
+			"tpltypename":"197_index_cvrj",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu wedding",
+			"sort":243
+		},
+		{
+			"tpltypeid":244,
+			"tplview":"cate1244.png",
+			"tpltypename":"196_index_sdf3",
+			"tpldesinfo":"图片要么都是正方形300x300px，要么都是360x200px。不支持更换颜色风格",
+			"attr":"bgs thumb focu wedding",
+			"sort":244
+		},
+		{
+			"tpltypeid":245,
+			"tplview":"cate1245.png",
+			"tpltypename":"194_index_sc23",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu wedding",
+			"sort":245
+		},
+		{
+			"tpltypeid":246,
+			"tplview":"cate1246.png",
+			"tpltypename":"193_index_b4bt",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu wedding",
+			"sort":246
+		},
+		{
+			"tpltypeid":247,
+			"tplview":"cate1247.png",
+			"tpltypename":"192_index_vbrn",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu wedding",
+			"sort":247
+		},
+		{
+			"tpltypeid":248,
+			"tplview":"cate1248.png",
+			"tpltypename":"190_index_xj643",
+			"tpldesinfo":"大气精美的婚纱摄影行业模板",
+			"attr":"wedding bgs thumb focu",
+			"sort":248
+		},
+		{
+			"tpltypeid":249,
+			"tplview":"cate1249.png",
+			"tpltypename":"187_index_4d8fw",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bgs thumb focu wedding",
+			"sort":249
+		},
+		{
+			"tpltypeid":250,
+			"tplview":"cate1250.png",
+			"tpltypename":"185_index_gjerf",
+			"tpldesinfo":"图片高度75，宽度不小于360px。不支持更换颜色风格",
+			"attr":"bgs thumb focu wedding",
+			"sort":250
+		},
+		{
+			"tpltypeid":251,
+			"tplview":"cate1251.png",
+			"tpltypename":"136_index_esfsd344",
+			"tpldesinfo":"大气精美的婚纱摄影行业模板",
+			"attr":"thumb bg bgs filt wedding",
+			"sort":251
+		},
+		{
+			"tpltypeid":252,
+			"tplview":"cate1252.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的婚纱摄影行业模板",
+			"attr":"thumb filt bg bgs wedding",
+			"sort":252
+		},
+		{
+			"tpltypeid":253,
+			"tplview":"cate1253.png",
+			"tpltypename":"114_index_mnsz6",
+			"tpldesinfo":"大气精美的婚纱摄影行业模板",
+			"attr":"thumb filt bg bgs wedding",
+			"sort":253
+		},
+		{
+			"tpltypeid":254,
+			"tplview":"cate1254.png",
+			"tpltypename":"112_index_kj7y5",
+			"tpldesinfo":"大气精美的婚纱摄影行业模板",
+			"attr":"bg bgs filt wedding",
+			"sort":254
+		},
+		{
+			"tpltypeid":255,
+			"tplview":"cate1255.png",
+			"tpltypename":"115_index_ms76x",
+			"tpldesinfo":"大气精美的婚纱摄影行业模板",
+			"attr":"wedding bgs bg filt",
+			"sort":255
+		},
+		{
+			"tpltypeid":256,
+			"tplview":"cate1256.png",
+			"tpltypename":"111_index_78yus",
+			"tpldesinfo":"左右图文式模版，顶部幻灯片建议使用尺寸为640*320或近似等比例图片；分类图片建议使用450*300或近似等比例图片，请不要使用高度大于或接近于宽度的图片。",
+			"attr":"wedding bgs focu thumb",
+			"sort":256
+		},
+		{
+			"tpltypeid":257,
+			"tplview":"cate1257.png",
+			"tpltypename":"104_index",
+			"tpldesinfo":"列表式图片模版，缩略图建议使用150*150或近似尺寸比例的图片。",
+			"attr":"wedding thumb focu bgs lis",
+			"sort":257
+		},
+		{
+			"tpltypeid":258,
+			"tplview":"cate1258.png",
+			"tpltypename":"101_index",
+			"tpldesinfo":"",
+			"attr":"wedding thumb focu bgs",
+			"sort":258
+		},
+		{
+			"tpltypeid":259,
+			"tplview":"cate1259.png",
+			"tpltypename":"1259_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"car thumb bgs slip bg",
+			"sort":259
+		},
+		{
+			"tpltypeid":260,
+			"tplview":"cate1260.png",
+			"tpltypename":"1260_index_xcve",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"car thumb bgs slip bg filt",
+			"sort":260
+		},
+		{
+			"tpltypeid":261,
+			"tplview":"cate1261.png",
+			"tpltypename":"1261_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"car thumb bgs slip bg",
+			"sort":261
+		},
+		{
+			"tpltypeid":262,
+			"tplview":"cate1262.png",
+			"tpltypename":"1262_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"car thumb bgs slip bg filt",
+			"sort":262
+		},
+		{
+			"tpltypeid":263,
+			"tplview":"cate1263.png",
+			"tpltypename":"1263_index_4567",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"car thumb bgs slip bg bg",
+			"sort":263
+		},
+		{
+			"tpltypeid":264,
+			"tplview":"cate1264.png",
+			"tpltypename":"1264_index_chs3",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"car thumb bgs slip bg",
+			"sort":264
+		},
+		{
+			"tpltypeid":265,
+			"tplview":"cate1265.png",
+			"tpltypename":"1265_index_vbte",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"car thumb bgs slip filt bg filt",
+			"sort":265
+		},
+		{
+			"tpltypeid":266,
+			"tplview":"cate1266.png",
+			"tpltypename":"1266_index_b4dg",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"car thumb bgs slip bg filt",
+			"sort":266
+		},
+		{
+			"tpltypeid":267,
+			"tplview":"cate1267.png",
+			"tpltypename":"1267_index_jxos",
+			"tpldesinfo":"大气精美的汽车行业模板",
+			"attr":"car thumb bgs slip bg focu",
+			"sort":267
+		},
+		{
+			"tpltypeid":268,
+			"tplview":"cate1268.png",
+			"tpltypename":"1268_index_k0d3",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"car thumb bgs slip focu",
+			"sort":268
+		},
+		{
+			"tpltypeid":269,
+			"tplview":"cate1269.png",
+			"tpltypename":"1269_index_cs35",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"car thumb bgs slip bg",
+			"sort":269
+		},
+		{
+			"tpltypeid":270,
+			"tplview":"cate1270.png",
+			"tpltypename":"1270_index_cs35",
+			"tpldesinfo":"此模板支持播放音乐，轮换背景图及漂浮小动画，背景图片尺寸为640x1136px，分类不要太多，多了影响整体美观。",
+			"attr":"car thumb bgs bg filt",
+			"sort":270
+		},
+		{
+			"tpltypeid":271,
+			"tplview":"cate1271.png",
+			"tpltypename":"1271_index_cs35",
+			"tpldesinfo":"此模板支持播放音乐，轮换背景图及漂浮小动画，背景图片尺寸为640x1136px，分类图标300x300px，分类不要太多，多了影响整体美观。",
+			"attr":"car thumb bgs bg filt",
+			"sort":271
+		},
+		{
+			"tpltypeid":272,
+			"tplview":"cate1272.png",
+			"tpltypename":"1272_index_sf43",
+			"tpldesinfo":"此模板支持播放音乐，轮换背景图及漂浮小动画，背景图片尺寸为640x1136px，分类不要太多，多了影响整体美观。",
+			"attr":"estate thumb bgs bg filt",
+			"sort":272
+		},
+		{
+			"tpltypeid":273,
+			"tplview":"cate1273.png",
+			"tpltypename":"1273_index_sfe3",
+			"tpldesinfo":"此模板支持播放音乐，轮换背景图及漂浮小动画，背景图片尺寸为640x1136px，分类图标300x300px。",
+			"attr":"car thumb bgs filt slip bg",
+			"sort":273
+		},
+		{
+			"tpltypeid":274,
+			"tplview":"cate1274.png",
+			"tpltypename":"1274_index_xa2c",
+			"tpldesinfo":"分类的图片统一相同尺寸300x300正方形图片，不用做成圆形图片，系统自己会显示为圆形图片。",
+			"attr":"hotel thumb bgs bg",
+			"sort":274
+		},
+		{
+			"tpltypeid":275,
+			"tplview":"cate1275.png",
+			"tpltypename":"1259_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"hotel thumb bgs slip bg",
+			"sort":275
+		},
+		{
+			"tpltypeid":276,
+			"tplview":"cate1276.png",
+			"tpltypename":"1261_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"hotel thumb bgs slip bg",
+			"sort":276
+		},
+		{
+			"tpltypeid":277,
+			"tplview":"cate1277.png",
+			"tpltypename":"1263_index_4567",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"hotel thumb bgs slip bg bg",
+			"sort":277
+		},
+		{
+			"tpltypeid":278,
+			"tplview":"cate1278.png",
+			"tpltypename":"1264_index_chs3",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"hotel thumb bgs slip bg",
+			"sort":278
+		},
+		{
+			"tpltypeid":279,
+			"tplview":"cate1279.png",
+			"tpltypename":"1267_index_jxos",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"hotel thumb bgs slip bg focu",
+			"sort":279
+		},
+		{
+			"tpltypeid":280,
+			"tplview":"cate1280.png",
+			"tpltypename":"1268_index_k0d3",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"hotel thumb bgs slip bg focu",
+			"sort":280
+		},
+		{
+			"tpltypeid":281,
+			"tplview":"cate1281.png",
+			"tpltypename":"1271_index_cs35",
+			"tpldesinfo":"此模板支持播放音乐，轮换背景图及漂浮小动画，背景图片尺寸为640x1136px，分类图标300x300px，分类不要太多，多了影响整体美观。",
+			"attr":"hotel thumb bgs bg filt",
+			"sort":281
+		},
+		{
+			"tpltypeid":282,
+			"tplview":"cate1282.png",
+			"tpltypename":"1259_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"tour thumb bgs slip bg",
+			"sort":282
+		},
+		{
+			"tpltypeid":283,
+			"tplview":"cate1283.png",
+			"tpltypename":"1261_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"tour thumb bgs slip bg",
+			"sort":283
+		},
+		{
+			"tpltypeid":284,
+			"tplview":"cate1284.png",
+			"tpltypename":"1263_index_4567",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"tour thumb bgs slip bg bg",
+			"sort":284
+		},
+		{
+			"tpltypeid":285,
+			"tplview":"cate1285.png",
+			"tpltypename":"1264_index_chs3",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"tour thumb bgs slip bg",
+			"sort":285
+		},
+		{
+			"tpltypeid":286,
+			"tplview":"cate1286.png",
+			"tpltypename":"1267_index_jxos",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"tour thumb bgs slip bg focu",
+			"sort":286
+		},
+		{
+			"tpltypeid":287,
+			"tplview":"cate1287.png",
+			"tpltypename":"1268_index_k0d3",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"tour thumb bgs slip focu",
+			"sort":287
+		},
+		{
+			"tpltypeid":288,
+			"tplview":"cate1288.png",
+			"tpltypename":"1273_index_sfe3",
+			"tpldesinfo":"此模板支持播放音乐，轮换背景图及漂浮小动画，背景图片尺寸为640x1136px，分类图标300x300px。",
+			"attr":"tour thumb bgs filt slip bg",
+			"sort":288
+		},
+		{
+			"tpltypeid":289,
+			"tplview":"cate1289.png",
+			"tpltypename":"1267_index_jxos",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"restaurant thumb bgs slip bg focu",
+			"sort":289
+		},
+		{
+			"tpltypeid":290,
+			"tplview":"cate1290.png",
+			"tpltypename":"1268_index_k0d3",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"restaurant thumb bgs slip focu",
+			"sort":290
+		},
+		{
+			"tpltypeid":291,
+			"tplview":"cate1291.png",
+			"tpltypename":"1271_index_cs35",
+			"tpldesinfo":"此模板支持播放音乐，轮换背景图及漂浮小动画，背景图片尺寸为640x1136px，分类图标300x300px，分类不要太多，多了影响整体美观。",
+			"attr":"restaurant thumb bgs bg filt",
+			"sort":291
+		},
+		{
+			"tpltypeid":292,
+			"tplview":"cate1292.png",
+			"tpltypename":"1261_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"estate thumb bgs slip bg",
+			"sort":292
+		},
+		{
+			"tpltypeid":293,
+			"tplview":"cate1293.png",
+			"tpltypename":"1259_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"estate thumb bgs slip bg",
+			"sort":293
+		},
+		{
+			"tpltypeid":294,
+			"tplview":"cate1294.png",
+			"tpltypename":"1264_index_chs3",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"estate thumb bgs slip bg",
+			"sort":294
+		},
+		{
+			"tpltypeid":295,
+			"tplview":"cate1295.png",
+			"tpltypename":"1259_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"health thumb bgs slip bg",
+			"sort":295
+		},
+		{
+			"tpltypeid":296,
+			"tplview":"cate1296.png",
+			"tpltypename":"1261_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"health thumb bgs slip bg",
+			"sort":296
+		},
+		{
+			"tpltypeid":297,
+			"tplview":"cate1297.png",
+			"tpltypename":"1260_index_xcve",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"health thumb bgs slip bg filt",
+			"sort":297
+		},
+		{
+			"tpltypeid":298,
+			"tplview":"cate1298.png",
+			"tpltypename":"1262_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"health thumb bgs slip bg filt",
+			"sort":298
+		},
+		{
+			"tpltypeid":299,
+			"tplview":"cate1299.png",
+			"tpltypename":"1263_index_4567",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"health thumb bgs slip bg bg",
+			"sort":299
+		},
+		{
+			"tpltypeid":300,
+			"tplview":"cate1300.png",
+			"tpltypename":"1264_index_chs3",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"health thumb bgs slip bg",
+			"sort":300
+		},
+		{
+			"tpltypeid":301,
+			"tplview":"cate1301.png",
+			"tpltypename":"1266_index_b4dg",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"health thumb bgs slip bg filt",
+			"sort":301
+		},
+		{
+			"tpltypeid":302,
+			"tplview":"cate1302.png",
+			"tpltypename":"1265_index_vbte",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"health thumb bgs slip filt bg filt",
+			"sort":302
+		},
+		{
+			"tpltypeid":303,
+			"tplview":"cate1303.png",
+			"tpltypename":"1259_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"edu thumb bgs slip bg",
+			"sort":303
+		},
+		{
+			"tpltypeid":304,
+			"tplview":"cate1304.png",
+			"tpltypename":"1261_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"edu thumb bgs slip bg",
+			"sort":304
+		},
+		{
+			"tpltypeid":305,
+			"tplview":"cate1305.png",
+			"tpltypename":"1263_index_4567",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"edu thumb bgs slip bg bg",
+			"sort":305
+		},
+		{
+			"tpltypeid":306,
+			"tplview":"cate1306.png",
+			"tpltypename":"1264_index_chs3",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"edu thumb bgs slip bg",
+			"sort":306
+		},
+		{
+			"tpltypeid":307,
+			"tplview":"cate1307.png",
+			"tpltypename":"1267_index_jxos",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"edu thumb bgs slip bg focu",
+			"sort":307
+		},
+		{
+			"tpltypeid":308,
+			"tplview":"cate1308.png",
+			"tpltypename":"1268_index_k0d3",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"edu thumb bgs slip focu",
+			"sort":308
+		},
+		{
+			"tpltypeid":309,
+			"tplview":"cate1309.png",
+			"tpltypename":"1260_index_xcve",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"beauty thumb bgs slip bg filt",
+			"sort":309
+		},
+		{
+			"tpltypeid":310,
+			"tplview":"cate1310.png",
+			"tpltypename":"1262_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"beauty thumb bgs slip bg filt",
+			"sort":310
+		},
+		{
+			"tpltypeid":311,
+			"tplview":"cate1311.png",
+			"tpltypename":"1259_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"beauty thumb bgs slip bg",
+			"sort":311
+		},
+		{
+			"tpltypeid":312,
+			"tplview":"cate1312.png",
+			"tpltypename":"1261_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"beauty thumb bgs slip bg",
+			"sort":312
+		},
+		{
+			"tpltypeid":313,
+			"tplview":"cate1313.png",
+			"tpltypename":"1266_index_b4dg",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"beauty thumb bgs slip bg filt",
+			"sort":313
+		},
+		{
+			"tpltypeid":314,
+			"tplview":"cate1314.png",
+			"tpltypename":"1265_index_vbte",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"beauty thumb bgs slip filt bg filt",
+			"sort":314
+		},
+		{
+			"tpltypeid":315,
+			"tplview":"cate1315.png",
+			"tpltypename":"1263_index_4567",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"beauty thumb bgs slip bg bg",
+			"sort":315
+		},
+		{
+			"tpltypeid":316,
+			"tplview":"cate1316.png",
+			"tpltypename":"1264_index_chs3",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"beauty thumb bgs slip bg",
+			"sort":316
+		},
+		{
+			"tpltypeid":317,
+			"tplview":"cate1317.png",
+			"tpltypename":"1267_index_jxos",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"beauty thumb bgs slip bg focu",
+			"sort":317
+		},
+		{
+			"tpltypeid":318,
+			"tplview":"cate1318.png",
+			"tpltypename":"1268_index_k0d3",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"beauty thumb bgs slip focu",
+			"sort":318
+		},
+		{
+			"tpltypeid":319,
+			"tplview":"cate1319.png",
+			"tpltypename":"1260_index_xcve",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"wedding thumb bgs slip bg filt",
+			"sort":319
+		},
+		{
+			"tpltypeid":320,
+			"tplview":"cate1320.png",
+			"tpltypename":"1262_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"wedding thumb bgs slip bg filt",
+			"sort":320
+		},
+		{
+			"tpltypeid":321,
+			"tplview":"cate1321.png",
+			"tpltypename":"1259_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"wedding thumb bgs slip bg",
+			"sort":321
+		},
+		{
+			"tpltypeid":322,
+			"tplview":"cate1322.png",
+			"tpltypename":"1261_index_cvee",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"wedding thumb bgs slip bg",
+			"sort":322
+		},
+		{
+			"tpltypeid":323,
+			"tplview":"cate1323.png",
+			"tpltypename":"1266_index_b4dg",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"wedding thumb bgs slip bg filt",
+			"sort":323
+		},
+		{
+			"tpltypeid":324,
+			"tplview":"cate1324.png",
+			"tpltypename":"1265_index_vbte",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"wedding thumb bgs slip filt bg filt",
+			"sort":324
+		},
+		{
+			"tpltypeid":325,
+			"tplview":"cate1325.png",
+			"tpltypename":"1263_index_4567",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"wedding thumb bgs slip bg bg",
+			"sort":325
+		},
+		{
+			"tpltypeid":326,
+			"tplview":"cate1326.png",
+			"tpltypename":"1264_index_chs3",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"wedding thumb bgs slip bg",
+			"sort":326
+		},
+		{
+			"tpltypeid":327,
+			"tplview":"cate1327.png",
+			"tpltypename":"1267_index_jxos",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"wedding thumb bgs slip bg focu",
+			"sort":327
+		},
+		{
+			"tpltypeid":328,
+			"tplview":"cate1328.png",
+			"tpltypename":"1268_index_k0d3",
+			"tpldesinfo":"分类图片为正方形300x300px。",
+			"attr":"wedding thumb bgs slip focu",
+			"sort":328
+		},
+		{
+			"tpltypeid":329,
+			"tplview":"cate1329.png",
+			"tpltypename":"1269_index_cs35",
+			"tpldesinfo":"分类图标为正方形300x300px。",
+			"attr":"wedding thumb bgs slip bg",
+			"sort":329
+		},
+		{
+			"tpltypeid":330,
+			"tplview":"cate1330.png",
+			"tpltypename":"1330_index_df3s",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb focu bg filt slip",
+			"sort":330
+		},
+		{
+			"tpltypeid":331,
+			"tplview":"cate1331.png",
+			"tpltypename":"1331_index_f3sd",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"sub bg focu bgs thumb other filt slip",
+			"sort":331
+		},
+		{
+			"tpltypeid":332,
+			"tplview":"cate1332.png",
+			"tpltypename":"1332_index_78yus",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"sub bg focu bgs thumb other filt slip other",
+			"sort":332
+		},
+		{
+			"tpltypeid":333,
+			"tplview":"cate1333.png",
+			"tpltypename":"1333_index_cvee",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"sub focu bgs thumb other other filt",
+			"sort":333
+		},
+		{
+			"tpltypeid":334,
+			"tplview":"cate1334.png",
+			"tpltypename":"1334_index_cvee",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"other thumb bgs focu",
+			"sort":334
+		},
+		{
+			"tpltypeid":335,
+			"tplview":"cate1335.png",
+			"tpltypename":"1335_index_cvee",
+			"tpldesinfo":"小图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb bgs focu other",
+			"sort":335
+		},
+		{
+			"tpltypeid":336,
+			"tplview":"cate1336.png",
+			"tpltypename":"1336_index_cvee",
+			"tpldesinfo":"图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb bgs focu other",
+			"sort":336
+		},
+		{
+			"tpltypeid":337,
+			"tplview":"cate1337.png",
+			"tpltypename":"1337_index_cvee",
+			"tpldesinfo":"图标为正方形300x300px。不支持更换颜色风格，此模版只显示8个分类",
+			"attr":"bg thumb filt bgs other",
+			"sort":337
+		},
+		{
+			"tpltypeid":338,
+			"tplview":"cate1338.png",
+			"tpltypename":"1338_index_cvee",
+			"tpldesinfo":"图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"bg focu thumb bgs other",
+			"sort":338
+		},
+		{
+			"tpltypeid":339,
+			"tplview":"cate1339.png",
+			"tpltypename":"1339_index_cvee",
+			"tpldesinfo":"图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"other bg thumb filt bgs slip",
+			"sort":339
+		},
+		{
+			"tpltypeid":340,
+			"tplview":"cate1340.png",
+			"tpltypename":"1340_index_cvee",
+			"tpldesinfo":"图标为正方形300x300px。建议分类不要太多",
+			"attr":"other focu thumb ",
+			"sort":340
+		},
+		{
+			"tpltypeid":341,
+			"tplview":"cate1341.png",
+			"tpltypename":"1341_index_cvee",
+			"tpldesinfo":"图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"other thumb bgs bg focu",
+			"sort":341
+		},
+		{
+			"tpltypeid":342,
+			"tplview":"cate1342.png",
+			"tpltypename":"1342_index_cvee",
+			"tpldesinfo":"图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"other thumb bgs bg focu",
+			"sort":342
+		},
+		{
+			"tpltypeid":343,
+			"tplview":"cate1343.png",
+			"tpltypename":"1343_index_cvee",
+			"tpldesinfo":"图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"other thumb bgs bg focu",
+			"sort":343
+		},
+		{
+			"tpltypeid":344,
+			"tplview":"cate1344.png",
+			"tpltypename":"1344_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"other bgs thumb bg slip filt",
+			"sort":344
+		},
+		{
+			"tpltypeid":345,
+			"tplview":"cate1345.png",
+			"tpltypename":"1345_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb bgs wedding focu",
+			"sort":345
+		},
+		{
+			"tpltypeid":346,
+			"tplview":"cate1346.png",
+			"tpltypename":"1346_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb bgs beauty focu",
+			"sort":346
+		},
+		{
+			"tpltypeid":347,
+			"tplview":"cate1347.png",
+			"tpltypename":"1347_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb bgs restaurant focu",
+			"sort":347
+		},
+		{
+			"tpltypeid":348,
+			"tplview":"cate1348.png",
+			"tpltypename":"1348_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb bgs other focu",
+			"sort":348
+		},
+		{
+			"tpltypeid":349,
+			"tplview":"cate1349.png",
+			"tpltypename":"1349_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb bgs other focu",
+			"sort":349
+		},
+		{
+			"tpltypeid":350,
+			"tplview":"cate1350.png",
+			"tpltypename":"1350_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb bgs other focu",
+			"sort":350
+		},
+		{
+			"tpltypeid":351,
+			"tplview":"cate1351.png",
+			"tpltypename":"1351_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格。不支持3D幻灯片效果",
+			"attr":"thumb bgs other focu",
+			"sort":351
+		},
+		{
+			"tpltypeid":352,
+			"tplview":"cate1352.png",
+			"tpltypename":"1352_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb other focu",
+			"sort":352
+		},
+		{
+			"tpltypeid":353,
+			"tplview":"cate1353.png",
+			"tpltypename":"1353_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb other focu",
+			"sort":353
+		},
+		{
+			"tpltypeid":354,
+			"tplview":"cate1354.png",
+			"tpltypename":"1354_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb other focu",
+			"sort":354
+		},
+		{
+			"tpltypeid":355,
+			"tplview":"cate1355.png",
+			"tpltypename":"1355_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb bgs wedding focu",
+			"sort":355
+		},
+		{
+			"tpltypeid":356,
+			"tplview":"cate1356.png",
+			"tpltypename":"1356_index_78yus",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb other focu",
+			"sort":356
+		},
+		{
+			"tpltypeid":357,
+			"tplview":"cate1357.png",
+			"tpltypename":"1357_index_xcve",
+			"tpldesinfo":"分类图标为正方形300x300px。不支持更换颜色风格",
+			"attr":"thumb bgs wedding focu",
+			"sort":357
+		},
+		{
+			"tpltypeid":358,
+			"tplview":"cate1358.png",
+			"tpltypename":"1358_index_xcve",
+			"tpldesinfo":"分类图标为长方形480x130px。最多显示30个分类，背景图随机选取，需滑动屏幕拉出菜单。",
+			"attr":"thumb bg other focu filt",
+			"sort":358
+		}
+	],
+	"ContentTpls":[
+		{
+			"tpltypeid":1,
+			"tplview":"news1.png",
+			"tpltypename":"yl_content",
+			"tpldesinfo":"有头像"
+		},
+		{
+			"tpltypeid":2,
+			"tplview":"news2.png",
+			"tpltypename":"ktv_content",
+			"tpldesinfo":"无头像"
+		},
+		{
+			"tpltypeid":3,
+			"tplview":"news3.png",
+			"tpltypename":"content_5xcg",
+			"tpldesinfo":"无头像"
+		},
+		{
+			"tpltypeid":4,
+			"tplview":"news4.png",
+			"tpltypename":"content_8xcv",
+			"tpldesinfo":"无头像"
+		},
+		{
+			"tpltypeid":5,
+			"tplview":"news5.png",
+			"tpltypename":"content_ghd6",
+			"tpldesinfo":"无头像"
+		},
+		{
+			"tpltypeid":6,
+			"tplview":"news6.png",
+			"tpltypename":"content_gkjs",
+			"tpldesinfo":"无头像"
+		},
+		{
+			"tpltypeid":7,
+			"tplview":"news7.png",
+			"tpltypename":"content_j5gd",
+			"tpldesinfo":"无头像"
+		},
+		{
+			"tpltypeid":8,
+			"tplview":"news8.png",
+			"tpltypename":"content_lidj",
+			"tpldesinfo":"无头像"
+		},
+		{
+			"tpltypeid":9,
+			"tplview":"news9.png",
+			"tpltypename":"content_twxx",
+			"tpldesinfo":"无头像"
+		},
+		{
+			"tpltypeid":10,
+			"tplview":"news10.png",
+			"tpltypename":"10_content_zhh",
+			"tpldesinfo":"休博会"
+		}
+	],
+	"fc":"/Public/web/images/1.png",
+	"about":"/Public/web/images/2.png",
+	"price":"/Public/web/images/5.png",
+	"login":"/Public/web/images/3.png",
+	"help":"/Public/web/images/6.png",
+	"common":"/Public/web/images/4.png",
+	"business":{
+		"mall":"电子商务",
+		"hotel":"酒店",
+		"car":"汽车",
+		"tour":"旅游",
+		"restaurant":"餐饮",
+		"estate":"房地产",
+		"health":"医疗保健",
+		"edu":"教育培训",
+		"beauty":"健身美容",
+		"wedding":"婚纱摄影",
+		"other":"其他"
+	},
+	"open_biz":0,
+	"demo":0,
+	"FILE_UPLOAD_TYPE":"LOCAL",
+	"UPLOAD_TYPE_CONFIG":{
+		"maxSize":52428800,
+		"exts":"jpeg,jpg,png,mp3,wav,wmv"
+	},
+  	"connectnum":"系统维护中",
+  	"funcToModel":{
+  		"choujiang":"Coupon",
+		"api":"Api",
+		"lottery":"Lottery",
+		"shouye":"Home",
+		"adma":"Adma",
+		"huiyuanka":"Member_card",
+		"host_kev":"Host",
+		"diyform":"Diyform",
+		"dx":"Repast",
+		"shop":"Store",
+		"etuan":"Groupon",
+		"diymen_set":"Diymen",
+		"gua2":"Guajiang",
+		"panorama":"Panorama",
+		"wedding":"Wedding",
+		"vote":"Vote",
+		"estate":"Estate",
+		"album":"Photo",
+		"GoldenEgg'":"GoldenEgg",
+		"LuckyFruit":"LuckyFruit",
+		"messageboard":"Reply",
+		"car":"Car",
+		"wall":"Wall",
+		"shake":"Shake",
+		"forum":"Forum",
+		"medical":"Medical",
+		"groupmessage":"Message",
+		"share":"Share",
+		"hotel":"Hotels",
+		"school":"School",
+		"Gamecenter":"Game",
+		"website":"Web"
+  	},
+  	"function_library":[
+  		"game",
+	  	"Invite",
+	  	"Red_packet",
+	  	"Seckill",
+	  	"Autumns",
+	  	"Popularity",
+	  	"Helping",
+	  	"Jiugong",
+	  	"MicroBroker",
+	  	"Crowdfunding",
+	  	"Unitary",
+	  	"DishOut",
+	  	"Bargain",
+	  	"SeniorScene",
+	  	"Test",
+	  	"Service",
+	  	"Hongbao",
+	  	"SeniorCard",
+	  	"ServiceChat",
+	  	"Voteimg",
+	  	"Micrstore",
+	  	"Person_card",
+	  	"Cutprice",
+	  	"Punish",
+	  	"Numqueue",
+	  	"CoinTree",
+	  	"Sentiment",
+	  	"FrontPage",
+	  	"Collectword",
+	  	"Auction",
+	  	"ShakeLottery",
+	  	"YouSetDiscount",
+	  	"Donation"
+  	]
+}

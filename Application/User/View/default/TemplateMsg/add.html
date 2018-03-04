@@ -1,0 +1,96 @@
+<include file="Public:head"/>
+<script type="text/javascript" src="__PUBLIC__/web/js/jquery-1.9.1.min.js"></script>
+<script src="__PUBLIC__/web/js/jscolor.js" type="text/javascript"></script>
+<div class="content"> 
+	<div class="cLineB"> 
+		<h4>模板设置</h4> 
+		<a href="{:U('TemplateMsg/index',array('token' => $token))}" class="right  btnGreen" style="margin-top:-27px">返回</a> 
+	</div> 
+	
+	<form method="post" action="" id="formID">
+		<input type="hidden" name="id" value="{$kitchen.id}" />
+		<div class="msgWrap bgfc"> 
+			<table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+				<tbody>
+					<tr> 
+						<th><span class="red">*</span>模板编号：</th> 
+						<td>
+						<if condition="$tempmsg['id'] gt 0">
+							{$tempmsg.tempkey}
+							<input type="hidden" name="tempkey" value="{$tempmsg.tempkey}"/>
+						<else />
+							<input type="text" name="tempkey" id="tempkey" value="{$tempmsg.tempkey}" class="px" style="width:400px;"/>
+						</if>
+						</td> 
+					</tr>
+					<tr> 
+						<th><span class="red">*</span>模板ID：</th> 
+						<td>
+							<input type="text" name="tempid" id="tempid" value="{$tempmsg.tempid}" class="px" style="width:400px;" />
+						</td> 
+					</tr>
+					<tr> 
+						<th>模板名：</th> 
+						<td>
+						<if condition="$tempmsg['id'] gt 0 AND $tempmsg['type'] eq 0">
+							{$tempmsg.name}
+							<input type="hidden" name="name" value="{$tempmsg.name}"/>
+						<else />
+							<input type="text" name="name" id="name" value="{$tempmsg.name}" class="px" style="width:400px;"/>
+						</if>
+						</td> 
+					</tr>
+					<tr> 
+						<th>所属行业：</th> 
+						<td>
+						<if condition="$tempmsg['id'] gt 0 AND $tempmsg['type'] eq 0">
+							{$tempmsg.industry}
+							<input type="hidden" name="industry" value="{$tempmsg.industry}"/>
+						<else />
+							<input type="text" name="industry" id="industry" value="{$tempmsg.industry}" class="px" style="width:400px;"/>
+						</if>
+						</td> 
+					</tr>
+					<tr> 
+						<th>头部颜色：</th> 
+						<td>
+							<input type="text" name="topcolor" id="topcolor" value="{$tempmsg.topcolor}" class="px color" style="width: 55px; background:{$tempmsg.topcolor}; color: rgb(255, 255, 255);" />
+						</td> 
+					</tr>
+					<tr> 
+						<th>文字颜色：</th> 
+						<td>
+							<input type="text" name="textcolor" id="textcolor" value="{$tempmsg.textcolor}" class="px color" style="width: 55px; background:{$tempmsg.topcolor}; color: rgb(255, 255, 255);" />
+						</td> 
+					</tr>
+					<tr> 
+						<th>状态：</th> 
+						<td>
+				        	<label> <input type="radio" name="status" value="0" class="px" <if condition="$tempmsg['status'] eq 0">checked="checked"</if>>关闭</label>　
+				        	<label> <input type="radio" name="status" value="1" class="px" <if condition="$tempmsg['status'] eq 1">checked="checked"</if>>开启</label>
+				        </td> 
+					</tr>
+					<tr> 
+						<th><span class="red">*</span>回复内容：</th> 
+						<td>
+						<if condition="$tempmsg['id'] gt 0">
+							<pre>{$tempmsg.content}</pre>
+							<input type="hidden" name="content" value="{$tempmsg.content}"/>
+						<else />
+							<textarea style="width:400px;height:120px;" name="content" id="content" class="px">{$tempmsg.content}</textarea>
+						</if>
+						</td> 
+					</tr>
+					<tr>  
+						<th>&nbsp;</th>
+						<td>
+							<button type="submit" name="submit" class="btnGreen" id="save">保存</button> &nbsp; 
+							<a href="{:U('TemplateMsg/index',array('token' => $token))}" class="btnGray vm">取消</a>
+						</td> 
+					</tr> 
+				</tbody> 
+			</table> 
+		</div>
+	</form>
+</div> 
+<include file="Public:footer" />

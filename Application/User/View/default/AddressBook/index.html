@@ -1,0 +1,66 @@
+
+<include file="Public:head" />
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/cymain.css" />  
+ <div class="content">
+<div class="cLineB">
+<h4 class="left">通讯录管理</h4>
+<div class="clr"></div>
+</div>
+<!--tab start-->
+<div class="tab">
+<ul>
+	<li class="current tabli" id="tab2"><a href="{:U('AddressBook/index',array('token'=>$token))}">会员列表</a></li>
+	<li class="tabli" id="tab2"><a href="{:U('AddressBook/member',array('token'=>$token))}">会员资料管理</a></li>
+</ul>
+</div>
+<!--tab end-->
+
+<div class="msgWrap">
+<form method="post" action="" id="info">
+<input name="delall" type="hidden" value="">
+<input name="wxid" type="hidden" value="">
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+<tr>
+<th width="100">姓名</th>
+<th width="100">帐号</th>
+<th width="60">性别</th>
+<th width="150">手机号码</th>
+<th width="150">email</th>
+<th width="160">企业名称</th>
+<th width="100">注册时间</th>
+<th width="100">状态</th>
+<th width="100" class="norightborder">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr></tr>
+<volist name="userextinfo" id="userex"> 
+<tr>
+<td>{$userex.truename}</td>
+<td>{$userinfo[$userex['uid']].username}</td>
+<td><if condition="$userex['sex'] eq 1">男<elseif condition="$userex['sex'] eq 2"/>女<else/>其他</if></td> 
+<td>{$userex.tel}</td> 
+<td>{$userex.email}</td> 
+<td>{$userex.compname}</td>
+<td>{$userex.regtime|date="Y-m-d",###}</td>
+<td><if condition="$userex['status'] eq 1">显示<elseif condition="$userex['status'] eq 0" />隐藏<else />注销</if></td>
+<td class="norightborder">
+	<a href="{:U('AddressBook/member',array('token' => $token, 'uid' => $userex['uid']))}">修改</a>
+	<a href="{:U('AddressBook/passwordreset',array('token' => $token, 'uid' => $userex['uid']))}">密码重置</a>
+</td>
+</tr>
+</volist>
+</tbody>
+</table>
+</form>
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

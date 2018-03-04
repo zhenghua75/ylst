@@ -1,0 +1,628 @@
+<?php
+namespace System\Controller;
+use Common\Controller\BackController;
+function recurse_copy($src, $dst){
+	$now = time();
+	$dir = opendir($src);
+	@mkdir($dst);
+
+	while (false !== $file = readdir($dir)) {
+		if (($file != ".") && ($file != "..")) {
+			if (is_dir($src . "/" . $file)) {
+				recurse_copy($src . "/" . $file, $dst . "/" . $file);
+			}
+			else {
+				if (file_exists($dst . DIRECTORY_SEPARATOR . $file)) {
+					if (!is_writeable($dst . DIRECTORY_SEPARATOR . $file)) {
+						exit($dst . DIRECTORY_SEPARATOR . $file . "不可写");
+					}
+
+					@unlink($dst . DIRECTORY_SEPARATOR . $file);
+				}
+
+				if (file_exists($dst . DIRECTORY_SEPARATOR . $file)) {
+					@unlink($dst . DIRECTORY_SEPARATOR . $file);
+				}
+
+				$copyrt = copy($src . DIRECTORY_SEPARATOR . $file, $dst . DIRECTORY_SEPARATOR . $file);
+
+				if (!$copyrt) {
+					echo "copy " . $dst . DIRECTORY_SEPARATOR . $file . " failed<br>";
+				}
+			}
+		}
+	}
+
+	closedir($dir);
+}
+
+function deletedir($dirname){
+	$result = false;
+
+	if (!is_dir($dirname)) {
+		echo " $dirname is not a dir!";
+		exit(0);
+	}
+
+	$handle = opendir($dirname);
+
+	while (($file = readdir($handle)) !== false) {
+		if (($file != ".") && ($file != "..")) {
+			$dir = $dirname . DIRECTORY_SEPARATOR . $file;
+			is_dir($dir) ? deletedir($dir) : unlink($dir);
+		}
+	}
+
+	closedir($handle);
+	$result = (rmdir($dirname) ? true : false);
+	return $result;
+}
+
+function pigcms_getcontents($url, $recu){
+	if (C("emergent_mode")) {
+		exit("您已经开启了紧急模式，如果需要升级，请先在站点设置里关闭紧急模式。");
+	}
+
+	if (!$url) {
+		exit("空的url请求" . $recu);
+	}
+
+	if (function_exists("curl_init")) {
+		$ch = curl_init();
+		$header = "Accept-Charset: utf-8";
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+		curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (compatible; MSIE 5.01; Windows NT 5.0)");
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+		$temp = curl_exec($ch);
+		$headers = curl_getinfo($ch);
+
+		if ($headers["http_code"] == 302) {
+			$haderUrl = $headers["redirect_url"];
+
+			if (!$haderUrl) {
+				$haderUrl = $headers["url"];
+			}
+
+			if (!$haderUrl) {
+				echo "header有空请求，请查看<br>";
+				var_export($headers);
+				exit();
+			}
+
+			$haderUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+			return pigcms_getcontents($haderUrl, 1);
+		}
+
+		$errorno = curl_errno($ch);
+		curl_close($ch);
+
+		if ($errorno) {
+			if ($errorno == 3) {
+				echo "请求地址是：" . $url . ",或者" . $haderUrl . "<br>";
+			}
+
+			exit("curl发生错误：错误代码" . $errorno . "，如果错误代码是6，您的服务器可能无法连接我们升级服务器");
+		}
+		else {
+			return $temp;
+		}
+	}
+	else {
+		$str = file_get_contents($url);
+		return $str;
+	}
+}
+
+class SystemController extends BackController{
+	public $server_url;
+	public $key;
+	public $topdomain;
+	public $dirtype;
+	public $useUrl;
+
+	public function _initialize(){
+		parent::_initialize();
+		$this->server_url = trim(C("server_url"));
+
+		if (!$this->server_url) {
+			$this->server_url = $this->updateServerDomain;
+		}
+
+		$this->key = trim(C("server_key"));
+		$this->topdomain = trim(C("server_topdomain"));
+
+		if (!$this->topdomain) {
+			$this->topdomain = $this->getTopDomain();
+		}
+
+		if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/Lib") && is_dir($_SERVER["DOCUMENT_ROOT"] . "/Lib")) {
+			$this->dirtype = 2;
+		}
+		else {
+			$this->dirtype = 1;
+		}
+
+		$this->useUrl = str_replace("http://", "", C("site_url"));
+		$Model = new \Think\Model();
+		$Model->execute("CREATE TABLE IF NOT EXISTS `" . C("DB_PREFIX") . "system_info` (`lastsqlupdate` INT( 10 ) NOT NULL ,`version` VARCHAR( 10 ) NOT NULL) ENGINE = MYISAM CHARACTER SET utf8");
+		$Model->execute("CREATE TABLE IF NOT EXISTS `" . C("DB_PREFIX") . "update_record` (\r\n  `id` int(11) NOT NULL AUTO_INCREMENT,\r\n  `msg` varchar(600) NOT NULL DEFAULT '',\r\n  `type` varchar(20) NOT NULL DEFAULT '',\r\n  `time` int(10) NOT NULL DEFAULT '0',\r\n  PRIMARY KEY (`id`)\r\n) ENGINE=MYISAM DEFAULT CHARSET=utf8");
+		$db = M("Node");
+		$firstNode = $db->where(array("name" => "Function", "title" => "功能模块"))->find();
+		$nodeExist = $db->where(array("name" => "aboutus"))->find();
+
+		if (!$nodeExist) {
+			$row2 = array("name" => "Aboutus", "title" => "关于我们", "status" => 1, "remark" => "0", "pid" => $firstNode["id"], "level" => 2, "sort" => 0, "display" => 2);
+			$db->add($row2);
+		}
+
+		$siteConfigNode = $db->where(array("title" => "站点设置"))->find();
+		$platformConfigNode = $db->where(array("title" => "平台支付配置"))->find();
+
+		if (!$platformConfigNode) {
+			$row = array("name" => "platform", "title" => "平台支付配置", "status" => 1, "remark" => "", "pid" => $siteConfigNode["id"], "level" => 3, "sort" => 0, "display" => 2);
+			$db->add($row);
+		}
+
+		$extNode = $db->where(array("title" => "扩展管理"))->find();
+		$customsPayNode = $db->where(array("title" => "自定义导航"))->find();
+
+		if (!$customsPayNode) {
+			$rom = array("name" => "Customs", "title" => "自定义导航", "status" => 1, "remark" => "", "pid" => $extNode["id"], "level" => 2, "sort" => 0, "display" => 2);
+			$customsID = $db->add($rom);
+			$row = array("name" => "index", "title" => "导航列表", "status" => 1, "remark" => "", "pid" => $customsID, "level" => 3, "sort" => 0, "display" => 2);
+			$db->add($row);
+		}
+
+		$useNode = M("Node")->where(array("title" => "数据统计"))->find();
+
+		if (!$useNode) {
+			$platFormID = M("Node")->add(array("name" => "Use", "title" => "数据统计", "status" => 1, "remark" => "", "pid" => $extNode["id"], "level" => 2, "sort" => 0, "display" => 2));
+			M("Node")->add(array("name" => "index", "title" => "统计图表", "status" => 1, "remark" => "", "pid" => $platFormID, "level" => 3, "sort" => 0, "display" => 2));
+		}
+
+		$platformPayNode = $db->where(array("title" => "平台支付"))->find();
+
+		if (!$platformPayNode) {
+			$row = array("name" => "Platform", "title" => "平台支付", "status" => 1, "remark" => "", "pid" => $extNode["id"], "level" => 2, "sort" => 0, "display" => 2);
+			$platFormID = $db->add($row);
+			$row = array("name" => "index", "title" => "平台对账", "status" => 1, "remark" => "", "pid" => $platFormID, "level" => 3, "sort" => 0, "display" => 2);
+			$db->add($row);
+		}
+	}
+
+	public function index(){
+		$where["display"] = 1;
+		$where["status"] = 1;
+		$order["sort"] = "asc";
+		$nav = M("Node")->where($where)->order($order)->select();
+		$this->assign("nav", $nav);
+		$notice_record_lists = M("notice_record")->field("id,n_id")->where(array("userid" => $_SESSION["userid"]))->select();
+
+		if (!$notice_record_lists) {
+			$n_id = array();
+
+			foreach ($notice_record_lists as $key => $val ) {
+				$n_id[] = $val["n_id"];
+			}
+
+			$data["n_id"] = implode(",", $n_id);
+		}
+
+		$url = "http://gongdan.weihubao.com/oa/admin.php?m=notice&c=view&a=get_list";
+		if ($data["n_id"] && !$data["n_id"]) {
+			$url .= "&" . http_build_query($data);
+		}
+
+		if (!C("emergent_mode")) {
+			if (function_exists("curl_init")) {
+				$ch = curl_init();
+				curl_setopt($ch, CURLOPT_URL, $url);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+				curl_setopt($ch, CURLOPT_HEADER, 0);
+				$content = curl_exec($ch);
+				curl_close($ch);
+			}
+			else {
+				$content = file_get_contents($url);
+			}
+		}
+
+		$content = json_decode($content, true);
+		$this->assign("content", $content);
+		D("Function")->execute("delete from " . C("DB_PREFIX") . "function where id not in ( select * from ( select min(id)  from " . C("DB_PREFIX") . "function group by funname ) as ali );");
+		$ndb = D("Node");
+		$ndb->where(array("name" => "email"))->setField("display", "0");
+		$ndb->where(array("name" => "Users"))->setField("title", "客户管理");
+		$this->display();
+	}
+
+	public function closeAD(){
+		if (IS_GET) {
+			$id = $this->_get("id", "intval");
+
+			if ($id) {
+				M("notice_record")->add(array("n_id" => $id, "userid" => $_SESSION["userid"]));
+			}
+		}
+	}
+
+	public function menu()
+	{
+		$pid = I('get.pid',0,'intval');
+
+		if ($pid) {
+			$where["display"] = 2;
+			$where["status"] = 1;
+			$where["pid"] = $pid;
+			$where["level"] = 2;
+			$order["sort"] = "asc";
+			$nav = M("Node")->where($where)->order($order)->select();
+			$this->assign("nav", $nav);
+		}
+
+		$this->display();
+	}
+
+	public function main()
+	{
+		$firstNode = M("Node")->where(array("pid" => 1, "title" => "站点管理"))->order("id ASC")->find();
+		$nodeExist = M("Node")->where(array("pid" => $firstNode["id"], "title" => "后台首页"))->find();
+		if (!$nodeExist) {
+			$submenu = array("name" => "SystemIndex", "title" => "后台首页", "status" => 1, "remark" => "0", "pid" => $firstNode["id"], "level" => 2, "sort" => 0, "display" => 2);
+			$submenuRowID = M("Node")->add($submenu);
+		}
+
+		$canEnUpdate = 1;
+		$this->assign("canEnUpdate", $canEnUpdate);
+		$updateRecord = M("System_info")->order("lastsqlupdate DESC")->find();
+
+		if ($updateRecord["version"] < $updateRecord["lastsqlupdate"]) {
+		}
+
+		$this->assign("updateRecord", $updateRecord);
+		$this->display();
+	}
+
+	public function repairTable()
+	{
+		$Model = new Model();
+		error_reporting(0);
+		@mysql_query("REPAIR TABLE `" . C("DB_PREFIX") . "behavior`");
+		@mysql_query("REPAIR TABLE `" . C("DB_PREFIX") . "requestdata`");
+		$this->success("成功删除缓存", U("System/main"));
+	}
+
+	public function _needUpdate()
+	{
+		$Model = new \Think\Model();
+		$updateRecord = M("System_info")->order("lastsqlupdate DESC")->find();
+
+		if (!$updateRecord) {
+			$Model->query("INSERT INTO `" . C("DB_PREFIX") . "system_info` (`lastsqlupdate`, `version`) VALUES(0, '0')");
+		}
+
+		$key = $this->key;
+		$url = $this->server_url . "server.php?key=" . $key . "&lastversion=" . $updateRecord["version"] . "&domain=" . $this->topdomain . "&dirtype=" . $this->dirtype . "&check=1&usingDomain=" . $this->useUrl;
+		$remoteStr = @pigcms_getcontents($url);
+		$rt = json_decode($remoteStr, 1);
+
+		if ($rt["success"] < 1) {
+		}
+
+		return $rt;
+	}
+
+	public function _needSqlUpdate()
+	{
+		$updateRecord = M("System_info")->order("lastsqlupdate DESC")->find();
+		$key = $this->key;
+		$url = $this->server_url . "sqlserver.php?key=" . $key . "&lastsqlupdate=" . $updateRecord["lastsqlupdate"] . "&domain=" . $this->topdomain . "&dirtype=" . $this->dirtype . "&usingDomain=" . $this->useUrl . "&check=1";
+		$remoteStr = pigcms_getcontents($url);
+		$rt = json_decode($remoteStr, 1);
+
+		if ($rt["success"] < 1) {
+			if ($rt["msg"]) {
+				$this->error($rt["msg"]);
+			}
+			else {
+				$this->success("程序已经是最新的了", U("System/main"));
+			}
+
+			exit();
+		}
+
+		return $rt;
+	}
+
+	public function checkUpdate()
+	{
+		$rt = $this->_needUpdate();
+		$needUpdate = 0;
+
+		if ($rt["success"] < 1) {
+			$sqlrt = $this->_needSqlUpdate();
+
+			if ($sqlrt["success"] < 1) {
+			}
+			else {
+				$needUpdate = 1;
+			}
+		}
+		else {
+			$needUpdate = 1;
+		}
+
+		$this->assign("needUpdate", $needUpdate);
+		$this->display();
+	}
+
+	public function doUpdate()
+	{
+		@set_time_limit(0);
+		$cannotWrite = 0;
+		$notSupportZip = 0;
+
+		if (!class_exists("ZipArchive")) {
+			$notSupportZip = 1;
+		}
+
+		if (!$_GET["ignore"]) {
+			if (!is_writable($_SERVER["DOCUMENT_ROOT"] . "/PigCms")) {
+				$cannotWrite = 1;
+				$this->error("您的服务器PigCms文件夹不可写入，设置好再升级", U("System/main"));
+			}
+
+			if (!is_writable($_SERVER["DOCUMENT_ROOT"] . "/PigCms/Lib/Action")) {
+				$cannotWrite = 1;
+				$this->error("您的服务器/PigCms/Lib/Action文件夹不可写入，设置好再升级", U("System/main"));
+			}
+
+			if (!is_writable($_SERVER["DOCUMENT_ROOT"] . "/tpl")) {
+				$this->error("您的服务器tpl文件夹不可写入，设置好再升级", U("System/main"));
+			}
+
+			if (!is_writable($_SERVER["DOCUMENT_ROOT"] . "/tpl/User/default")) {
+				$this->error("您的服务器/tpl/User/default文件夹不可写入，设置好再升级", U("System/main"));
+			}
+		}
+
+		$now = time();
+		$updateRecord = M("System_info")->order("lastsqlupdate DESC")->find();
+		$key = $this->key;
+		$url = $this->server_url . "server.php?key=" . $key . "&lastversion=" . $updateRecord["version"] . "&domain=" . $this->topdomain . "&dirtype=" . $this->dirtype . "&check=1&usingDomain=" . $this->useUrl;
+		$remoteStr = @pigcms_getcontents($url);
+		$rt = json_decode($remoteStr, 1);
+
+		if (intval($rt["success"]) < 1) {
+			if (intval($rt["success"]) == 0) {
+				M("System_info")->where("version>0")->save(array("currentfileid" => 0, "currentsqlid" => 0));
+
+				if (!$_GET["ignore"]) {
+					$this->success("继续检查更新了,不要关闭,跳是正常的" . $rt["msg"], U("System/doSqlUpdate"));
+				}
+				else {
+					$this->success("继续检查更新了,不要关闭,跳是正常的" . $rt["msg"], U("System/doSqlUpdate", array("ignore" => 1)));
+				}
+			}
+			else {
+				$this->success($rt["msg"], U("System/main"));
+			}
+		}
+		else {
+			M("System_info")->where("version>0")->save(array("currentfileid" => $rt["fileid"]));
+			$url = $this->server_url . "server.php?key=" . $key . "&lastversion=" . $updateRecord["version"] . "&domain=" . $this->topdomain . "&dirtype=" . $this->dirtype . "&usingDomain=" . $this->useUrl . "&b=1";
+			$remoteStr = @pigcms_getcontents($url);
+			$rt = json_decode($remoteStr, 1);
+			$locationZipPath = CONF_PATH . $rt["fileid"] . "_" . $now . ".zip";
+
+			if (strpos($rt["filepath"], "ttp://")) {
+				$filename = $rt["filepath"];
+			}
+			else {
+				$filename = $this->server_url . $rt["filepath"];
+			}
+
+			$fileStr = @pigcms_getcontents($filename);
+
+			if (!$fileStr) {
+				$fileStr = @file_get_contents($filename);
+			}
+
+			if (!$fileStr) {
+				$this->error("竟然获取不到文件");
+			}
+
+			file_put_contents($locationZipPath, $fileStr);
+			$cacheUpdateDirName = "caches_upgrade" . date("Ymd", time()) . time();
+
+			if ($notSupportZip) {
+				$archive = new PclZip($locationZipPath);
+
+				if ($archive->extract(PCLZIP_OPT_PATH, CONF_PATH . $cacheUpdateDirName, PCLZIP_OPT_REPLACE_NEWER) == 0) {
+					$this->error("Error : " . $archive->errorInfo(true));
+				}
+			}
+			else {
+				$zip = new ZipArchive();
+				$rs = $zip->open($locationZipPath);
+
+				if ($rs !== true) {
+					$err = "解压失败_2!Error Code:" . $rs . "!";
+				}
+			}
+
+			if (!file_exists(CONF_PATH . $cacheUpdateDirName)) {
+				@mkdir(CONF_PATH . $cacheUpdateDirName, 511);
+			}
+
+			if (!$notSupportZip) {
+				$zip->extractTo(CONF_PATH . $cacheUpdateDirName);
+				$zip->close();
+			}
+
+			recurse_copy(CONF_PATH . $cacheUpdateDirName, $_SERVER["DOCUMENT_ROOT"]);
+			deletedir(CONF_PATH . $cacheUpdateDirName);
+			@unlink($locationZipPath);
+
+			if ($rt["time"]) {
+				M("System_info")->where(array("version" => $updateRecord["version"]))->save(array("version" => $rt["time"]));
+				M("Update_record")->add(array("msg" => $rt["msg"], "time" => $rt["time"], "type" => $rt["type"]));
+			}
+
+			if ($_GET["ignore"]) {
+				$this->success($err . "进入下一步(不要关闭,等待完成,跳是正常的):" . $rt["msg"], U("System/doUpdate", array("ignore" => 1)));
+			}
+			else {
+				$this->success($err . "进入下一步(不要关闭,等待完成,跳是正常的):" . $rt["msg"], U("System/doUpdate"));
+			}
+		}
+	}
+
+	public function doSqlUpdate()
+	{
+		@set_time_limit(0);
+		$now = time();
+		$updateRecord = M("System_info")->order("lastsqlupdate DESC")->find();
+		$key = $this->key;
+		$url = $this->server_url . "sqlserver.php?key=" . $key . "&excute=1&lastsqlupdate=" . $updateRecord["lastsqlupdate"] . "&domain=" . $this->topdomain . "&dirtype=" . $this->dirtype . "&usingDomain=" . $this->useUrl . "&check=1";
+		$remoteStr = pigcms_getcontents($url);
+		$backUrl = ($_GET["install"] == 1 ? U("System/index") : U("System/main"));
+		$rt = json_decode($remoteStr, 1);
+
+		if (intval($rt["success"]) < 1) {
+			if (intval($rt["success"]) == 0) {
+				M("System_info")->where("version>0")->save(array("currentfileid" => 0, "currentsqlid" => 0, "lastsqlupdate" => $updateRecord["lastsqlupdate"]));
+				$this->success("升级完成", $backUrl);
+			}
+			else {
+				$this->error($rt["msg"], $backUrl);
+			}
+		}
+		else {
+			M("System_info")->where("version>0")->save(array("currentsqlid" => $rt["time"], "lastsqlupdate" => $updateRecord["lastsqlupdate"]));
+			$url = $this->server_url . "sqlserver.php?key=" . $key . "&excute=1&lastsqlupdate=" . $updateRecord["lastsqlupdate"] . "&domain=" . $this->topdomain . "&dirtype=" . $this->dirtype . "&usingDomain=" . $this->useUrl . "&b=1";
+			$remoteStr = pigcms_getcontents($url);
+			$rt = json_decode($remoteStr, 1);
+			$this->createSqlLogTable();
+			$status = D("SqlLog")->run($rt);
+			if ($status && $_SESSION["sql_log_flag"]) {
+				M("System_info")->where("version>0")->save(array("currentsqlid" => $updateRecord["time"], "lastsqlupdate" => $updateRecord["lastsqlupdate"]));
+				$message = "这条SQL更新失败，正在重新更新：";
+				$_SESSION["sql_log_flag"] = true;
+			}
+			else {
+				$message = "进入下一步(不要关闭,耐心等待完成,跳是正常的):";
+				$_SESSION["sql_log_flag"] = false;
+			}
+
+			if ($rt["time"]) {
+				if ($_SESSION["sql_log_flag"]) {
+					M("System_info")->where(array("lastsqlupdate" => $updateRecord["lastsqlupdate"]))->save(array("lastsqlupdate" => $rt["time"]));
+				}
+			}
+
+			if (!$_GET["ignore"]) {
+				$this->success($message . date("Y-m-d H:i:s", $rt["time"]) . "-" . $rt["msg"], U("System/doSqlUpdate"));
+			}
+			else {
+				$this->success($message . date("Y-m-d H:i:s", $rt["time"]) . "-" . $rt["msg"], U("System/doSqlUpdate", array("ignore" => 1)));
+			}
+		}
+	}
+
+	public function createSqlLogTable()
+	{
+		$sql = "CREATE TABLE IF NOT EXISTS `" . C("DB_PREFIX") . "sql_log` (\r\n\t\t\t  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,\r\n\t\t\t  `time` int(10) unsigned NOT NULL,\r\n\t\t\t  `hash` char(40) NOT NULL,\r\n\t\t\t  `status` tinyint(4) NOT NULL DEFAULT '0',\r\n\t\t\t  `code` smallint(6) NOT NULL DEFAULT '0',\r\n\t\t\t  `exception` text NOT NULL,\r\n\t\t\t  `update_time` int(10) unsigned NOT NULL,\r\n\t\t\t  `create_time` int(10) unsigned NOT NULL,\r\n\t\t\t  PRIMARY KEY (`id`)\r\n\t\t) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;";
+
+		try {
+			$model = new \Think\Model();
+			$model->execute($sql);
+		}
+		catch (Exception $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	public function getcontents($url, $recu)
+	{
+		return pigcms_getcontents($url, $recu);
+	}
+
+	public function rollback()
+	{
+		$time = substr($_GET["time"], 0, 8);
+		$year = substr($time, 0, 4);
+		$month = substr($time, 4, 2);
+		$day = substr($time, 6, 2);
+		$timeStamp = mktime(0, 0, 0, $month, $day, $year);
+		$updateRecord = M("System_info")->order("lastsqlupdate DESC")->find();
+		M("System_info")->where("lastsqlupdate>0")->save(array("version" => $timeStamp));
+		$this->success("您可以重新进行升级了", U("System/main"));
+	}
+
+	public function rollbacksql()
+	{
+		$time = substr($_GET["time"], 0, 8);
+		$year = substr($time, 0, 4);
+		$month = substr($time, 4, 2);
+		$day = substr($time, 6, 2);
+		$timeStamp = mktime(0, 0, 0, $month, $day, $year);
+		$updateRecord = M("System_info")->order("lastsqlupdate DESC")->find();
+		M("System_info")->where(array("lastsqlupdate" => $updateRecord["lastsqlupdate"]))->save(array("lastsqlupdate" => $timeStamp));
+		$this->success("您可以重新进行升级了", U("System/main"));
+	}
+
+	public function curlGet($url)
+	{
+		$ch = curl_init();
+		$header = "Accept-Charset: utf-8";
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+		curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (compatible; MSIE 5.01; Windows NT 5.0)");
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$temp = curl_exec($ch);
+		return $temp;
+	}
+
+	public function getTopDomain()
+	{
+		$host = $_SERVER["HTTP_HOST"];
+		$host = strtolower($host);
+
+		if (strpos($host, "/") !== false) {
+			$parse = @parse_url($host);
+			$host = $parse["host"];
+		}
+
+		$topleveldomaindb = array("com", "edu", "gov", "int", "mil", "net", "org", "biz", "info", "pro", "name", "museum", "coop", "aero", "xxx", "idv", "mobi", "cc", "me");
+		$str = "";
+
+		foreach ($topleveldomaindb as $v ) {
+			$str .= ($str ? "|" : "") . $v;
+		}
+
+		$matchstr = "[^\.]+\.(?:(" . $str . ")|\w{2}|((" . $str . ")\.\w{2}))\$";
+
+		if (preg_match("/" . $matchstr . "/ies", $host, $matchs)) {
+			$domain = $matchs[0];
+		}
+		else {
+			$domain = $host;
+		}
+
+		return $domain;
+	}
+}

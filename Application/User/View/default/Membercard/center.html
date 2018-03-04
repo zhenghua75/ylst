@@ -1,0 +1,77 @@
+<include file="Public:head"/>  
+<script src="__PUBLIC__/web/js/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/web/js/artDialog/plugins/iframeTools.js"></script>
+<script src="__PUBLIC__/web/js/jscolor.js" type="text/javascript"></script>
+<div class="content">
+<div class="cLineB">
+<ul id="tags">
+  <li class="selectTag"><a href="{:U('Membercard/center',array('token'=>$token))}">已领卡会员</a> </li>
+  <li><a href="{:U('Membercard/center_all',array('token'=>$token))}">所有注册会员</a></li>
+  <div class="clr"></div>
+</ul>
+<div class="clr"></div>
+</div>
+
+<div class="cLine">
+<form method="post"  action="{:U('Membercard/center',array('token'=>$token))}" id="info" >
+	会员卡
+	<select name="cardid">
+		<option value="">请选择..</option>
+		<volist name="cards" id="cards">
+			<option value="{$cards.id}" <if condition="$cards['id'] eq $cardid">selected</if>>{$cards.cardname}</option>
+		</volist>
+	</select>
+	会员卡号：
+	<input type="text" class="px" name="number" value="{$number}" style="height:25px;" placeholder="请输入会员卡号">
+	<input type="submit" class="btnGrayS" value="搜索">
+</form>
+<div class="clr"></div>
+</div>
+<div class="msgWrap">
+<form method="post"  action="" id="info" >
+<TABLE class="ListProduct" border="0" cellSpacing="0" cellPadding="0" width="100%">
+<THEAD>
+<tr>
+<th width="120">会员卡号</th>
+<th width="120">持卡人</th>
+<th width="150">会员卡类型</th>
+<th width="120">手机号</th>
+<th width="100">领卡时间</th>
+<th width="80">积分</th>
+<th width="80">消费</th>
+<th width="80">余额</th>
+<th width="80">操作</th>
+</tr>
+</THEAD>
+<TBODY>
+<TR></TR>
+<volist id="item" name="allCard">
+<TR>
+<TD>{$item.number}</TD>
+<TD>{$item.username}</TD>
+<TD>{$item.card_name}</TD>
+<TD>{$item.tel}</TD>
+<TD><if condition="$item.createtime eq 0">无时间记录<else/>{$item.createtime|date='Y-m-d',###}</if></TD>
+<TD>{$item.score}</TD>
+<TD>{$item.expense}</TD>
+<TD>{$item.balance}</TD>
+<TD><a href="{:U('Membercard/member',array('token'=>$this->token,'cardid'=>$item['cardid'],'number'=>$item['number']))}">消费记录</a></TD>
+</TR>
+</volist>
+</TBODY>
+</TABLE>
+</form>
+
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>  
+        <div class="clr"></div>
+		<include file="Public:footer"/>
+      </div>
+    </div>
+  </div> 

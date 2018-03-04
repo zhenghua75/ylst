@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+<title>意路视通-后台管理登录</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="意路视通微信营销系统" />
+<meta name="Description" content="意路视通微信营销系统" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/web/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/web/css/common.css" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/web/css/page.css" />
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript">
+    function refresh() {
+        var randomRZ = Math.random();
+        $("#imgCheckB").attr("src", "/index.php?g=System&m=Admin&a=verify&rz=" + randomRZ);
+    }
+</script>
+</head>
+<body style="background: #000000;">
+<div>
+    <img id="bg" src="__PUBLIC__/web/images/bglogin.jpg" width="100%" height="100%" style="right: 0; bottom: 0;position: absolute; top: 0; z-index:-100" />
+</div>
+<!--container-->
+<div class="login_container">
+	<div class="loginBox1">
+            	<form name="form1" method="post" action="{:U('Admin/insert')}" id="form1" class="myformnew">
+
+                	<fieldset>
+                        <div class="forminputuser">
+                            <p><input name="username" type="text" id="Text1" class="username_input1"/></p>
+                        </div>
+
+                        <div class="forminputpwd">
+                            <p><input name="password" type="password" id="Password1" class="ps_input1" /></p>
+                        </div>
+                        
+                        <div class="forminputcode">
+                            <p style="margin-left:15px;">
+                                <input name="code" type="text" id="txtCheckCode" class="chk_input1" maxlength="4" />
+                                <span class="chk_img"><img src="{:U('Admin/verify')}" id="imgCheckB"/></span>
+                                <span class="chk_txt"><a href="javascript:refresh();" style="color: #0033CC">看不清？换一张</a></span>
+                            </p>
+                        </div>
+                      
+                        <input type="submit" name="Button1" value="" id="Button1" class="subBtn1" />
+                    </fieldset>
+                </form>	
+		</div>
+</div>
+
+<!--footer-->
+<div class="footer pt30">
+	<br />
+	
+</div>
+</body>
+</html>

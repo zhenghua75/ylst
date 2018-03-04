@@ -1,0 +1,98 @@
+<include file="Public:head" />
+<script src="__PUBLIC__/web/js/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/web/js/artDialog/plugins/iframeTools.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/cymain.css" />
+<div class="content">
+	<div style="background:#fefbe4;border:1px solid #f3ecb9;color:#993300;padding:10px;margin-bottom:5px;font-size:12px;">
+		温馨提示：1.APP云打包功能，可以将一个手机网站打包成一个可以直接安装到手机里的应用软件。<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		2.由于安装后的应用软件运行于浏览器环境，使用APP云打包功能暂不支持类似需要使用微信授权功能的网站和需要使用微信支付功能的网站。
+	</div>
+	<div class="cLineB">
+		<h4 class="left">应用列表</h4>
+		<div class="searchbar right">
+			<input type="text" id="msgSearchInput" class="txt left" placeholder="名称/平台/APPID称搜索" name="search" value="<?php echo $_GET['search'];?>" style="margin-top:3px;width:300">
+			<a value="搜索" id="msgSearchBtn" href="javascript:search();" class="btnGrayS" title="搜索" style="margin-top:0px">搜索</a>
+		</div>
+		<div class="clr"></div>
+	</div>
+	
+	<div class="cLineB"></div>
+	
+	<div class="msgWrap">
+		<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+			<thead>
+				<tr>
+					<th width="100px">APPID</th>
+					<th width="100px">LOGO</th>
+					<th width="100px">名称</th>
+					<th width="100px">网址</th>
+					<th width="100px">平台</th>
+					<th width="100px">系统标题栏</th>
+					<th width="100px">横竖屏</th>
+					<th width="120px">创建时间</th>
+					<th class="norightborder">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="applist" id="vo">
+					<tr>
+						<td>{$vo.web_app_id}</td>
+						<td><img src="{$vo.icopic}" style="height:60px"></td>
+						<td>{$vo.name}</td>
+						<td><a href="{$vo.weburl}" target="_blank">浏览网址</a></td>
+						<td><?php if($vo['apptype']){echo 'IOS';}else{echo '安卓';}?></td>
+						<td><?php if($vo['hidetop']){echo '隐藏';}else{echo '显示';}?></td>
+						<td><?php if($vo['screen']){echo '横屏';}else{echo '竖屏';}?></td>
+						<td>{$vo.addtime|date='Y-m-d H:i:s',###}</td>
+						<td class="norightborder" >
+							<a href="javascript:download('{$vo.id}');">下载</a>
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="cLine">
+		<div class="pageNavigator right">
+			<div class="pages">{$page}</div>
+		</div>
+		<div class="clr"></div>
+	</div>
+</div>
+<script>
+	$(document).ready(function(){});
+	function search(){
+		var search = $("input[name='search']").val();
+		if(search != ""){
+			window.location.href="{:U('User/Yundabao/applist',array('token'=>$token))}&search="+search;
+		}else{
+			window.location.href="{:U('User/Yundabao/applist',array('token'=>$token))}";
+		}
+	}
+	function download(id){
+		$url = '<?php echo U('User/Yundabao/download',array('token'=>$token));?>&id='+id;
+		art.dialog.open($url,{
+			init: function(){
+				var iframe = this.iframe.contentWindow;
+				window.top.art.dialog.data('iframe_handle',iframe);
+			},
+			id: 'handle',
+			title:'下载应用',
+			padding: 0,
+			width: 350,
+			height: 380,
+			lock: true,
+			resize: false,
+			background:'black',
+			button: null,
+			fixed: false,
+			close: null,
+			left: '50%',
+			top: '38.2%',
+			opacity:'0.4'
+		});
+	}
+</script>
+<include file="Public:footer"/>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="{:STATICS}/vhouse/online_booking.css" media="all">
+<link rel="stylesheet" type="text/css" href="{:STATICS}/vhouse/wap/common.css" media="all">
+<link rel="stylesheet" type="text/css" href="{:STATICS}/vhouse/wap/datepicker_car.css" media="all">
+<link rel="stylesheet" type="text/css" href="{:STATICS}/vhouse/amazeui.min.css" media="all">
+<script type="text/javascript" src="{:STATICS}/vhouse/jQuery.js"></script>
+<script type="text/javascript" src="{:STATICS}/vhouse/jquery-ui.js"></script>
+<script type="text/javascript" src="{:STATICS}/vhouse/wap/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="{:STATICS}/vhouse/amazeui.min.js"></script>
+<title>{$reslist['title']}</title>
+<script type="text/javascript">
+    window.onload = function () {
+        var oWin = document.getElementById("win");
+        var oLay = document.getElementById("overlay");
+        var oBtn = document.getElementById("popmenu");
+        var oClose = document.getElementById("close");
+        oBtn.onclick = function () {
+            oLay.style.display = "block";
+            oWin.style.display = "block";
+            //oWin.style.zIndex = 99999;
+        };
+        oLay.onclick = function () {
+            oLay.style.display = "none";
+            oWin.style.display = "none";
+        };
+    };
+
+   $('#plug-wrap').removeClass();
+   //document.body.removeChild(document.getElementById('plug-wrap'));
+</script>
+<link rel="stylesheet" href="{:STATICS}/schools/css/plugmenu.css">
+<link href="{:STATICS}/schools/css/news3_3.css" rel="stylesheet" type="text/css" />
+</head>
+<body onselectstart="return true;" ondragstart="return false;" id="onlinebooking">
+
+<include file="RentCar:menu"/>
+<p></p><br><br>
+<if condition="$oput['roompicurl'] neq ''">
+    <div class="qiandaobanner">
+        <img src="{$oput['roompicurl']}" style="height:255px;width:100%!important;">
+    </div>
+</if>
+    <div class="cardexplain">
+<style>
+#ro li span{
+  display:-webkit-inline-box;
+}
+#ro li img{
+  width:100%!important;
+}
+#userinfos p {
+  color:blue;
+}
+#tip {
+  font-size: 12px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#tip input[type="button"] {
+  background-color: #0D9BF2;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}
+
+#tip input[type="text"] {
+  height: 25px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  border-radius: 3px;
+  outline: none;
+}
+
+#result1 {
+  max-height: 300px;
+  z-index: 300;
+}
+#l-map{
+  font-size: 12px;
+  width:100%;
+}
+</style>
+    <ul class="round" id="ro">
+        <li>
+        <h2>预约说明</h2>
+        <div class="text">{$rttype['orderInfo']|html_entity_decode}</div>
+        </li>
+    </ul>
+<form action="" method="post" id="formID">
+        <!-- <div class="cardexplain"> -->
+  <ul class="round">
+    <li class="title mb"><span class="none">请认真填写在线预约信息！以方便核对.</span></li>
+    <input type="hidden" name="type" value="{$type}">
+    <input type="hidden" name="tid" value="{$second['tid']}">
+    <input type="hidden" name="sid" value="{$second['sid']}">
+    <input type="hidden" name="token" value="{$token}">
+    <input type="hidden" name="wecha_id" value="{$wecha_id}">
+    <input type="hidden" name="productName" value="{$second['name']}">
+    <input type="hidden" name="truename" value="{$userinfo['truename']}">
+    <input type="hidden" name="tel" value="{$userinfo['tel']}">
+    <if condition="$rttype['group'] eq '10'">
+    <li class="nob" id="agea">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="kuang">
+        <tbody><tr>
+          <th>人数</th>
+          <td>
+            <select name="age" id="age" class="px">
+                <option value="1">1人</option>
+                <option value="2">2人</option>
+                <option value="3">3人</option>
+                <option value="4">4人</option>
+                <option value="5">5人</option>
+                <option value="0">5人以上</option>
+            </select>
+          </td>
+        </tr>
+      </tbody></table>
+    </li>
+    <li class="nob" id="addressa">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="kuang">
+        <tbody><tr>
+          <th>出发地</th>
+          <td><input name="address" type="text" class="px" id="address" value="" placeholder="请输入出发地" style="width:85%;display:inline;" >
+            <a id="address1" href="javascript: void(0)" class="js-modal-open"><img src="{:STATICS}/vhouse/maps.png" style="width:25px;height:25px;" /></a>
+          </td>
+        </tr>
+      </tbody></table>
+    </li>
+    <li class="nob" id="choosea">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="kuang">
+        <tbody><tr>
+          <th>目的地</th>
+          <td><input name="choose" type="text" class="px" id="choose" value=""  placeholder="请输入目的地" style="width:85%;display:inline;">
+            <a id="address2" href="javascript: void(0)" class="js-modal-open"><img src="{:STATICS}/vhouse/maps.png" style="width:25px;height:25px;" /></a>
+          </td>
+        </tr>
+      </tbody></table>
+    </li>
+    <elseif condition="$rttype['group'] eq '30'" />
+    <li class="nob" id="addressa">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="kuang">
+        <tbody><tr>
+          <th>区域</th>
+          <td><select name="address" id="address" class="px" onblur="check3(this)" onfocus="check2(this)">
+                <option value="">请选择区域</option>
+                <option value="城区">城区</option>
+                <option value="郊区">郊区</option>
+            </select>
+          </td>
+        </tr>
+      </tbody></table>
+    </li>
+    </if>
+    <li class="nob" id="scheduled_datea">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="kuang">
+        <tbody><tr>
+          <th>预约时间</th>
+          <td> <input type="text" class="px hasDatepicker" name="dateline" placeholder="" value=""  readonly="readonly" id="dateline" >
+          </td>
+        </tr>
+      </tbody></table>
+    </li>
+    <li class="nob" id="diseasea">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="kuang">
+        <tbody><tr>
+          <th>备注</th>
+          <td><input name="info" type="text" class="px" id="info" value="" placeholder="如有其它要求，请在此填写！"></td>
+        </tr>
+      </tbody></table>
+    </li>
+
+  </ul>
+
+    <ul class="round roundyellow" >
+    <li class="addr"><span style="width: 260px;">请认真核对信息,确认之后再提交.</span></li>
+        <li class="userinfo" id="userinfos">
+          <p style="border: solid 1px rgb(201, 197, 197);margin: 5px;padding:4px;">姓名:<strong>{$userinfo['truename']}</strong></p>
+          <p style="border: solid 1px rgb(201, 197, 197);margin: 5px;padding:4px;">电话:<strong>{$userinfo['tel']}</strong></p>
+          <p style="border: solid 1px rgb(201, 197, 197);margin: 5px;padding:4px;">类型:<strong>{$rttype['name']}</strong></p>
+          <p style="border: solid 1px rgb(201, 197, 197);margin: 5px;padding:4px;">名称:  <strong>{$second['name']}</strong></p>
+        <if condition="$second['oneprice'] neq '0.00'">
+          <p style="border: solid 1px rgb(201, 197, 197);margin: 5px;padding:4px;">价格: <strong>{$second['oneprice']} RMB</strong></p>
+        </if>
+        </li>
+    </ul>
+
+    <div class="footReturn">
+        <input id="showcard" class="submit" value="确认并提交订单" type="submit" style="width: 100%">
+        <div class="window" id="windowcenter">
+            <div id="title" class="wtitle">操作提示<span class="close" id="alertclose"></span></div>
+            <div class="content">
+                <div id="txt"></div>
+            </div>
+        </div>
+    </div>
+  </form>
+</div>
+
+<div id="mapaddress" class="am-modal am-modal-no-btn" tabindex="-1">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd">搜索地址并选择
+      <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+    </div>
+    <div class="am-modal-bd">
+      <div id="tip">
+          <input type="text" id="keyword" name="keyword" value="" style="width: 100%;" placeholder="请输入关键字："/>
+          <div id="result1" name="result1"></div>
+      </div>
+      <div id="l-map" style="height:300px;"></div>
+      <input type="hidden" id="longitude" value="">  
+      <input type="hidden" id="latitude" value="">
+      <input type="hidden" id="whichsel" value="">
+      <input type="text" id="seladdrname" value="" style="width:100%;border:0;font-size:12px;color:blue;" readonly="true">
+    </div>
+  </div>
+<script language="javascript" src="http://webapi.amap.com/maps?v=1.3&key=b6c2c19cf45cd3d2b82541bc857eed7c">
+</script>
+
+<script type="text/javascript">
+  var mapObj;
+  function mapInit(){
+    $('#keyword').attr('value','');
+    $('#seladdrname').attr('value','');
+    if($('#longitude').val() && $('#longitude').val()!=0){
+      mapObj = new AMap.Map("l-map",{
+          view: new AMap.View2D({
+              center:new AMap.LngLat($('#longitude').val(),$('#latitude').val()),//地图中心点
+              zoom:13 //地图显示的缩放级别
+          })
+      });
+    }else{
+      mapObj = new AMap.Map("l-map", {
+        resizeEnable: true
+      });
+    }
+    document.getElementById("keyword").onkeyup = keydown;
+
+    var marker = new AMap.Marker({
+        position: [$('#longitude').val(), $('#latitude').val()],
+        draggable:false, //点标记可拖拽
+        cursor:'move',  //鼠标悬停点标记时的鼠标样式
+        raiseOnDrag:false//鼠标拖拽点标记时开启点标记离开地图的效果
+ 
+    });
+    marker.setMap(mapObj);
+    // AMap.event.addListener(marker,'dragging',function(e){
+    //     $('#longitude').attr('value',e.lnglat.getLng())
+    //     $('#latitude').attr('value',e.lnglat.getLat())
+    // })
+
+    //输入提示
+    function autoSearch() {
+        var keywords = document.getElementById("keyword").value;
+        var auto;
+        //加载输入提示插件
+        AMap.service(["AMap.Autocomplete"], function() {
+            var autoOptions = {
+                city: "德宏" //城市，默认全国
+            };
+            auto = new AMap.Autocomplete(autoOptions);
+            //查询成功时返回查询结果
+            if (keywords.length > 0) {
+                auto.search(keywords, function(status, result) {
+                    autocomplete_CallBack(result);
+                });
+            }
+            else {
+                document.getElementById("result1").style.display = "none";
+            }
+        });
+    }
+
+    //输出输入提示结果的回调函数
+    function autocomplete_CallBack(data) {
+        var resultStr = "";
+        var tipArr = data.tips;
+        if (tipArr && tipArr.length > 0) {
+            for (var i = 0; i < tipArr.length; i++) {
+                resultStr += "<div id='divid" + (i + 1) + "' onclick='selectResult(" + i + ")' style=\"font-size: 13px;cursor:pointer;padding:5px 5px 5px 5px;\"" + "data=" + tipArr[i].adcode + ">" + tipArr[i].name + "<span style='color:#C1C1C1;'>" + tipArr[i].district + "</span></div>";
+            }
+        }
+        else {
+            resultStr = " π__π 亲,人家找不到结果!<br />要不试试：<br />1.请确保所有字词拼写正确<br />2.尝试不同的关键字<br />3.尝试更宽泛的关键字";
+        }
+        document.getElementById("result1").curSelect = -1;
+        document.getElementById("result1").tipArr = tipArr;
+        document.getElementById("result1").innerHTML = resultStr;
+        document.getElementById("result1").style.display = "block";
+    }
+
+    //定位选择输入提示关键字
+    function focus_callback() {
+        if (navigator.userAgent.indexOf("MSIE") > 0) {
+            document.getElementById("keyword").onpropertychange = autoSearch;
+        }
+    }
+
+    //鼠标滑过查询结果改变背景样式，根据id打开信息窗体
+    function openMarkerTipById1(pointid, thiss) {
+        thiss.style.background = '#CAE1FF';
+        windowsArr[pointid].open(mapObj, marker[pointid]);
+    }
+
+    function keydown(event) {
+        var key = (event || window.event).keyCode;
+        var result = document.getElementById("result1")
+        var cur = result.curSelect;
+        if (key === 40) {//down
+            if (cur + 1 < result.childNodes.length) {
+                if (result.childNodes[cur]) {
+                    result.childNodes[cur].style.background = '';
+                }
+                result.curSelect = cur + 1;
+                result.childNodes[cur + 1].style.background = '#CAE1FF';
+                document.getElementById("keyword").value = result.tipArr[cur + 1].name;
+            }
+        } else if (key === 38) {//up
+            if (cur - 1 >= 0) {
+                if (result.childNodes[cur]) {
+                    result.childNodes[cur].style.background = '';
+                }
+                result.curSelect = cur - 1;
+                result.childNodes[cur - 1].style.background = '#CAE1FF';
+                document.getElementById("keyword").value = result.tipArr[cur - 1].name;
+            }
+        } else if (key === 13) {
+            var res = document.getElementById("result1");
+            if (res && res['curSelect'] !== -1) {
+                selectResult(document.getElementById("result1").curSelect);
+            }
+        } else {
+            autoSearch();
+        }
+    }
+  }
+
+  //从输入提示框中选择关键字并查询
+  function selectResult(index) {
+      if (index < 0) {
+          return;
+      }
+      if (navigator.userAgent.indexOf("MSIE") > 0) {
+          document.getElementById("keyword").onpropertychange = null;
+          document.getElementById("keyword").onfocus = focus_callback;
+      }
+      //截取输入提示的关键字部分
+      var text = document.getElementById("divid" + (index + 1)).innerHTML.replace(/<[^>].*?>.*<\/[^>].*?>/g, "");
+      var cityCode = document.getElementById("divid" + (index + 1)).getAttribute('data');
+      document.getElementById("keyword").value = text;
+      document.getElementById("result1").style.display = "none";
+      //根据选择的输入提示关键字查询
+      mapObj.plugin(["AMap.PlaceSearch"], function() {
+          var msearch = new AMap.PlaceSearch();  //构造地点查询类
+          AMap.event.addListener(msearch, "complete", placeSearch_CallBack); //查询成功时的回调函数
+          msearch.setCity(cityCode);
+          msearch.search(text);  //关键字查询查询
+      });
+  }
+  //输出关键字查询结果的回调函数
+  function placeSearch_CallBack(data) {
+      //清空地图上的InfoWindow和Marker
+      windowsArr = [];
+      marker = [];
+      mapObj.clearMap();
+      var resultStr1 = "";
+      var poiArr = data.poiList.pois;
+      var resultCount = poiArr.length;
+      for (var i = 0; i < resultCount; i++) {
+          resultStr1 += "<div id='divid" + (i + 1) + "' style=\"font-size: 12px;cursor:pointer;padding:0px 0 4px 2px; border-bottom:1px solid #C1FFC1;\"><table><tr><td><img src=\"http://webapi.amap.com/images/" + (i + 1) + ".png\"></td>" + "<td><h3><font color=\"#00a6ac\">名称: " + poiArr[i].name + "</font></h3>";
+          resultStr1 += createContent(poiArr[i].type, poiArr[i].address, poiArr[i].tel) + "</td></tr></table></div>";
+          addmarker(i, poiArr[i]);
+      }
+      mapObj.setFitView();
+  }
+  function createContent(type, address, tel) {  //窗体内容
+      type=parseStr(type);
+      address=parseStr(address);
+      tel=parseStr(tel);
+      var s=[];
+      s.push("地址：" +address);
+      s.push("电话：" +tel);
+      s.push("类型：" +type);
+      return s.join("<br>");
+  }
+  //infowindow显示内容
+  function parseStr(p){
+      if(!p || p == "undefined" || p == " undefined"||p=="tel"){
+          p="暂无";
+      }
+      return p;
+  }
+  //添加查询结果的marker&infowindow
+  function addmarker(i, d) {
+      var lngX = d.location.getLng();
+      var latY = d.location.getLat();
+      var markerOption = {
+          map: mapObj,
+          icon:"http://webapi.amap.com/theme/v1.3/markers/n/mark_b"+(i+1)+".png",
+          position: [lngX, latY]
+      };
+      var mar = new AMap.Marker(markerOption);
+      marker.push([lngX, latY]);
+
+      var infoWindow = new AMap.InfoWindow({
+          content: "<font color=\"#00a6ac\">  " + (i + 1) + ". " + d.name + "</font>" + createContent(d.type, d.address, d.tel),
+          size: new AMap.Size(200, 0),
+          autoMove: true,
+          offset: new AMap.Pixel(0, -30)
+      });
+      windowsArr.push(infoWindow);
+      var aa = function(e) {
+          infoWindow.open(mapObj, mar.getPosition());
+      };
+      var bb = function(e) {
+          $('#seladdrname').attr('value',d.name);
+          if($('#whichsel').val()=='address1'){
+            $('#address').attr('value',d.name);
+          }else if($('#whichsel').val()=='address2'){
+            $('#choose').attr('value',d.name);
+          }
+          infoWindow.open(mapObj, mar.getPosition());
+      };
+      mar.on( "mouseover", aa);
+      mar.on( "click", bb);
+  }
+</script>
+</div>
+
+
+<script type="text/javascript">
+// wx.ready(function () {
+//   wx.getLocation({
+//     type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+//     success: function (res) {
+//       var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+//       var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+//       var speed = res.speed; // 速度，以米/每秒计
+//       var accuracy = res.accuracy; // 位置精度
+//       $('#longitude').attr('value',longitude);
+//       $('#latitude').attr('value',latitude);
+//     },
+//     fail:function (res) {
+//       //alert(JSON.stringify(res));
+//     }
+//   });
+// });
+
+$(document).ready(function () {
+  var nowTemp = new Date();
+  var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+  var ndate = $('#dateline').datepicker({
+          format:"yyyy-mm-dd",
+          onRender: function(date) {
+             return date.valueOf() < now.valueOf() ? 'disabled' : '';
+          }
+  }).on("changeDate", function(date){
+          ndate.datepicker('hide');
+  });
+
+  $("#address1").bind("click",
+    function() {
+      var btn = $(this);
+      var $modal = $('#mapaddress');
+      $('#whichsel').attr('value','address1');
+      if ((btn).hasClass('js-modal-open')) {
+        // mapInit();
+        // $modal.modal();
+        wx.openLocation({
+            latitude: 0, // 纬度，浮点数，范围为90 ~ -90
+            longitude: 0, // 经度，浮点数，范围为180 ~ -180。
+            name: '', // 位置名
+            address: '', // 地址详情说明
+            scale: 1, // 地图缩放级别,整形值,范围从1~28。默认为最大
+            infoUrl: '' // 在查看位置界面底部显示的超链接,可点击跳转
+        });
+      }
+    });
+
+  $("#address2").bind("click",
+    function() {
+      var btn = $(this);
+      var $modal = $('#mapaddress');
+      $('#whichsel').attr('value','address2');
+      if ((btn).hasClass('js-modal-open')) {
+        mapInit();
+        $modal.modal();
+      }
+    });
+});
+</script>
+<if condition="$rttype['group'] eq '10'">
+<script type="text/javascript">
+$("#showcard").bind("click",
+function() {
+    var btn = $(this);
+    var age    = $("#age").val();
+    var address      = $("#address").val();
+    var choose    = $("#choose").val();
+    var wecha_id    = "{$wecha_id}";
+
+    if (age == '') {
+        alert("请认真输入乘车人数");
+        return false;
+    }else if (address == '') {
+        alert("请输入出发地");
+        return false;
+    }else if (choose == '') {
+        alert("请输入目的地");
+        return false;
+    }else if(wecha_id == ''){
+      alert("您可能没有关注我们的微信号或者是通过分享进来的,因此不能提交信息.请关注后再来.");
+      return false;
+    }else{
+      return true;
+    }
+});
+
+
+function check1(obj){
+    if(obj.value == ''){
+        alert("请输入乘车人数.");
+        document.getElementById(obj.id).style.background="red";
+        return;
+    }
+}
+function check2(obj){
+    document.getElementById(obj.id).style.background="white";
+    document.getElementById(obj.id).style.color="black";
+    ///document.getElementById(obj.id).style.font="bolder";
+}
+function check3(obj){
+    if(obj.value == ''){
+        alert("请输入出发地.");
+        document.getElementById(obj.id).style.background="red";
+        return;
+    }
+}
+function check4(obj){
+    if(obj.value == ''){
+        alert("请输入目的地.");
+        document.getElementById(obj.id).style.background="red";
+        return;
+    }
+}
+</script>
+<elseif condition="$rttype['group'] eq '30'" />
+<script type="text/javascript">
+$("#showcard").bind("click",
+function() {
+    var btn = $(this);
+    var address      = $("#address").val();
+    var wecha_id    = "{$wecha_id}";
+
+    if (address == '') {
+        alert("请输入区域");
+        return false;
+    }else if(wecha_id == ''){
+      alert("您可能没有关注我们的微信号或者是通过分享进来的,因此不能提交信息.请关注后再来.");
+      return false;
+    }else{
+      return true;
+    }
+});
+</script>
+</if>
+
+<p><br/>
+<div class="footerWrapper" style="padding-left: 30%;">
+
+    <span class="copyright">
+    <if condition="$iscopyright eq 1">
+    {$homeInfo.copyright}
+    <else/>
+    {$siteCopyright}
+    </if>
+    </span>
+</div>
+  <include file="$cateMenuFileName"/></p>
+</body></html>

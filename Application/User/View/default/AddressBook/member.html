@@ -1,0 +1,233 @@
+
+<include file="Public:head" />
+<script src="__PUBLIC__/web/js/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/web/js/artDialog/plugins/iframeTools.js"></script>
+
+
+<script type="text/javascript" src="__PUBLIC__/web/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/jquery.jplayer.min.js"></script>
+<script src="__PUBLIC__/web/js/jscolor.js" type="text/javascript"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/miniplayer.css" title="style" media="screen"/>
+<script src="__PUBLIC__/web/js/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/web/js/artDialog/plugins/iframeTools.js"></script>
+<script src="__PUBLIC__/web/js/upyun.js?2013"></script>
+<script src="__PUBLIC__/web/js/alert.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/cymain.css" />  
+<style>
+.por{width:65px;float:left;height:65px;}
+.por img{width:60px;height:60px;cursor:pointer}
+.por img.selected{border:2px solid #f60}
+</style>
+<script>
+function selectpor(el){
+	$("#portrait").val(el.src);
+	$('#pors img').removeClass('selected');
+	$('#portrait_src').attr('src',el.src);
+	el.className='selected';
+}
+function induschange(obj){
+  var indus=document.getElementById("industry");
+  var strold=indus.value;
+  if(obj.value!='请选择你所在行业')
+  {
+    var strdot=strold.substring(strold.length-1,strold.length);
+    if(strold==""||strdot=="，"||strdot==",")
+    {
+      strold=strold+obj.value;
+    }
+    else
+    {
+      strold=strold+'，'+obj.value;
+    }
+    indus.value=strold;
+  }
+}
+function focusindchange(obj){
+  var indus=document.getElementById("focusindus");
+  var strold=indus.value;
+  if(obj.value!='请选择你关注的行业')
+  {
+    var strdot=strold.substring(strold.length-1,strold.length);
+    if(strold==""||strdot=="，"||strdot==",")
+    {
+      strold=strold+obj.value;
+    }
+    else
+    {
+      strold=strold+'，'+obj.value;
+    }
+    indus.value=strold;
+  }
+}
+</script>
+ <div class="content">
+<div class="cLineB">
+<h4 class="left"><if condition="$uid eq ''">添加会员资料<else />修改会员资料</if></h4>
+<div class="clr"></div>
+</div>
+<!--tab start-->
+<div class="tab">
+<ul>
+  <li class="tabli" id="tab2"><a href="{:U('AddressBook/index',array('token'=>$token))}">会员列表</a></li>
+	<li class="current tabli" id="tab2"><a href="{:U('AddressBook/member',array('token'=>$token))}">会员资料管理</a></li>
+</ul>
+</div>
+
+<form class="form" method="post" id="form" action=""> 
+    <div class="msgWrap bgfc"> 
+     <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+      <tbody>
+       <tr> 
+        <th style="text-align:center;font-size:16px;">个人名片</th> 
+        <td><input type="hidden" id="uid" name="uid" value="{$userInfoex.uid}" /></td> 
+       </tr> 
+       <tr> 
+        <th><span class="red">*</span>姓名：</th>
+        <td><input type="text" id="truename" name="truename" value="{$userInfoex.truename}" class="px require" style="width:400px;" /></td> 
+       </tr> 
+       <tr> 
+        <th><span class="red">*</span>登录帐号：</th> 
+        <td><input type="text" id="username" name="username" value="{$userInfo.username}" style="width:400px;" <if condition="$uid neq ''">class="px_d" readonly="readonly"<else />class="px"</if> /></td> 
+       </tr>
+       <tr> 
+        <th><span class="red">*</span>状态：</th> 
+        <td><input type="radio" name="status" id="status" value="1" <if condition="$userInfoex.status eq 1 or $uid eq ''">checked=true</if> />显示 <input type="radio" name="status" id="status" value="0" <if condition="$userInfoex.status eq 0 and $uid neq ''">checked=true</if> />隐藏 <input type="radio" name="status" id="status" value="2" <if condition="$userInfoex.status eq 2 and $uid neq ''">checked=true</if> />注销</td> 
+       </tr>
+        <th>头像：</th> 
+        <td><input type="hidden" value="{$userInfo.portrait}" id="portrait" name="portrait" size="80" /><a href="###" onclick="upyunWapPicUpload('portrait',200,200,'{$token}')" class="a_upload" style="color:red">点击这里上传</a>
+			<div class="por"><img src="<if condition="$userInfo.portrait neq ''">{$userInfo.portrait}<else/>/tpl/User/default/common/images/portrait.jpg</if>" id="portrait_src" /></div>
+			<div style="clear:both"></div>
+			或者选择下面头像
+			<div style="margin:10px 0 20px 0" id="pors">
+			<div class="por"><img onclick="selectpor(this)" src="__PUBLIC__/web/images/portrait/1.jpg" /></div>
+			<div class="por"><img onclick="selectpor(this)" src="__PUBLIC__/web/images/portrait/2.jpg" /></div>
+			<div class="por"><img onclick="selectpor(this)" src="__PUBLIC__/web/images/portrait/3.jpg" /></div>
+			<div class="por"><img onclick="selectpor(this)" src="__PUBLIC__/web/images/portrait/4.jpg" /></div>
+			<div class="por"><img onclick="selectpor(this)" src="__PUBLIC__/web/images/portrait/5.jpg" /></div>
+			<div class="por"><img onclick="selectpor(this)" src="__PUBLIC__/web/images/portrait/6.jpg" /></div>
+			<div class="por"><img onclick="selectpor(this)" src="__PUBLIC__/web/images/portrait/7.jpg" /></div>
+			<div class="por"><img onclick="selectpor(this)" src="__PUBLIC__/web/images/portrait/8.jpg" /></div>
+			<div class="por"><img onclick="selectpor(this)" src="__PUBLIC__/web/images/portrait/9.jpg" /></div>
+			<div class="por"><img onclick="selectpor(this)" src="__PUBLIC__/web/images/portrait/10.jpg" /></div>
+			<div style="clear:both"></div>
+		</td> 
+       </tr>
+		<tr><th>性别：</th>
+			<td><input type="radio" name="sex" id="sex" value="1" <if condition="$userInfoex.sex eq 1 or $userInfoex.sex eq ''">checked=true</if> />男<input type="radio" name="sex" id="sex" value="2" <if condition="$userInfoex.sex eq 2">checked=true</if> />女</td>
+		</tr>
+		<tr><th>手机号码：</th>
+        	<td><input type="text" id="tel" name="tel" value="{$userInfoex.tel}" class="px require" style="width:400px;" /></td> 
+		</tr>
+       <tr> 
+        <th>邮箱：</th> 
+        <td><input type="text" id="email" name="email" value="{$userInfoex.email}" class="px require" style="width:400px;" /></td> 
+       </tr>
+       <tr> 
+        <th>推荐人：</th> 
+        <td><input type="text" id="referrer" name="referrer" value="{$userInfoex.referrer}" class="px require" style="width:400px;" /></td> 
+       </tr>
+       <tr> 
+        <th>客服电话：</th> 
+        <td><input type="text" id="referrertel" name="referrertel" value="{$userInfoex.referrertel}" class="px require" style="width:400px;" /></td> 
+       </tr>
+       <tr> 
+        <th>业务介绍：</th> 
+        <td><input type="text" id="busiintro" name="busiintro" value="{$userInfoex.busiintro}" class="px require" style="width:400px;" /></td> 
+       </tr>
+      </tbody> 
+     </table> 
+     </div>
+    <div class="msgWrap bgfc"> 
+     <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+      <tbody> 
+       <tr> 
+        <th style="text-align:center;font-size:16px;">商业信息</th> 
+        <td></td> 
+       </tr> 
+       <tr> 
+        <th>擅长/经验：</th> 
+        <td><input type="text" id="skillexp" name="skillexp" value="{$userInfoex.skillexp}" class="px require" style="width:400px;" /></td> 
+       </tr> 
+       <tr> 
+        <th>所在行业：</th> 
+        <td>
+          <select name="industrysel" id="industrysel" style="width:400px;" onchange="induschange(this)">
+          <option class="dropdown-option">请选择你所在行业</option>
+          <volist name='induscat' id='vo'>
+            <option value="{$vo.name}">{$vo.name}</option>
+          </volist>
+          </select>
+        </td>
+       </tr>
+       <tr> 
+        <th></th> 
+        <td><input type="text" id="industry" name="industry" value="{$userInfoex.industry}" class="px require" style="width:400px;" /></td> 
+       </tr>
+       <tr> 
+       <tr> 
+        <th>企业名称：</th> 
+        <td><input type="text" id="compname" name="compname" value="{$userInfoex.compname}" class="px require" style="width:400px;" /></td> 
+       </tr>
+       <tr> 
+        <th>企业介绍：</th> 
+        <td><input type="text" id="compintro" name="compintro" value="{$userInfoex.compintro}" class="px require" style="width:400px;" /></td> 
+       </tr>
+       <tr>
+       <tr> 
+        <th>关注行业：</th> 
+        <td>
+          <select name="focusindussel" id="focusindussel" style="width:400px;" onchange="focusindchange(this)">
+          <option  class="dropdown-option">请选择你关注的行业</option>
+          <volist name='induscat' id='vo'>
+            <option value="{$vo.name}">{$vo.name}</option>
+          </volist>
+          </select>
+        </td>
+       </tr>
+       <tr> 
+        <th></th> 
+        <td><input type="text" id="focusindus" name="focusindus" value="{$userInfoex.focusindus}" class="px require" style="width:400px;" /></td> 
+       </tr>
+      </tbody> 
+     </table> 
+     </div>
+    <div class="msgWrap bgfc"> 
+     <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+      <tbody> 
+       <tr> 
+        <th style="text-align:center;font-size:16px;">个人信息</th> 
+        <td></td> 
+       </tr> 
+       <tr> 
+        <th>自我介绍：</th> 
+        <td><input type="text" id="selfintro" name="selfintro" value="{$userInfoex.selfintro}" class="px require" style="width:400px;" /></td> 
+       </tr> 
+       <tr> 
+        <th>社会职务：</th> 
+        <td><input type="text" id="socialduty" name="socialduty" value="{$userInfoex.socialduty}" class="px require" style="width:400px;" /></td> 
+       </tr>
+       <tr> 
+        <th>兴趣爱好：</th> 
+        <td><input type="text" id="hobby" name="hobby" value="{$userInfoex.hobby}" class="px require" style="width:400px;" /></td> 
+       </tr>
+       <tr>
+       <tr> 
+        <th>城市：</th> 
+        <td><input type="text" id="city" name="city" value="{$userInfoex.city}" class="px require" style="width:400px;" /></td> 
+       </tr>
+       <tr> 
+        <th>学习经历：</th> 
+        <td><input type="text" id="learnexp" name="learnexp" value="{$userInfoex.learnexp}" class="px require" style="width:400px;" /></td> 
+       </tr>
+       <tr>
+       <th>&nbsp;</th>
+       <td>
+       <button type="submit" name="button" class="btnGreen">保存</button> &nbsp; <a href="{:U('AddressBook/index',array('token'=>$token))}" class="btnGray vm">取消</a></td> 
+       </tr> 
+      </tbody> 
+     </table> 
+     </div>
+   </form> 
+</div>
+<include file="Public:footer"/>

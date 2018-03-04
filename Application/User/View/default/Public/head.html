@@ -1,0 +1,1524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> {$Think.config.sitetitle} {$Think.config.sitename}</title>
+<meta name="keywords" content="{$Think.config.metakeyword}" />
+<meta name="description" content="{$Think.config.metades}" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<script>var SITEURL='';</script>
+<script src="__PUBLIC__/web/js/common.js" type="text/javascript"></script>
+<script src="__PUBLIC__/web/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<php>if($usertplid == 0){</php>
+    <link href="__PUBLIC__/web/css/style.css?id=103" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/style_2_common.css?BPm" />
+<php>}elseif($usertplid == 1){</php>
+    <link href="__PUBLIC__/web/css/style-{$usertplid}.css?id=103" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/style_2_common.css?BPm" />
+<php>}else{</php>
+    
+<php>}</php>
+<style type="text/css">
+  .welcome1{
+    border: 1px solid #EAEAEA;
+    position: relative;
+  }
+  .welcome1 li{
+    float: left;  
+    height: 50px;
+    width: 12.323%; 
+    text-align:center;
+    /*font-weight: bold;*/
+    position: relative;
+    font-size: 1.25em;
+    border: 1px solid #DFDFDF;
+    background: #F3F3F3;
+  }
+  .welcome1 ul{
+    /*max-width: 981px;*/
+  }
+  .welcome1 li a{
+    line-height:3.5;
+  }
+  .welcome1 li.tab-current{
+    border-right:0;   
+    border-left:0;
+    border-bottom:0;
+    background: none;
+  }
+  .content1{
+    margin:80px auto;
+    top:80px;
+  }
+  .img1{
+    margin-top:60px;
+    width:120px;
+    height:150px;
+    float: left;
+    text-align: center;
+  }
+  .img1 a {
+    line-height: 50px;
+  }
+  .img1 a:hover{
+    text-decoration:none;  
+  } 
+   .content ul li.guanzhu {
+  color: #fff;
+    float: left;
+    height: 96px;
+    margin-right: 1px;
+    overflow: hidden;
+    width: 25.23%;
+    background:#7cbae5;
+  }
+
+ .content ul li.huiyuanka {
+  color: #fff;
+    float: left;
+    height: 96px;
+    margin-right: 1px;
+    overflow: hidden;
+    width: 24.8%;
+    background:#cec0f4;
+  }
+ .content ul li.liulan {
+  color: #fff;
+    float: left;
+    height: 96px;
+    margin-right: 1px;
+    overflow: hidden;
+    width: 24.8%;
+    background:#81d2cf;
+  }
+ .content ul li.fangke {
+  color: #fff;
+    float: left;
+    height: 96px;
+    margin-right: 1px;
+    overflow: hidden;
+    width: 24.8%;
+    background:#92bf77;
+  }
+ .content ol li{
+  float: left;
+    height:120px;
+    overflow: hidden;
+    width:120px;
+  padding:0px 15px;
+  }
+ .content ul li.guanzhu a,
+ .content ul li.huiyuanka a,
+ .content ul li.liulan a,
+ .content ul li.fangke a
+ {
+    color: #fff;
+    display: block;
+    font-size:22px;
+    height: 96px;
+    overflow: hidden;
+    /*width: 224px;*/
+    padding-top:10px;
+  text-align:center;
+}
+ .content ul li a:hover {
+  text-decoration:none;
+}
+</style>
+<style>
+.topbg{background:url(__PUBLIC__/web/images/top.gif) repeat-x; height:101px; /*box-shadow:0 0 10px #000;-moz-box-shadow:0 0 10px #000;-webkit-box-shadow:0 0 10px #000;*/}
+.top {
+    margin: 0px auto; width: 988px; height: 101px;
+}
+.toplink{ height:30px; line-height:27px; color:#999; font-size:12px;}
+.toplink .welcome{ float:left;}
+.toplink .memberinfo{ float:right;}
+.toplink .memberinfo a{ color:#999;}
+.toplink .memberinfo a:hover{ color:#F90}
+.toplink .memberinfo a.green{ background:none; color:#0C0}
+
+.logo { color: #333; height:70px; font-size:16px;}
+h1{ font-size:25px;float:left; width:230px; margin:0; padding:0; margin-top:6px; }
+.navr {width:auto;overflow:hidden;}
+.navr li {text-align:center; float: left; height:25px; font-size:1em; width:12%; margin-right:5px;}
+.navr li a {width:100%; line-height:25px; float: left;height:100%; color: #333; font-size: 1em; text-decoration:none;}
+.navr li a:hover { background:#1ab394;}
+.navr li.menuon {background:#1ab394; display:block; width:12%;}
+.navr li.menuon a{color:#333;}
+.navr li.menuon a:hover{color:#333;}
+.banner{height:200px; text-align:center; border-bottom:2px solid #ddd;}
+.hbanner{ background: url(__PUBLIC__/web/images/h2003070126.jpg) center no-repeat #B4B4B4;}
+.gbanner{ background: url(__PUBLIC__/web/images/h2003070127.jpg) center no-repeat #264C79;}
+.jbanner{ background: url(__PUBLIC__/web/images/h2003070128.jpg) center no-repeat #E2EAD5;}
+.dbanner{ background: url(__PUBLIC__/web/images/h2003070129.jpg) center no-repeat #009ADA;}
+.nbanner{ background: url(__PUBLIC__/web/images/h2003070130.jpg) center no-repeat #ffca22;}
+</style>
+</head>
+<?php
+ $Cashierpath=str_replace($_SERVER['SCRIPT_NAME'],'',dirname($_SERVER['SCRIPT_FILENAME'])).DIRECTORY_SEPARATOR.'Cashier'.DIRECTORY_SEPARATOR.'pigcms'.DIRECTORY_SEPARATOR.'base.php';
+ $CashierOff=ture;
+ if(file_exists($Cashierpath)){
+    $CashierOff=false;
+ }
+
+$menus=array(
+array(
+'name'=>'基础设置',
+'iconName'=>'base',
+'display'=>0,
+'subs'=>array(
+//array('name'=>'功能管理','link'=>U('Function/index',array('token'=>$token,'id'=>session('wxid'))),'new'=>0,'selectedCondition'=>array('m'=>'Function','a'=>'index')),
+array('name'=>'关注时回复与帮助','link'=>U('Areply/advanceindex',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Areply')),
+array('name'=>'微信－文本回复','link'=>U('Text/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Text')),
+array('name'=>'微信－图文回复','link'=>U('Img/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Img','a'=>'index')),
+array('name'=>'微信－多图文回复','link'=>U('Img/multi',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Img','a'=>'multi')),
+array('name'=>'微信－语音回复','link'=>U('Voiceresponse/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Voiceresponse')),
+array('name'=>'微信－群发消息','link'=>U('Message/sendHistory',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Message')),
+array('name'=>'微信－模板消息','link'=>U('TemplateMsg/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'TemplateMsg')),
+array('name'=>'LBS商家连锁','link'=>U('Company/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Company')),
+array('name'=>'自定义菜单','link'=>U('Diymen/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Diymen')),
+//array('name'=>'个性化自定义菜单','link'=>U('Conditionalmenu/index',array('token'=>$token)),'new'=>0,'test'=>1,'selectedCondition'=>array('m'=>'Conditionalmenu')),
+array('name'=>'自动获取粉丝信息','link'=>U('Auth/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Auth')),
+array('name'=>'店员管理','f'=>'Assistente','link'=>U('Assistente/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Assistente')),
+array('name'=>'回答不上来的配置','link'=>U('Other/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Other')),
+array('name'=>'快捷关注配置','link'=>U('Quick/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Quick')),
+)),
+
+array(
+'name'=>'微网站',
+'iconName'=>'site',
+'display'=>0,
+'subs'=>array(
+array('name'=>'首页回复配置','f'=>'Home','link'=>U('Home/set',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Home','g'=>'User','a'=>'set')),
+array('name'=>'分类管理','f'=>'Home','link'=>U('Classify/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Classify')),
+array('name'=>'H5动态自定义模板','f'=>'CustomTmpls','link'=>U('CustomTmpls/dynamic',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'CustomTmpls','a'=>'dynamic')),
+array('name'=>'静态模板管理','f'=>'Home','link'=>U('Tmpls/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Tmpls','a'=>'index')),
+array('name'=>'文章管理','f'=>'Home','link'=>U('Img/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Img','a'=>'index')),
+array('name'=>'首页幻灯片','f'=>'Home','link'=>U('Flash/index',array('token'=>$token,'tip'=>1)),'new'=>0,'selectedCondition'=>array('m'=>'Flash','tip'=>1)),
+array('name'=>'轮播背景图','f'=>'Home','link'=>U('Flash/index',array('token'=>$token,'tip'=>2)),'new'=>0,'selectedCondition'=>array('m'=>'Flash','tip'=>2)),
+array('name'=>'底部导航菜单','f'=>'Home','link'=>U('Catemenu/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Catemenu')),
+array('name'=>'版权设置','f'=>'Home','link'=>U('Home/plugmenu',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Home','g'=>'User','a'=>'plugmenu')),
+//array('name'=>'微场景','f'=>'Home','link'=>U('Live/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Live'),'notinpigcms'=>1),
+)),
+
+array(
+'name'=>'游戏&贺卡',
+'iconName'=>'game',
+'display'=>0,
+'subs'=>array(
+array('name'=>'游戏信息设置','f'=>'Game','link'=>U('Game/config',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Game','a'=>'config')),
+array('name'=>'我的游戏','f'=>'Game','link'=>U('Game/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Game','a'=>'index')),
+array('name'=>'游戏库','f'=>'Game','link'=>U('Game/gameLibrary',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Game','a'=>'gameLibrary')),
+
+array('name'=>'我的贺卡','f'=>'Card','link'=>U('Card/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Card','a'=>'index')),
+array('name'=>'贺卡库','f'=>'Card','link'=>U('Card/cardLibrary',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Card','a'=>'cardLibrary')),
+)),
+array(
+'name'=>'三网通[独立]',
+'iconName'=>'scene',
+'display'=>0,
+'subs'=>array(
+  array('name'=>'基本设置','f'=>'Web','link'=>U('Web/set',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Web','a'=>'set')),
+  array('name'=>'选择模板','f'=>'Web','link'=>U('Web/choose_tpl',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Web','a'=>'choose_tpl')),
+  array('name'=>'导航菜单','f'=>'Web','link'=>U('Web/nav',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Web','a'=>'nav')),
+  array('name'=>'图集管理','f'=>'Web','link'=>U('Web/flash',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Web','a'=>'flash')),
+  array('name'=>'新闻管理','f'=>'Web','link'=>U('Web/news',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Web','a'=>'news')),
+  array('name'=>'产品管理','f'=>'Web','link'=>U('Web/product',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Web','a'=>'product')),
+  array('name'=>'下载管理','f'=>'Web','link'=>U('Web/down',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Web','a'=>'down')),
+  array('name'=>'自定义页面','f'=>'Web','link'=>U('Web/page',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Web','a'=>'page')),
+  array('name'=>'手机站配置','f'=>'Phone','link'=>U('Phone/baseSet',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Phone','a'=>'baseSet'))
+)),
+
+
+array(
+'name'=>'APP打包[独立]',
+'iconName'=>'store',
+'display'=>0,
+'subs'=>array(
+array('name'=>'创建应用','f'=>'Yundabao','link'=>U('Yundabao/add',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Yundabao','a'=>'add')),
+array('name'=>'应用列表','f'=>'Yundabao','link'=>U('Yundabao/applist',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Yundabao','a'=>'applist')),
+)),
+
+array(
+'iconName'=>'zhida',
+'name'=>'百度直达号',
+'display'=>0,
+'subs'=>array(
+  array('name'=>'对接配置','f'=>'Zhida','link'=>U('Zhida/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Zhida','a'=>'index')),
+)),
+
+array(
+'name'=>'微场景',
+'iconName'=>'ditch',
+'display'=>0,
+'subs'=>array(
+array('name'=>'创建场景','f'=>'SeniorScene','link'=>U('SeniorScene/highLive',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'SeniorScene'),'blank'=>1),
+array('name'=>'我的场景','f'=>'SeniorScene','link'=>U('SeniorScene/highLive',array('token'=>$token,'v'=>'myscene')),'new'=>1,'selectedCondition'=>array('m'=>'SeniorScene'),'blank'=>1),
+array('name'=>'场景关键词','f'=>'SeniorScene','link'=>U('SeniorScene/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'SeniorScene')),
+)),
+
+array(
+'name'=>'收银台[独立]',
+'iconName'=>'iconzhifu',
+'display'=>0,
+'subs'=>array(array('name'=>'登录收银台','f'=>'Cashier','link'=>U('Cashier/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Cashier'),'blank'=>1)
+)),
+
+array(
+'name'=>'微互动',
+'iconName'=>'interact',
+'display'=>0,
+'subs'=>array(
+
+array('name'=>'微名片','f'=>'Personcard','link'=>U('Personcard/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Personcard')),
+array('name'=>'留言板','f'=>'Reply','link'=>U('Reply/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Reply')),
+array('name'=>'微论坛','f'=>'Forum','link'=>U('Forum/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Forum')),
+array('name'=>'3G图集(相册)','f'=>'Photo','link'=>U('Photo/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Photo')),
+array('name'=>'3G微投票','f'=>'Vote','link'=>U('Vote/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Vote')),
+array('name'=>'图文投票','f'=>'Voteimg','link'=>U('Voteimg/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Voteimg')),
+array('name'=>'微预约(万能表单,报名)','f'=>'Custom','link'=>U('Custom/record',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Custom')),
+array('name'=>'微调研','f'=>'Research','link'=>U('Research/index',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Research')),
+//array('name'=>'祝福贺卡','f'=>'Greetingcard','link'=>U('Greetingcard/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Greetingcard')),
+array('name'=>'分享管理','f'=>'Share','link'=>U('Share/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Share')),
+array('name'=>'邀请函','f'=>'Invite','link'=>U('Invite/add',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Invite')),
+)),
+
+array(
+'name'=>'微活动',
+'iconName'=>'active',
+'display'=>0,
+'subs'=>array(
+//array('name'=>'募捐','f'=>'Donation','link'=>U('Donation/index',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Donation')),
+//array('name'=>'校友录','f'=>'Friend','link'=>U('Friend/index',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Friend')),
+array('name'=>'集字游戏','f'=>'Collectword','link'=>U('Collectword/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Collectword')),
+array('name'=>'我要上头条','f'=>'FrontPage','link'=>U('FrontPage/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'FrontPage')),
+array('name'=>'摇钱树','f'=>'CoinTree','link'=>U('CoinTree/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'CoinTree')),
+array('name'=>'摇一摇抽奖','f'=>'ShakeLottery','link'=>U('ShakeLottery/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'ShakeLottery')),
+array('name'=>'微信合体红包','f'=>'Hongbao','link'=>U('Hongbao/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Hongbao')),
+array('name'=>'粉丝红包','f'=>'DirectHongbao','link'=>U('DirectHongbao/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'DirectHongbao')),
+array('name'=>'分享助力','f'=>'Helping','link'=>U('Helping/index',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Helping')),
+array('name'=>'谁是情圣','f'=>'Sentiment','link'=>U('Sentiment/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Sentiment')),
+array('name'=>'优惠接力','f'=>'YouSetDiscount','link'=>U('YouSetDiscount/index',array('token'=>$token)),'new'=>0,'test'=>1,'selectedCondition'=>array('m'=>'YouSetDiscount')),
+array('name'=>'人气冲榜','f'=>'Popularity','link'=>U('Popularity/index',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Popularity')),
+array('name'=>'幸运大转盘','f'=>'Lottery','link'=>U('Lottery/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Lottery')),
+array('name'=>'幸运九宫格','f'=>'Jiugong','link'=>U('Jiugong/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Jiugong')),
+array('name'=>'优惠券','f'=>'Coupon','link'=>U('Coupon/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Coupon')),
+array('name'=>'刮刮卡','f'=>'Guajiang','link'=>U('Guajiang/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Guajiang')),
+array('name'=>'幸运水果机','f'=>'LuckyFruit','link'=>U('LuckyFruit/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'LuckyFruit')),
+array('name'=>'砸金蛋','f'=>'GoldenEgg','link'=>U('GoldenEgg/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'GoldenEgg')),
+array('name'=>'走鹊桥','f'=>'AppleGame','link'=>U('AppleGame/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'AppleGame')),
+array('name'=>'摁死小情侣','f'=>'Lovers','link'=>U('Lovers/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Lovers')),
+array('name'=>'中秋吃月饼','f'=>'Autumn','link'=>U('Autumn/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Autumn')),
+array('name'=>'拆礼盒','f'=>'Autumns','link'=>U('Autumns/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Autumns')),
+array('name'=>'一战到底','f'=>'Problem','link'=>U('Problem/index',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Problem')),
+array('name'=>'微信红包','f'=>'Red_packet','link'=>U('Redpacket/index',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Red_packet')),
+array('name'=>'惩罚台','f'=>'Punish','link'=>U('Punish/index',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Punish')),
+array('name'=>'趣味测试','f'=>'Test','link'=>U('Test/index',array('token'=>$token,'type'=>'Test')),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Test')),
+
+
+)),
+
+array(
+'name'=>'行业应用',
+'iconName'=>'business',
+'display'=>0,
+'subs'=>array(
+array('name'=>'微排号','f'=>'Numqueue','link'=>U('Numqueue/index',array('token'=>$token,'type'=>'Numqueue')),'new'=>1,'selectedCondition'=>array('m'=>'Numqueue','type'=>'Numqueue'),'test'=>0),
+array('name'=>'微餐饮（无线打印）','f'=>'Repast','link'=>U('Repast/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Repast')),
+array('name'=>'微外卖[新版]','f'=>'DishOut','link'=>U('DishOut/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'DishOut'),'test'=>0),
+array('name'=>'全民经纪人','f'=>'MicroBroker','link'=>U('MicroBroker/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'MicroBroker'),'test'=>0),
+array('name'=>'楼盘房产','f'=>'Estate','link'=>U('Estate/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Estate')),
+array('name'=>'360°全景','f'=>'Panorama','link'=>U('Panorama/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Panorama')),
+array('name'=>'微婚庆（喜帖）','f'=>'Wedding','link'=>U('Wedding/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Wedding')),
+array('name'=>'微汽车','f'=>'Car','link'=>U('Car/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Car')),
+array('name'=>'微教育','f'=>'School','link'=>U('School/index',array('token'=>$token,'type'=>'semester')),'new'=>0,'selectedCondition'=>array('m'=>'School')),
+array('name'=>'微医疗','f'=>'Medical','link'=>U('Medical/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Medical'),'test'=>0),
+array('name'=>'酒店宾馆','f'=>'Hotels','link'=>U('Hotels/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Hotels')),
+//array('name'=>'通用订单(酒吧KTV)','f'=>'Host','link'=>U('Host/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Host')),
+array('name'=>'微美容','f'=>'Beauty','link'=>U('Business/index',array('token'=>$token,'type'=>'beauty')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'beauty'),'test'=>0),
+array('name'=>'微健身','f'=>'Fitness','link'=>U('Business/index',array('token'=>$token,'type'=>'fitness')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'fitness'),'test'=>0,'show'=>1),
+array('name'=>'微政务','f'=>'Gover','link'=>U('Business/index',array('token'=>$token,'type'=>'gover')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'gover'),'test'=>0,'show'=>1),
+array('name'=>'微食品','f'=>'Food','link'=>U('Business/index',array('token'=>$token,'type'=>'food')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'food'),'test'=>0),
+array('name'=>'微旅游','f'=>'Travel','link'=>U('Business/index',array('token'=>$token,'type'=>'travel')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'travel'),'test'=>0),
+array('name'=>'微花店','f'=>'Flower','link'=>U('Business/index',array('token'=>$token,'type'=>'flower')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'flower'),'test'=>0),
+array('name'=>'微物业','f'=>'Property','link'=>U('Business/index',array('token'=>$token,'type'=>'property')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'property'),'test'=>0),
+array('name'=>'微KTV','f'=>'Ktv','link'=>U('Business/index',array('token'=>$token,'type'=>'ktv')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'ktv'),'test'=>0),
+array('name'=>'微酒吧','f'=>'Bar','link'=>U('Business/index',array('token'=>$token,'type'=>'bar')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'bar'),'test'=>0),
+array('name'=>'微装修','f'=>'Fitment','link'=>U('Business/index',array('token'=>$token,'type'=>'fitment')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'fitment'),'test'=>0),
+array('name'=>'微婚庆','f'=>'Wedding','link'=>U('Business/index',array('token'=>$token,'type'=>'wedding')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'wedding'),'test'=>0),
+array('name'=>'微宠物','f'=>'Affections','link'=>U('Business/index',array('token'=>$token,'type'=>'affections')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'affections'),'test'=>0),
+array('name'=>'微家政','f'=>'Housekeeper','link'=>U('Business/index',array('token'=>$token,'type'=>'housekeeper')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'housekeeper'),'test'=>0),
+array('name'=>'微租赁','f'=>'Lease','link'=>U('Business/index',array('token'=>$token,'type'=>'lease')),'new'=>0,'selectedCondition'=>array('m'=>'Business','type'=>'lease'),'test'=>0),
+
+)),
+array(
+'name'=>'摇一摇.周边',
+'iconName'=>'shakearound',
+'display'=>0,
+'subs'=>array(
+array('name'=>'设备管理','f'=>'Shakearound','link'=>U('Shakearound/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Shakearound')),
+array('name'=>'页面管理','f'=>'Shakearound','link'=>U('Shakearound/page_index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Shakearound','a'=>'page_index')),
+array('name'=>'统计信息','f'=>'Shakearound','link'=>U('Shakearound/statistics',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Shakearound')),
+)),
+array(
+'name'=>'微现场',
+'iconName'=>'scene',
+'display'=>0,
+'subs'=>array(
+array('name'=>'微信签到','f'=>'Signin','link'=>U('Signin/index',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Signin')),
+array('name'=>'摇一摇','f'=>'Shake','link'=>U('Shake/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Shake')),
+array('name'=>'微信墙','f'=>'Wall','link'=>U('Wall/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Wall')),
+array('name'=>'现场活动','f'=>'Scene','link'=>U('Scene/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Scene')),
+)),
+
+array(
+'name'=>'微信商城',
+'iconName'=>'store',
+'display'=>0,
+'subs'=>array(
+array('name'=>'在线支付设置','link'=>U('Alipayconfig/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Alipayconfig')),
+array('name'=>'微信支付证书','link'=>U('Alipaycert/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Alipaycert')),
+array('name'=>'平台支付对帐','link'=>U('Platform/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Platform')),
+array('name'=>'微信支付账单','link'=>U('WeixinBill/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'WeixinBill')),
+array('name'=>'微信团购系统','f'=>'Groupon','link'=>U('Groupon/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Groupon')),
+array('name'=>'商城分佣管理','f'=>'Store','link'=>U('Store/twitter',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Store','a'=>'twitter')),
+array('name'=>'微信商城系统','f'=>'Store','link'=>U('Store/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Store')),
+
+//array('name'=>'三级分销[独立]','f'=>'Micrstore','link'=>U('Micrstore/dis',array('token'=>$token,'infotype'=>'Micrstore')),'new'=>0,'selectedCondition'=>array('m'=>'Micrstore','a'=>'dis')),
+array('name'=>'微商圈','f'=>'Market','link'=>U('Market/index',array('token'=>$token)),'test'=>0,'selectedCondition'=>array('m'=>'Market')),
+//array('name'=>'淘宝天猫店铺配置','link'=>U('Taobao/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Taobao')),
+array('name'=>'微众筹','f'=>'Crowdfunding','link'=>U('Crowdfunding/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Crowdfunding')),
+array('name'=>'一元夺宝','f'=>'Unitary','link'=>U('Unitary/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Unitary')),
+array('name'=>'微秒杀','f'=>'Seckill','link'=>U('Seckill/index',array('token'=>$token,'type'=>'seckill')),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Seckill')),
+array('name'=>'微信生活圈','f'=>'LivingCircle','link'=>U('LivingCircle/index',array('token'=>$token,'type'=>'LivingCircle')),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'LivingCircle')),
+array('name'=>'微砍价','f'=>'Bargain','link'=>U('Bargain/index',array('token'=>$token,'type'=>'Bargain')),'new'=>1,'selectedCondition'=>array('m'=>'Bargain')),
+array('name'=>'降价拍','f'=>'Cutprice','link'=>U('Cutprice/index',array('token'=>$token,'type'=>'Cutprice')),'test'=>0,'selectedCondition'=>array('m'=>'Cutprice')),
+array('name'=>'微拍卖','f'=>'Auction','link'=>U('Auction/index',array('token'=>$token,'type'=>'Auction')),'new'=>1,'selectedCondition'=>array('m'=>'Auction')),
+)),
+
+array(
+'name'=>'微店系统[独立]',
+'iconName'=>'micrstore',
+'display'=>0,
+'subs'=>array(
+array('name'=>'微店设置','f'=>'Micrstore','link'=>U('Micrstore/index',array('token'=>$token,'infotype'=>'Micrstore')),'new'=>0,'selectedCondition'=>array('m'=>'Micrstore','a'=>'index')),
+array('name'=>'微店管理','f'=>'Micrstore','link'=>U('Micrstore/api',array('token'=>$token,'infotype'=>'Micrstore')),'new'=>0,'selectedCondition'=>array('m'=>'Micrstore','a'=>'api')),
+array('name'=>'三级分销[独立]','f'=>'Micrstore','link'=>U('Micrstore/dis',array('token'=>$token,'infotype'=>'Micrstore')),'new'=>0,'selectedCondition'=>array('m'=>'Micrstore','a'=>'dis')),
+array('name'=>'提现管理','f'=>'Micrstore','link'=>U('Micrstore/withdraw',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Micrstore')),
+)),
+
+
+array(
+'name'=>'微粉丝管理CRM',
+'iconName'=>'crm',
+'display'=>0,
+'subs'=>array(
+array('name'=>'粉丝管理','link'=>U('Wechatgroup/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Wechat_group','a'=>'index')),
+array('name'=>'分组管理','link'=>U('Wechatgroup/groups',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Wechat_group','a'=>'groups')),
+array('name'=>'粉丝行为分析','link'=>U('Wechatbehavior/statistics',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Wechat_behavior')),
+array('name'=>'会员信息管理','link'=>U('Wechatgroup/info',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Wechat_group')),
+array('name'=>'服务窗粉丝管理','f'=>'Fuwu','link'=>U('Fuwu/index',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Fuwu')),
+)),
+array(
+'name'=>'微硬件',
+'iconName'=>'hardware',
+'display'=>0,
+'subs'=>array(
+array('name'=>'微信连WIFI','f'=>'Dizwifi','link'=>U('Dizwifi/index',array('token'=>$token)),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Dizwifi')),
+array('name'=>'微信wifi设置','link'=>U('Router/index',array('token'=>$token)),'new'=>0,'test'=>0,'selectedCondition'=>array('m'=>'Router')),
+array('name'=>'无线打印机','link'=>U('Hardware/orderprint',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Hardware','a'=>'orderprint')),
+array('name'=>'照片打印机','link'=>U('Hardware/photoprint',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Hardware','a'=>'photoprint')),
+)),
+array(
+'name'=>'微渠道',
+'iconName'=>'ditch',
+'display'=>0,
+'subs'=>array(
+array('name'=>'渠道二维码','link'=>U('Recognition/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Recognition')),
+array('name'=>'二维码扫描分析','link'=>U('RecognitionData/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'RecognitionData')),
+//array('name'=>'DIY宣传页','link'=>U('Adma/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Adma')),
+)),
+
+array(
+'name'=>'微客服',
+'iconName'=>'service',
+'display'=>0,
+'subs'=>array(
+array('name'=>'微信人工客服','f'=>'ServiceUser','link'=>U('ServiceUser/wechatService',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'ServiceUser')),
+array('name'=>'网页客服管理','f'=>'Service','link'=>U('Service/servicelist',array('token'=>$token,'type'=>'setup')),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Service','type'=>'setup')),
+array('name'=>'聊天推广内容','f'=>'Service','link'=>U('Service/preferentiallist',array('token'=>$token,'type'=>'preferential')),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Service','type'=>'preferential')),
+array('name'=>'聊天个人板块','f'=>'Service','link'=>U('Service/my',array('token'=>$token,'type'=>'my')),'new'=>1,'test'=>0,'selectedCondition'=>array('m'=>'Service','type'=>'my')),
+)),
+
+
+array(
+'name'=>'会员卡',
+'iconName'=>'card',
+'display'=>0,
+'subs'=>array(
+array('name'=>'会员卡','f'=>'Member_card','link'=>U('Membercard/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Member_card'),'exceptCondition'=>array('a'=>'replyInfoSet,focus,custom,center,member,coupons,consume_record')),
+array('name'=>'卡券管理','f'=>'Member_card','link'=>U('Membercard/coupons',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Member_card','a'=>'coupons')),
+array('name'=>'卡券核销','f'=>'Member_card','link'=>U('Membercard/consume_record',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Member_card','a'=>'consume_record')),
+array('name'=>'会员中心','f'=>'Member_card','link'=>U('Membercard/center',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Member_card','a'=>'center')),
+array('name'=>'消费记录','link'=>U('Membercard/member',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Member_card','a'=>'member')),
+array('name'=>'回复设置','f'=>'Member_card','link'=>U('Membercard/replyInfoSet',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Member_card','a'=>'replyInfoSet')),
+array('name'=>'幻灯片广告','f'=>'Member_card','link'=>U('Membercard/focus',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Member_card','a'=>'focus')),
+array('name'=>'自定义输入项','f'=>'Member_card','link'=>U('Membercard/custom',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Member_card','a'=>'custom')),
+)),
+
+array(
+'name'=>'数据魔方',
+'iconName'=>'datacube',
+'display'=>0,
+'subs'=>array(
+array('name'=>'请求数详情','link'=>U('Requerydata/index',array('token'=>$token)),'new'=>0,'selectedCondition'=>array('m'=>'Requerydata')),
+array('name'=>'粉丝行为分析','link'=>U('Wechatbehavior/statistics',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Wechat_behavior','a'=>'statistics')),
+)),
+
+array(
+'name'=>'二次开发',
+'iconName'=>'secondary',
+'display'=>0,
+'subs'=>array(
+array('name'=>'融合第三方','link'=>U('Api/index',array('token'=>$token)),'new'=>1,'selectedCondition'=>array('m'=>'Api')),
+)),
+);
+?>
+<php>if($usertplid == 2){</php>
+<body style="background-color:#2f4050;">
+<?php
+$userbrowser = $_SERVER['HTTP_USER_AGENT']; 
+if ( preg_match( '/MSIE/i', $userbrowser ) ) {
+?>    
+    <![if lt IE 9]>
+      <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]>
+<?php
+}
+?>
+<div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header" style="height: 90px;">
+                        <div class="dropdown profile-element"> <span>
+                            &nbsp;&nbsp;&nbsp;<a href="{:U('Function/welcome',array('token'=>$token))}"><img src="{$wecha.headerpic}" width="60" height="60" class="img-circle"/></a>
+                             </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <font face="微软雅黑">{$wecha.wxname}</font>
+                             </span> <span class="text-muted text-xs block"> 套餐使用 <b class="caret"></b></span> </span> </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs" style="  margin-left: -5%;">
+                              <li><a href="#"><strong>微信号：</strong>{$wecha.weixin}</a></a></li>
+                                <li><a href="#"><strong>VIP有效期：</strong>{$thisUser.viptime|date="Y-m-d",###}</a></a></li>
+                                <li><a href="#"><strong>图文自定义：</strong>{$thisUser.diynum}/{$userinfo.diynum}</a></li>
+                                <li><a href="#"><strong>已使用图文：</strong><php>echo $_SESSION['diynum'];</php></a></li>
+                                <li><a href="#"><strong>活动创建数：</strong>{$thisUser.activitynum}/{$userinfo.activitynum}</a></li>
+                                <li><a href="#"><strong>请求数：</strong>{$thisUser.connectnum}/{$userinfo.connectnum}</a></li>
+                                <li><a href="#"><strong>请求数剩余：</strong><php>echo ($userinfo['connectnum']-$_SESSION['connectnum']);</php></a></li>
+                                <li><a href="#"><strong>当月赠送请求数：</strong>{$userinfo.connectnum}</a></li>
+                                <li><a href="#"><strong>当月剩余请求数：</strong><php>echo $userinfo['connectnum']-$thisUser['connectnum'];</php></a></li>
+                                <li class="divider"></li>
+                                <li><a href="/#" onclick="Javascript:window.open('{:U('System/Admin/logout')}','_blank')" ><b><center>退 出</center></b></a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            <b>管理<br />中心</b>
+                        </div>
+                    </li>
+<?php
+$icn=array('基础设置'=>'fa-th-large','微网站'=>'fa-home','游戏&贺卡'=>'fa-gamepad','三网通[独立]'=>'fa-desktop','APP打包[独立]'=>'fa-folder','百度直达号'=>'fa-paw','微场景'=>'fa-picture-o','收银台[独立]'=>'fa-cny','微互动'=>'fa-slideshare','行业应用'=>'fa-taxi','摇一摇.周边'=>'fa-weixin','微现场'=>'fa-wifi','微信商城'=>'fa-shopping-cart','微粉丝管理CRM'=>'fa-group','微硬件'=>'fa-puzzle-piece','微渠道'=>'fa-random','微活动'=>'fa-puzzle-piece','会员卡'=>'fa-credit-card','数据魔方'=>'fa-cube','微店系统[独立]'=>'fa-sitemap','微客服'=>'fa-headphones','二次开发'=>'fa-wrench');
+foreach ($menus as $mk => $mv){
+  if(C('router_key') != ''&&$mv['iconName']=='hardware'){
+    //var_export($mv['subs']);
+    unset($mv['subs'][1]);
+  }
+
+  /***收银台是否添加***/
+  if($CashierOff  && ($mv['subs'][0]['f']=='Cashier')){
+     unset($menus[$mk]);
+  }
+  foreach ($mv['subs'] as $mvk => $mvv){
+
+    if ($mvv['f'] != NULL && !in_array($mvv['f'], $Allfunc)) {
+
+      unset($menus[$mk]['subs'][$mvk]);
+    }
+
+    if ($mvv['selectedCondition']['m'] == 'Web') {
+      $path=str_replace($_SERVER['SCRIPT_NAME'],'',dirname($_SERVER['SCRIPT_FILENAME'])).DIRECTORY_SEPARATOR.'PigCms'.DIRECTORY_SEPARATOR.'Lib'.DIRECTORY_SEPARATOR.'Action'.DIRECTORY_SEPARATOR.'Web'.DIRECTORY_SEPARATOR;
+      if (!file_exists($path.'Web_indexAction.class.php')) {
+        unset($menus[$mk]);
+      }
+    }
+    //店员菜单管理 
+    if(isset($group_func) && $_SESSION['role_name'] != '' && $_SESSION['role_name'] == 'staff'){
+      $not_exists = array('tianqi','qiushi','jishuan','langdu','jiankang','kuaidi','xiaohua','changtoushi','peiliao','liaotian','mengjian','yuyinfanyi','huoche','gongjiao','shenfenzheng','shouji','yinle','fujin','geci','fanyi','api','suanming','baike','caipiao','Zhida','whois','assistente');
+      if($mvv['f'] != NULL && !in_array($mvv['f'],$group_func)){
+        unset($menus[$mk]['subs'][$mvk]);
+      }
+      if($mvv['f'] != NULL && in_array(strtolower($mvv['f']),$not_exists)){
+        unset($menus[$mk]['subs'][$mvk]);
+      }
+      /*if($mvv['f'] == NULL && in_array(strtolower($mvv['selectedCondition']['m']),$not_exists)){
+        unset($menus[$mk]['subs'][$mvk]);
+      }*/
+      if($mvv['f'] == NULL){
+        unset($menus[$mk]['subs'][$mvk]);
+      }
+      if($mv['iconName']=='hardware'){
+        unset($menus[$mk]['subs']);
+      }
+      if($mvv['selectedCondition']['m'] == 'Business'){
+        //行业处理
+        if($mvv['selectedCondition']['type'] == 'wedding') $mvv['selectedCondition']['type'] = 'buswedd';
+        if(!in_array(ucfirst($mvv['selectedCondition']['type']),$group_func)){
+          unset($menus[$mk]['subs'][$mvk]);
+        }
+      }
+    }
+    if(in_array($mvv['selectedCondition']['m'],$not_exist) || in_array($mvv['f'],$not_exist)){
+      if($mvv['selectedCondition']['m'] == 'Home'){
+      //微官网处理
+        unset($menus[$mk]);
+      }else{
+      //正常处理
+        if ($mvv['f'] != NULL) {
+          unset($menus[$mk]['subs'][$mvk]);
+        }
+        
+      }
+      
+    }elseif($mvv['selectedCondition']['m'] == 'Business'){
+    //行业处理
+      if($mvv['selectedCondition']['type'] == 'wedding') $mvv['selectedCondition']['type'] = 'buswedd';
+      if(in_array(ucfirst($mvv['selectedCondition']['type']),$not_exist)){
+        unset($menus[$mk]['subs'][$mvk]);
+      }
+    }
+    //主菜单
+    if($menus[$mk]['subs'] == NULL){
+      unset($menus[$mk]);
+    }
+  }
+}
+
+$i=0;
+
+$parms=$_SERVER['QUERY_STRING'];
+$parms1=explode('&',$parms);
+$parmsArr=array();
+if ($parms1){
+  foreach ($parms1 as $p){
+    $parms2=explode('=',$p);
+    $parmsArr[$parms2[0]]=$parms2[1];
+  }
+}
+/*
+ksort($parmsArr);
+$newParmStr='';
+if ($parmsArr){
+  $comma='';
+  foreach ($parmsArr as $k=>$v){
+    $newParmStr.=$comma.$k.'='.$v;
+    $comma='&';
+  }
+}
+*/
+//
+$subMenus=array();
+$t=0;
+$currentMenuID=0;
+$currentParentMenuID=0;
+foreach ($menus as $m){
+  $loopContinue=1;
+  if ($m['subs']){
+    $st=0;
+    foreach ($m['subs'] as $s){
+      /*
+      $conditionParmStr='';
+      ksort($s['selectedCondition']);
+      if ($s['selectedCondition']){
+        $comma='';
+        foreach ($s['selectedCondition'] as $k=>$v){
+          $conditionParmStr.=$comma.$k.'='.$v;
+          $comma='&';
+        }
+      }
+      */
+      $includeArr=1;
+      if ($s['selectedCondition']){
+        foreach ($s['selectedCondition'] as $condition){
+          if (!in_array($condition,$parmsArr)){
+            $includeArr=0;
+            break;
+          }
+        }
+      }
+      if ($includeArr){
+        if ($s['exceptCondition']){
+          foreach ($s['exceptCondition'] as $epkey=>$eptCondition){
+            if ($epkey=='a'){
+              $parm_a_values=explode(',',$eptCondition);
+
+              if ($parm_a_values){
+                if (in_array($parmsArr['a'],$parm_a_values)){
+                  $includeArr=0;
+                  break;
+                }
+              }
+            }else {
+              if (in_array($eptCondition,$parmsArr)){
+                $includeArr=0;
+                break;
+              }
+            }
+          }
+        }
+      }
+      /*
+      if ($t==1&&$st==4){
+        echo $conditionParmStr;
+      }
+      */
+      //
+      if ($includeArr){
+        $currentMenuID=$st;
+        $currentParentMenuID=$t;
+        $loopContinue=0;
+        break;
+      }
+      $st++;
+    }
+    //
+    if ($loopContinue==0){
+      break;
+    }
+  }
+  $t++;
+} 
+foreach ($menus as $m){
+  $displayStr='';
+  if ($currentParentMenuID!=0||0!=$currentMenuID){
+    $m['display']=0;
+  }
+  if (!$m['display']){
+    $displayStr=' style="display:none"';
+  }
+  if ($currentParentMenuID==$i){
+    $displayStr='';
+  }
+  $aClassStr='';
+  if ($displayStr){
+    $aClassStr=' nav-header-current';
+  }
+  foreach ($icn as $k => $v) {
+    if ($k == $m['name']) {
+      $m['iconName'] = $v;
+    }
+  }
+  if($currentParentMenuID == $i){
+    echo '<li class="active"><a href="#"><i class="fa '.$m['iconName'].'"></i><span class="nav-label">'.$m['name'].'</span> <span class="fa arrow"></span></a><ul class="nav nav-second-level collapse">';
+  }else{
+    echo '<li class=""><a href="#"><i class="fa '.$m['iconName'].'"></i> <span class="nav-label">'.$m['name'].'</span> <span class="fa arrow"></span></a><ul class="nav nav-second-level collapse">';
+  }
+  
+  if ($m['subs']){
+    $j=0;
+    foreach ($m['subs'] as $s){
+      $selectedClassStr='subCatalogList';
+      if ($currentParentMenuID==$i&&$j==$currentMenuID){
+        $selectedClassStr='active';
+      }
+      $newStr='';
+      if ($s['test']){
+        $newStr.='<span class="test"></span>';
+      }else {
+      if ($s['new']){
+        $newStr.='<span class="new"></span>';
+      }
+      }
+      if ($s['name']!='微信墙'&&$s['name']!='摇一摇'&&$s['name']!='现场活动'){
+        
+        $target='';
+        if ($s['blank']){
+          $target=' target="_blank"';
+        }
+        if ($s['notinpigcms']&&C('server_topdomain')=='pigcms.cn'){
+          
+        }else {
+          if (C('server_topdomain') !=='pigcms.cn' and $s['name'] == '三级分销[独立]') {
+            $s['name'] = '三级分销';
+          }
+          echo '<li class="'.$selectedClassStr.'"> <a href="'.$s['link'].'"'.$target.'>'.$s['name'].'</a>'.$newStr.'</li>';
+        }
+        
+      }else {
+        switch ($s['name']){
+          case '微信墙':
+          case '摇一摇':
+          case '现场活动':
+            $path=str_replace($_SERVER['SCRIPT_NAME'],'',dirname($_SERVER['SCRIPT_FILENAME'])).DIRECTORY_SEPARATOR.'PigCms'.DIRECTORY_SEPARATOR.'Lib'.DIRECTORY_SEPARATOR.'Action'.DIRECTORY_SEPARATOR.'User'.DIRECTORY_SEPARATOR;
+            if (file_exists($path.'WallAction.class.php')&&file_exists($path.'ShakeAction.class.php')){
+              echo '<li class="'.$selectedClassStr.'"> <a href="'.$s['link'].'">'.$s['name'].'</a>'.$newStr.'</li>';
+            }
+            break;
+        }
+      }
+
+      if ($s['name']=='静态模板管理'&&is_dir($_SERVER['DOCUMENT_ROOT'].'/cms')&&!strpos($_SERVER['HTTP_HOST'],'pigcms')){
+        //echo '<li class="subCatalogList"> <a href="/index.php?g=User&m=AdvanceTpl&a=index">高级模板</a><span class="new"></span></li>';
+        echo '<li> <a href="/cms/manage/index.php">高级模板</a><span class="new"></span></li>';
+      }
+      $j++;
+    }
+  }
+  echo '</ul>';
+  $i++;
+  echo '</li>';
+}
+?>
+     </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" class="gray-bg dashbard-1" style="background-color:#f3f3f3;">
+        <div class="row border-bottom">
+        <div class="footer">
+            <div style="float:left;">
+            </div>
+            <div  class="pull-right" style="float:left;">
+                {$Think.config.sitename}(c)版权所有 <a href="http://www.miibeian.gov.cn" target="_blank">{:C('copyright')}</a>
+    技术支持：<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$Think.config.qq}&site=qq&menu=yes"><i class="fa fa-qq">{$Think.config.qq}</i></a>
+            </div>
+    </div>
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0;height: 70px;">
+        <div class="logo">
+        <div class="navbar-header" style="width:10%;height:30px;float:left;">
+              <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#" style="padding:10px 15px;height:15px;"><i class="fa fa-bars"></i> </a>
+          </div>
+        <div style="float:right;">
+        <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">欢迎使用{$Think.config.sitename}!</span>
+                </li>
+                <li class="dropdown">
+                <?php
+                  $messageCount = M('SiteMessage')->where(array('token'=>$token, 'relation'=>'0', 'status'=>'0'))->count();
+                ?>
+                    <a class="count-info" href="{:U('SiteMessage/index', array('token'=>$token))}">
+                        <i class="fa fa-envelope"></i><span class="label label-warning"><if condition="$messageCount gt 0"> {$messageCount}<else />0</if></span>
+                    </a>
+                </li>
+                <if condition="$_SESSION[uid]==false">
+                  <li><a href="{:U('Index/login')}"><font color="#888" size="2">登录</font></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                  <a href="{:U('Index/login')}"><font color="#888" size="2">注册</font></a></li>
+                  <else/>
+                  <li>
+                  <a href="/#" onclick="Javascript:window.open('{:U('System/Admin/logout')}','_blank')" >
+                      <font color="#888" size="2"><i class="fa fa-sign-out"></i> 退 出
+                  </font></a></li>
+                  &nbsp;&nbsp;&nbsp;
+                  <li><a href="{:U('Home/Index/index')}">
+                      <font color="#888" size="2"><i class="fa fa-mail-reply"></i> 返回首页
+                  </font></a></li>
+                  &nbsp;&nbsp;&nbsp;
+                  <li><a href="{:U('User/Index/index')}">
+                      <font color="#888" size="2"><i class="fa fa-mail-reply"></i> 返回管理中心
+                  </font></a></li>
+            </if>
+            </ul>
+            </div>
+          </div>
+        </nav>
+        <?php  
+          function convertUrlQuery($query){
+              $queryParts = explode('&', $query);
+              $params = array();
+              foreach ($queryParts as $param){
+                  $item = explode('=', $param);
+                  $params[$item[0]] = $item[1];
+              }
+              return $params;
+          }
+
+          function getUrlQuery($array_query){
+              $tmp = array();
+              foreach($array_query as $k=>$param){
+                  $tmp[] = $k.'='.$param;
+              }
+              $params = implode('&',$tmp);
+              return $params;
+          }
+          $str = $_SERVER['REQUEST_URI'];
+          $arr = parse_url($str);
+          $arr_query = convertUrlQuery($arr['query']);
+          $m = $arr_query['m'];
+          $a = $arr_query['a'];
+          
+          $model = array(
+            '欢迎页' =>array('Function' => '功能展示'),
+            '基础设置' =>array('Areply' => '关注时回复与帮助','Home' => '首页回复设置','Text' => '微信-文本回复','Img' => '微信-图文回复','Voiceresponse' => '微信-语音回复','Message' => '微信－群发消息','TemplateMsg' => '微信－模板消息','Company' => 'LBS商家连锁','Diymen' => '自定义菜单','Auth' => '自动获取粉丝信息','Assistente' => '店员管理','Other' => '回答不上来的配置'),
+            '微网站' =>array('Classify' => '分类管理','Essay' => '自定义内容','Tmpls' => '静态模板管理','CustomTmpls' => 'H5动态自定义模板','Flash' => '首页幻灯片','Catemenu' => '底部导航菜单','Live' => '微场景'),
+            '游戏&贺卡' =>array('Game' => '游戏','Card' => '贺卡'),
+            '三网通[独立]' =>array('Web' => 'PC站','Phone' => '手机站'),
+            'APP打包[独立]' =>array('Yundabao' => 'APP打包[独立]'),
+            '百度直达号' =>array('Zhida' => '百度直达号'),
+            '微场景' =>array('SeniorScene' => '高级场景'),
+            '微互动' =>array('Personcard' => '微名片','Reply' => '留言板','Forum' => '微论坛','Photo' => '3G图集(相册)','Vote' => '3G微投票','Voteimg' => '图文投票','Custom' => '微预约(万能表单,报名)','Research' => '微调研','Share' => '分享管理','Invite' => '邀请函'),
+            '行业应用' =>array('Numqueue' => '微排号','Repast' => '微餐饮','DishOut' => '微外卖','MicroBroker' => '全民经纪人','Estate' => '楼盘房产','School' => '微教育','Hotels' => '酒店宾馆','Panorama' => '360°全景','Wedding' => '微婚庆（喜帖）','Car' => '微汽车','Medical' => '微医疗','Host' => '通用订单(酒吧KTV)','Business' => '行业应用'),
+            '摇一摇.周边' =>array('Shakearound' => '摇一摇.周边'),
+            '微现场' =>array('Signin' => '微信签到','Shake' => '摇一摇','Wall' => '微信墙','Scene' => '现场活动'),
+            '电商系统' =>array('Alipayconfig' => '在线支付设置','Alipaycert' => '微信支付证书','Platform' => '平台支付对帐','WeixinBill' => '微信支付账单','Groupon' => '微信团购系统','Store' => '商城','Market' => '微商圈','Crowdfunding' => '微众筹','Unitary' => '一元夺宝','Unitary' => '一元夺宝','Seckill' => '微秒杀','LivingCircle' => '微信生活圈','Bargain' => '微砍价','Cutprice' => '降价拍'),
+            '微店系统[独立]' =>array('Micrstore' => '微店系统[独立]'),
+            '微粉丝管理CRM' =>array('Wechat_group' => '粉丝管理','Wechat_behavior' => '粉丝行为分析','Fuwu' => '服务窗粉丝管理'),
+            '微硬件' =>array('Router' => '微信wifi设置','Hardware' => '打印机'),
+            '微渠道' =>array('Recognition' => '渠道二维码','RecognitionData' => '二维码扫描分析'),
+            '微客服' =>array('ServiceUser' => '微信人工客服','Service' => '网页客服管理'),
+            '微活动' =>array('CoinTree' => '摇钱树','Hongbao' => '微信合体红包','Helping' => '分享助力','Sentiment' => '谁是情圣','Popularity' => '人气冲榜','Lottery' => '幸运大转盘','Jiugong' => '幸运九宫格','Coupon' => '优惠券','Guajiang' => '刮刮卡','LuckyFruit' => '幸运水果机','GoldenEgg' => '砸金蛋','AppleGame' => '走鹊桥','Lovers' => '摁死小情侣','Autumn' => '中秋吃月饼','Autumns' => '拆礼盒','Problem' => '一战到底','Red_packet' => '微信红包','Punish' => '惩罚台','Test' => '趣味测试','Donation' => '募捐','Friend' => '校友录','Collectword' => '集字游戏','FrontPage' => '我要上头条','FrontPage' => '我要上头条','ShakeLottery' => '摇一摇抽奖'),
+            '会员卡' =>array('Member_card' => '会员卡'),
+            '数据魔方' =>array('Requerydata' => '请求数详情'),
+            '二次开发' =>array('Api' => '融合第三方'),
+            );
+            foreach ($model as $key => $value) {
+              foreach ($value as $k => $v) {
+                if ($m == $k) {
+                  if (C('server_topdomain') !=='pigcms.cn') {
+                  switch ($v) {
+                    case '三网通[独立]':
+                      $v = '三网通';
+                      break;
+                    case 'APP打包[独立]':
+                      $v = 'APP打包';
+                      break;
+                    case '收银台[独立]':
+                      $v = '收银台';
+                      break;
+                    case '微店系统[独立]':
+                      $v = '微店系统';
+                      break;
+                  }
+                }
+                $mod =$v;
+              }
+            }
+            }
+            
+         ?>
+        
+        <div class="row wrapper border-bottom white-bg page-heading" style="margin-left: 0px;height:30px;">
+                <div class="col-lg-10" style="margin-top:8px;">
+                    <h2 style="font-size: 24px;"><php>echo $mod;</php></h2>
+                </div>
+            </div>
+        <div>
+        <div class="animated fadeInRight" style="margin-bottom: 80px;background-color: #fff;margin-top:10px;border: 1px solid rgba(155, 155, 155, 0.36);border-top:5px solid rgba(155, 155, 155, 0.36);">
+        <div style="margin-left:1%;margin-right:1%;margin-top:20px;">
+<php>}else{</php>
+<body id="nv_member" class="pg_CURMODULE">
+<div id="wp" class="wp">
+<style>
+a.a_upload,a.a_choose{border:1px solid #3d810c;box-shadow:0 1px #CCCCCC;-moz-box-shadow:0 1px #CCCCCC;-webkit-box-shadow:0 1px #CCCCCC;cursor:pointer;display:inline-block;text-align:center;vertical-align:bottom;overflow:visible;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;vertical-align:middle;background-color:#f1f1f1;background-image: -webkit-linear-gradient(bottom, #CCC 0%, #E5E5E5 3%, #FFF 97%, #FFF 100%); background-image: -moz-linear-gradient(bottom, #CCC 0%, #E5E5E5 3%, #FFF 97%, #FFF 100%); background-image: -ms-linear-gradient(bottom, #CCC 0%, #E5E5E5 3%, #FFF 97%, #FFF 100%); color:#000;border:1px solid #AAA;padding:2px 8px 2px 8px;text-shadow: 0 1px #FFFFFF;font-size: 14px;line-height: 1.5;
+}
+
+.pages{padding:3px;margin:3px;text-align:center;}
+.pages a{border:#eee 1px solid;padding:2px 5px;margin:2px;color:#036cb4;text-decoration:none;}
+.pages a:hover{border:#999 1px solid;color:#666;}
+.pages a:active{border:#999 1px solid;color:#666;}
+.pages .current{border:#036cb4 1px solid;padding:2px 5px;font-weight:bold;margin:2px;color:#fff;background-color:#036cb4;}
+.pages .disabled{border:#eee 1px solid;padding:2px 5px;margin:2px;color:#ddd;}
+</style>
+
+ <if condition="session('isQcloud') eq true">
+ <link type="text/css" rel="stylesheet" href="http://qzonestyle.gtimg.cn/qcloud/app/open/v1/css/wxcloud.min.css" />
+
+
+<style>
+.px {
+  background:#fff;
+
+  border-color:#c9c9c9;
+
+}
+
+
+input[type=radio] {
+
+  border-radius:55px;
+
+  border: none;
+
+}
+.btnGreen {
+  border:1px solid #FFFFFF;
+  box-shadow:0 1px 1px #0A8DE4;
+  -moz-box-shadow:0 1px 1px #0A8DE4;
+  -webkit-box-shadow:0 1px 1px #0A8DE4;
+  padding:5px 20px;
+  cursor:pointer;
+  display:inline-block;
+  text-align:center;
+  vertical-align:bottom;
+  overflow:visible;
+  border-radius:3px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+*zoom:1;
+  background-color:#5ba607;
+  background-image:linear-gradient(bottom, #107BAD  3%, #18C2D1 97%, #18C2D1 100%);
+  background-image:-moz-linear-gradient(bottom, #107BAD  3%, #0A8DE40 97%, #18C2D1 100%);
+  background-image:-webkit-linear-gradient(bottom, #107BAD  3%,#0A8DE4 97%, #18C2D1 100%);
+  color:#fff; font-size:14px; line-height: 1.5;
+}
+.btnGreen:hover {
+  background-color:#5ba607;
+  background-image:linear-gradient(bottom, #2F8BC9 3%, #2F8BC9 97%, #6AA2D6  100%);
+  background-image:-moz-linear-gradient(bottom, #2F8BC9 3%, #2F8BC9 97%, #6AA2D6  100%);
+  background-image:-webkit-linear-gradient(bottom, #2F8BC9 3%, #2F8BC9 97%, #6AA2D6  100%);
+  color:#fff
+}
+.btnGreen:active {
+  background-color:#5ba607;
+  background-image:linear-gradient(bottom, #69b310 3%, #3d810c 97%, #fff 100%);
+  background-image:-moz-linear-gradient(bottom, #69b310 3%, #3d810c 97%, #fff 100%);
+  background-image:-webkit-linear-gradient(bottom, #69b310 3%, #3d810c 97%, #fff 100%);
+  color:#fff
+}
+
+.btnGreen{border:1px solid #3d810c;box-shadow:0 1px 1px #aaa;-moz-box-shadow:0 1px 1px #aaa;-webkit-box-shadow:0 1px 1px #aaa;padding:5px 20px;cursor:pointer;display:inline-block;text-align:center;vertical-align:bottom;overflow:visible;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;*zoom:1;background-color:#5ba607;background-image:linear-gradient(bottom,#4d910c 3%,#69b310 97%,#fff 100%);background-image:-moz-linear-gradient(bottom,#4d910c 3%,#69b310 97%,#fff 100%);background-image:-webkit-linear-gradient(bottom,#4d910c 3%,#69b310 97%,#fff 100%);color:#fff;font-size:14px;line-height:1.5;}.btnGreen:hover{background-color:#5ba607;background-image:linear-gradient(bottom,#3d810c 3%,#69b310 97%,#fff 100%);background-image:-moz-linear-gradient(bottom,#3d810c 3%,#69b310 97%,#fff 100%);background-image:-webkit-linear-gradient(bottom,#3d810c 3%,#69b310 97%,#fff 100%);color:#fff}.btnGreen:active{background-color:#5ba607;background-image:linear-gradient(bottom,#69b310 3%,#3d810c 97%,#fff 100%);background-image:-moz-linear-gradient(bottom,#69b310 3%,#3d810c 97%,#fff 100%);background-image:-webkit-linear-gradient(bottom,#69b310 3%,#3d810c 97%,#fff 100%);color:#fff}
+
+</style>
+</if>
+<!--对接独立样式-->
+<?php if ($_SESSION['is_syn'] != 0): ?>
+<style>
+.tableContent {
+  background:none !important;
+}
+  <?php if ($_SESSION['is_syn'] == 1): ?>
+  .tableContent .content {
+    border-left: 0;
+    padding: 5px 10px;
+    background-color: #FFFFFF;
+    width:820px;
+    min-height: inherit;
+  }
+  .tableContent .content .px {
+    width:300px !important;
+  }
+  <?php endif;?>
+  <?php if ($_SESSION['is_syn'] == 2): ?>
+  .tableContent .content {
+    border-left: 0;
+    padding: 5px 10px;
+    background-color: #FFFFFF;
+    width:95%;
+    min-height: inherit;
+    margin:0;
+    float:left;
+  }
+  <?php endif;?>
+.tableContent .content .bgfc {
+  padding:5px;
+}
+</style>
+<script type="text/javascript">
+$(function () {
+  $('.tableContent form').removeAttr('target');
+});
+</script>
+<?php endif;?>
+
+<!--对接隐藏头部和公用菜单-->
+<?php
+if (!isset($_SESSION['is_syn']) && ($_SESSION['is_syn'] == 0)){
+?>
+<?php
+if (!isset($_SESSION['isQcloud']) && (!isset($_SESSION['role_name']) || $_SESSION['role_name'] != 'staff')){
+  ?>
+<include file="Public:include"/>
+<div id="aaa"></div>
+<?php
+}else{
+  ?>
+  <include file="Public:include_staff"/>
+<?php } ?>
+  <!--中间内容-->
+
+  <div class="contentmanage"<?php if (isset($_SESSION['isQcloud'])){?> style="width:100%"<?php }?>>
+  <?php
+if (!isset($_SESSION['isQcloud'])){
+  if(!isset($_SESSION['role_name']) || $_SESSION['role_name'] != 'staff'){
+  ?>
+    <div class="developer">
+       <div class="appTitle normalTitle2">
+        <div class="vipuser">
+
+
+<div class="logo">
+<a href="{:U('Function/welcome',array('token'=>$token))}"><img src="{$wecha.headerpic}" width="100" height="100" /></a>
+</div>
+
+<div id="nickname">
+<strong><a href="{:U('Function/welcome',array('token'=>$token))}">{$wecha.wxname}</a></strong><a href="#" target="_blank" class="vipimg vip-icon<php>echo $userinfo['taxisid']-1;</php>" title=""></a></div>
+<div id="weixinid"> 
+  微信号:{$wecha.weixin}  
+  <?php
+    $messageCount = M('SiteMessage')->where(array('token'=>$token, 'relation'=>'0', 'status'=>'0'))->count();
+  ?>
+  <if condition="$messageCount gt 0 ">
+    <a href="{:U('SiteMessage/index', array('token'=>$token))}" style="color:red;margin-left:5px;">{$messageCount}条未读消息</a>
+  <else />
+    <a href="{:U('SiteMessage/index', array('token'=>$token, 'status'=>'1'))}" style="color:green;margin-left:5px;">消息</a>
+  </if>
+</div>
+</div>
+
+        <div class="accountInfo">
+<table class="vipInfo" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong>VIP有效期：</strong>{$thisUser.viptime|date="Y-m-d",###}</td>
+<td><strong>图文自定义：</strong>{$thisUser.diynum}/{$userinfo.diynum}</td>
+<td><strong>活动创建数：</strong>{$thisUser.activitynum}/{$userinfo.activitynum}</td>
+<td><strong>请求数：</strong>{$thisUser.connectnum}/{$userinfo.connectnum}</td>
+</tr>
+<tr>
+<td><strong>请求数剩余：</strong><php>echo ($userinfo['connectnum']-$_SESSION['connectnum']);</php></td>
+<td><strong>已使用：</strong><php>echo $_SESSION['diynum'];</php></td>
+<td><strong>当月赠送请求数：</strong>{$userinfo.connectnum}</td>
+<!-- <td><strong>当月剩余请求数：</strong><php>echo $userinfo['connectnum']-$_SESSION['connectnum'];</php></td> -->
+<td><strong>当月剩余请求数：</strong><php>echo $userinfo['connectnum']-$thisUser['connectnum'];</php></td>
+</tr>
+
+</table>
+    </div>
+        <div class="clr"></div>
+      </div>
+      <!--左侧功能菜单-->
+
+<?php } ?>
+<?php } ?>
+<style type="text/css">
+#sideBar{
+border-right: 0px solid #D3D3D3 !important;
+float: left;
+padding: 0 0 10px 0;
+width: 170px;
+background: #fff;
+}
+.tableContent {
+background: none repeat scroll 0 0 #f5f6f7;
+padding: 0;
+}
+.tableContent .content {
+border-left: 1px solid #D7DDE6 !important;
+}
+ul#menu, ul#menu ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+ul#menu a {
+  display: block;
+  text-decoration: none;
+}
+
+ul#menu li {
+  margin: 1px;
+}
+ul#menu li ul li{
+  margin: 1px 0;
+}
+ul#menu li a {
+  background: #EBEEF1;
+  color: #464D6A;
+  padding: 0.5em;
+}
+ul#menu li .nav-header{
+font-size:14px;
+border-bottom: 1px solid #D7DDE6;
+}
+ul#menu li .nav-header:hover {
+  background: #DDE4EB;
+}
+
+ul#menu li ul li a {
+  background: #FCFCFC;
+  color: #8288A4;
+  padding-left: 20px;
+}
+ul#menu li ul li:last-child {
+    border-bottom: 1px solid #D7DDE6;
+}
+ul#menu li ul li a:hover {
+  background: #fff;
+  border-left: 5px #4A98E0 solid;
+
+}
+ul#menu li.selected a{
+  background: #fff;
+  border-left: 5px #4A98E0 solid;
+  padding-left: 15px;
+  color: #4A98E0;
+}
+.code { border: 1px solid #ccc; list-style-type: decimal-leading-zero; padding: 5px; margin: 0; }
+.code code { display: block; padding: 3px; margin-bottom: 0; }
+.code li { background: #ddd; border: 1px solid #ccc; margin: 0 0 2px 2.2em; }
+.indent1 { padding-left: 1em; }
+.indent2 { padding-left: 2em; }
+/*.tableContent .content{min-height: 1328px;}*/
+
+a.nav-header{background:url(__PUBLIC__/web/images/arrow_click.png) center right no-repeat;cursor:pointer}
+a.nav-header-current{background:url(__PUBLIC__/web/images/arrow_unclick.png) center right no-repeat;}
+
+</style>
+<style type="text/css">
+  .welcome1{
+    width:981px;
+    border: 1px solid #EAEAEA;
+    position: relative;
+  }
+  .welcome1 li{
+    float: left;  
+    height: 50px;
+    width: 12.323%; 
+    text-align:center;
+    font-weight: bold;
+    position: relative;
+    font-size: 1.25em;
+    border: 1px solid #DFDFDF;
+    background: #F3F3F3;
+  }
+  .welcome1 ul{
+    max-width: 981px;
+  }
+  .welcome1 li a{
+    line-height:3.5;
+  }
+  .welcome1 li.tab-current{
+    border-right:0;   
+    border-left:0;
+    border-bottom:0;
+    background: none;
+  }
+  .content1{
+    margin:80px auto;
+    width:900px;
+    top:80px;
+  }
+  .img1{
+    margin: 60px 30px 0px 30px;
+    width:120px;
+    height:150px;
+    float: left;
+    text-align: center;
+  }
+  .img1 a {
+    line-height: 50px;
+  }
+  .img1 a:hover{
+    text-decoration:none;  
+  } 
+</style>
+<?php
+}
+  ?>
+      <div class="tableContent">
+<if condition="$Think.session.is_syn eq 0">  
+        <?php
+if (!isset($_SESSION['isQcloud'])){
+  ?>
+        <!--左侧功能菜单-->
+ <div  class="sideBar" id="sideBar">
+<div class="catalogList">
+<ul id="menu">
+<?php
+foreach ($menus as $mk => $mv){
+  if(C('router_key') != ''&&$mv['iconName']=='hardware'){
+    //var_export($mv['subs']);
+    unset($mv['subs'][1]);
+  }
+
+  /***收银台是否添加***/
+  if($CashierOff  && ($mv['subs'][0]['f']=='Cashier')){
+     unset($menus[$mk]);
+  }
+  foreach ($mv['subs'] as $mvk => $mvv){
+
+    if ($mvv['f'] != NULL && !in_array($mvv['f'], $Allfunc)) {
+
+      unset($menus[$mk]['subs'][$mvk]);
+    }
+
+    if ($mvv['selectedCondition']['m'] == 'Web') {
+      $path=str_replace($_SERVER['SCRIPT_NAME'],'',dirname($_SERVER['SCRIPT_FILENAME'])).DIRECTORY_SEPARATOR.'PigCms'.DIRECTORY_SEPARATOR.'Lib'.DIRECTORY_SEPARATOR.'Action'.DIRECTORY_SEPARATOR.'Web'.DIRECTORY_SEPARATOR;
+      if (!file_exists($path.'Web_indexAction.class.php')) {
+        unset($menus[$mk]);
+      }
+    }
+    //店员菜单管理 
+    if(isset($group_func) && $_SESSION['role_name'] != '' && $_SESSION['role_name'] == 'staff'){
+      $not_exists = array('tianqi','qiushi','jishuan','langdu','jiankang','kuaidi','xiaohua','changtoushi','peiliao','liaotian','mengjian','yuyinfanyi','huoche','gongjiao','shenfenzheng','shouji','yinle','fujin','geci','fanyi','api','suanming','baike','caipiao','Zhida','whois','assistente');
+      if($mvv['f'] != NULL && !in_array($mvv['f'],$group_func)){
+        unset($menus[$mk]['subs'][$mvk]);
+      }
+      if($mvv['f'] != NULL && in_array(strtolower($mvv['f']),$not_exists)){
+        unset($menus[$mk]['subs'][$mvk]);
+      }
+      /*if($mvv['f'] == NULL && in_array(strtolower($mvv['selectedCondition']['m']),$not_exists)){
+        unset($menus[$mk]['subs'][$mvk]);
+      }*/
+      if($mvv['f'] == NULL){
+        unset($menus[$mk]['subs'][$mvk]);
+      }
+      if($mv['iconName']=='hardware'){
+        unset($menus[$mk]['subs']);
+      }
+      if($mvv['selectedCondition']['m'] == 'Business'){
+        //行业处理
+        if($mvv['selectedCondition']['type'] == 'wedding') $mvv['selectedCondition']['type'] = 'buswedd';
+        if(!in_array(ucfirst($mvv['selectedCondition']['type']),$group_func)){
+          unset($menus[$mk]['subs'][$mvk]);
+        }
+      }
+    }
+    if(in_array($mvv['selectedCondition']['m'],$not_exist) || in_array($mvv['f'],$not_exist)){
+      if($mvv['selectedCondition']['m'] == 'Home'){
+      //微官网处理
+        unset($menus[$mk]);
+      }else{
+      //正常处理
+        if ($mvv['f'] != NULL) {
+          unset($menus[$mk]['subs'][$mvk]);
+        }
+        
+      }
+      
+    }elseif($mvv['selectedCondition']['m'] == 'Business'){
+    //行业处理
+      if($mvv['selectedCondition']['type'] == 'wedding') $mvv['selectedCondition']['type'] = 'buswedd';
+      if(in_array(ucfirst($mvv['selectedCondition']['type']),$not_exist)){
+        unset($menus[$mk]['subs'][$mvk]);
+      }
+    }
+    //主菜单
+    if($menus[$mk]['subs'] == NULL){
+      unset($menus[$mk]);
+    }
+  }
+}
+
+$i=0;
+
+$parms=$_SERVER['QUERY_STRING'];
+$parms1=explode('&',$parms);
+$parmsArr=array();
+if ($parms1){
+  foreach ($parms1 as $p){
+    $parms2=explode('=',$p);
+    $parmsArr[$parms2[0]]=$parms2[1];
+  }
+}
+/*
+ksort($parmsArr);
+$newParmStr='';
+if ($parmsArr){
+  $comma='';
+  foreach ($parmsArr as $k=>$v){
+    $newParmStr.=$comma.$k.'='.$v;
+    $comma='&';
+  }
+}
+*/
+//
+$subMenus=array();
+$t=0;
+$currentMenuID=0;
+$currentParentMenuID=0;
+foreach ($menus as $m){
+  $loopContinue=1;
+  if ($m['subs']){
+    $st=0;
+    foreach ($m['subs'] as $s){
+      /*
+      $conditionParmStr='';
+      ksort($s['selectedCondition']);
+      if ($s['selectedCondition']){
+        $comma='';
+        foreach ($s['selectedCondition'] as $k=>$v){
+          $conditionParmStr.=$comma.$k.'='.$v;
+          $comma='&';
+        }
+      }
+      */
+      $includeArr=1;
+      if ($s['selectedCondition']){
+        foreach ($s['selectedCondition'] as $condition){
+          if (!in_array($condition,$parmsArr)){
+            $includeArr=0;
+            break;
+          }
+        }
+      }
+      if ($includeArr){
+        if ($s['exceptCondition']){
+          foreach ($s['exceptCondition'] as $epkey=>$eptCondition){
+            if ($epkey=='a'){
+              $parm_a_values=explode(',',$eptCondition);
+
+              if ($parm_a_values){
+                if (in_array($parmsArr['a'],$parm_a_values)){
+                  $includeArr=0;
+                  break;
+                }
+              }
+            }else {
+              if (in_array($eptCondition,$parmsArr)){
+                $includeArr=0;
+                break;
+              }
+            }
+          }
+        }
+      }
+      /*
+      if ($t==1&&$st==4){
+        echo $conditionParmStr;
+      }
+      */
+      //
+      if ($includeArr){
+        $currentMenuID=$st;
+        $currentParentMenuID=$t;
+        $loopContinue=0;
+        break;
+      }
+      $st++;
+    }
+    //
+    if ($loopContinue==0){
+      break;
+    }
+  }
+  $t++;
+} 
+foreach ($menus as $m){
+  //
+  $displayStr='';
+  if ($currentParentMenuID!=0||0!=$currentMenuID){
+    $m['display']=0;
+  }
+  if (!$m['display']){
+    $displayStr=' style="display:none"';
+  }
+  if ($currentParentMenuID==$i){
+    $displayStr='';
+  }
+  $aClassStr='';
+  if ($displayStr){
+    $aClassStr=' nav-header-current';
+  }
+
+  if (C('server_topdomain') !=='pigcms.cn') {
+    switch ($m['name']) {
+      case '三网通[独立]':
+        $m['name'] = '三网通';
+        break;
+      case 'APP打包[独立]':
+        $m['name'] = 'APP打包';
+        break;
+      case '收银台[独立]':
+        $m['name'] = '收银台';
+        break;
+      case '微店系统[独立]':
+        $m['name'] = '微店系统';
+        break;
+    }
+  }
+  if($i == 0){
+    echo '<a class="nav-header'.$aClassStr.'" style="border-top:none !important;"><b class="'.$m['iconName'].'"></b>'.$m['name'].'</a><ul class="ckit"'.$displayStr.'>';
+  }else{
+    echo '<a class="nav-header'.$aClassStr.'"><b class="'.$m['iconName'].'"></b>'.$m['name'].'</a><ul class="ckit"'.$displayStr.'>';
+  }
+  if(C('router_key') == ''&&$m['iconName']=='hardware'){
+    //var_export($mv['subs']);
+    unset($m['subs'][1]);
+  }
+  if ($m['subs']){
+    $j=0;
+    foreach ($m['subs'] as $s){
+      $selectedClassStr='subCatalogList';
+      if ($currentParentMenuID==$i&&$j==$currentMenuID){
+        $selectedClassStr='selected';
+      }
+      $newStr='';
+      if ($s['test']){
+        $newStr.='<span class="test"></span>';
+      }else {
+      if ($s['new']){
+        $newStr.='<span class="new"></span>';
+      }
+      }
+      if ($s['name']!='微信墙'&&$s['name']!='摇一摇'&&$s['name']!='现场活动'){
+        
+        $target='';
+        if ($s['blank']){
+          $target=' target="_blank"';
+        }
+        if ($s['notinpigcms']&&C('server_topdomain')=='pigcms.cn'){
+          
+        }else {
+          if (C('server_topdomain') !=='pigcms.cn' and $s['name'] == '三级分销[独立]') {
+            $s['name'] = '三级分销';
+          }
+          echo '<li class="'.$selectedClassStr.'"> <a href="'.$s['link'].'"'.$target.'>'.$s['name'].'</a>'.$newStr.'</li>';
+        }
+        
+      }else {
+        switch ($s['name']){
+          case '微信墙':
+          case '摇一摇':
+          case '现场活动':
+            $path=str_replace($_SERVER['SCRIPT_NAME'],'',dirname($_SERVER['SCRIPT_FILENAME'])).DIRECTORY_SEPARATOR.'PigCms'.DIRECTORY_SEPARATOR.'Lib'.DIRECTORY_SEPARATOR.'Action'.DIRECTORY_SEPARATOR.'User'.DIRECTORY_SEPARATOR;
+            if (file_exists($path.'WallAction.class.php')&&file_exists($path.'ShakeAction.class.php')){
+              echo '<li class="'.$selectedClassStr.'"> <a href="'.$s['link'].'">'.$s['name'].'</a>'.$newStr.'</li>';
+            }
+            break;
+        }
+      }
+
+      if ($s['name']=='静态模板管理'&&is_dir($_SERVER['DOCUMENT_ROOT'].'/cms')&&!strpos($_SERVER['HTTP_HOST'],'pigcms')){
+        //echo '<li class="subCatalogList"> <a href="/index.php?g=User&m=AdvanceTpl&a=index">高级模板</a><span class="new"></span></li>';
+        echo '<li class="subCatalogList"> <a href="/cms/manage/index.php">高级模板</a><span class="new"></span></li>';
+      }
+      $j++;
+    }
+  }
+  echo '</ul>';
+  $i++;
+}
+?>
+
+<div style="clear:both"></div>
+</ul>
+</div>
+</div>
+<?php
+}
+?>
+</if>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(".nav-header").mouseover(function(){
+      $(this).addClass('navHover');
+    }).mouseout(function(){
+      $(this).removeClass('navHover');
+    }).click(function(){
+      $(this).toggleClass('nav-header-current');
+      $(this).next('.ckit').slideToggle();
+    })
+  });
+
+</script>
+<php>}</php>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" /><meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="format-detection" content="telephone=no"/>
+<title>会员登录</title>
+
+<link href="__PUBLIC__/wap/common/css/address/other.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="login" class="body account">
+    <div class="logintitle">会员登录</div>
+    <div class="wrapper">
+        <div id="login-panel" class="panel" data-tab="normal">
+            <div id="normal-panel" class="active-panel normal-panel">
+                <form id="normal-login-form" action="{:U('Index/login',array('token'=>$_GET['token']))}" autocomplete="off" method="post">
+                    <p><input id="username" class="input-common" type="text" placeholder="账号" name="username" value="" ></p>
+                    <p><input id="password" class="input-common" type="password" placeholder="请输入您的密码" name="password" ></p>
+					<button type="submit" class="btn-large btn-large mj-submit mj-submit">登录</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="meituan_check" style="margin:0 0 55px 0"><br><br><br></div>
+<div class="copyright" style="text-align:center;padding:10px 0">
+<if condition="$iscopyright eq 1">
+{$homeInfo.copyright}
+<else/>
+{$siteCopyright}
+</if>
+</div>
+<include file="Index:styleInclude"/><include file="Index:kcdh"/> 
+<!-- share -->
+<include file="Index:share" />
+</body>
+</html>

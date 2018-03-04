@@ -1,0 +1,230 @@
+<include file="Public:head" />
+<script src="__PUBLIC__/web/js/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/web/js/artDialog/plugins/iframeTools.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/cymain.css" />
+<div class="content">
+	<div class="cLineB">
+		<h4 class="left">微砍价</h4>
+		<div class="clr"></div>
+	</div>
+<if condition="$Think.session.is_syn neq 2">
+	<div class="alert alert-success alert-dismissable">
+		温馨提示：本功能使用了模板消息中的"订单发货提醒"模板消息,模板消息编号为OPENTM200565259。<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		开通微信支付功能的公众号在使用此功能的时候可以在"基本设置——微信模板消息"中配置对应的模板消息。
+	</div>
+</if>
+	<div class="tab">
+		<ul>
+			<li class="current tabli" id="tab1"><a href="{:U('Bargain/index',array('token'=>$token))}">砍价商品</a></li>
+			<if condition="$Think.session.is_syn eq 1">
+				<li class="tabli" id="tab2"><a href="{:U('Bargain/wdActOrder')}">订单管理</a></li>
+			<else/>
+				<li class="tabli" id="tab2"><a href="{:U('Bargain/order',array('token'=>$token))}">订单管理</a></li>
+			</if>
+		</ul>
+	</div>
+	
+	<div class="cLineB">
+		<h4 class="left">砍价商品列表</h4>
+		<div class="clr"></div>
+	</div>
+	
+	<div class="cLine">
+		<div class="pageNavigator left">
+			<a href="{:U('Bargain/add',array('token'=>$token))}" title="添加砍价" class="btnGrayS vm bigbtn"><if condition="$usertplid eq 2"><i class="fa fa-hand-o-right"></i><else /><img src="__PUBLIC__/web/images/add.png" class="vm"></if> 添加砍价</a>
+		</div>
+		<div class="pageNavigator right">
+			<input type="text" id="name" class="px name" placeholder="输入商品名称"  name="name" value="{$_GET['name']}" style="margin-top:10px">
+			<a href="javascript:seach()" id="seach" href="" class="btnGrayS" title="搜索">搜索</a>
+		</div>
+		<script>
+			
+		</script>
+		<div class="clr"></div>
+	</div>
+	
+	<style type="text/css">
+	.pop_brg{ width:100%; height:100%; background:#333; position:absolute; top:0; left:0; filter:alpha(opacity=60); -moz-opacity:0.6; opacity: 0.6; position:absolute; top:0; left:0; display:none;}
+	.pop_showdiv{z-index:20; display:none;position:fixed; *position:absolute;top:20%; left:50%; margin:-50px 0 0 -50px;}
+	.pop_testdiv{ width:300px; height:300px; margin:0 auto; border:1px solid #4d4d4d; background:#f2f2f2;}
+	.pop_close{width:300px; height:27px; line-height:27px; font-size:14px; font-weight:bold; border:1px solid #4d4d4d; text-align:center; cursor:pointer; margin:0 auto; background:#333; color:#fff;margin-top: 15%;}
+	</style>
+	<div class="msgWrap">
+		<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+			<thead>
+
+			<if condition="$Think.session.is_syn eq 1">
+				<!-- 电商调用 start -->
+
+				<tr>
+					<th width="200px">商品信息</th>
+					<th width="100px">价格</th>
+					<th width="80px">库存</th>
+					<th width="60px">销量</th>
+					<th width="120px" >创建时间</th>
+					<th width="60px">是否开启</th>
+					<th <if condition="$usertplid eq 2">width="200px"</if> >操作</th>
+				</tr>
+
+				<!-- 电商调用 end -->
+			<else/>
+
+				<tr>
+					<th width="120px">商品名称</th>
+					<if condition="$_SESSION['is_syn'] eq 0">
+						<th width="80px">关键词</th>
+					</if>
+					<th width="100px">商品信息</th>
+					<th width="80px">人数</th>
+					<th width="60px">版本</th>
+					<th width="60px">开始关闭</th>
+					<th <if condition="$usertplid eq 2">width="200px"</if>>操作</th>
+					<th width="120px" class="norightborder">添加时间</th>
+				</tr>
+
+			</if>
+
+			</thead>
+			<tbody>
+				<script type="text/javascript">
+					// 电商获取活动二维码
+					function showWdCode(modelId){
+						art.dialog.open('?g=User&m=Bargain&a=qrcode&modelId='+modelId,{lock:true,title:'活动二维码',top: '10%', width:'50%',height:'400px',yesText:'关闭',background: '#000',opacity: 0.45});
+					}
+				</script>
+				<volist name="bargain_list" id="vo">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						var bheight=document.body.clientHeight;
+						$("#lay{$vo.pigcms_id}").click(function(){
+							$("#brg{$vo.pigcms_id}").css("display","block");
+							$("#showdiv{$vo.pigcms_id}").css("display","block");
+							//$("#testdiv").load("test.html");
+						});
+						$("#close{$vo.pigcms_id}").click(function(){
+							$("#brg{$vo.pigcms_id}").css("display","none");
+							$("#showdiv{$vo.pigcms_id}").css("display","none");
+						});
+
+						$("#layWeidian{$vo.pigcms_id}").click(function(){
+							$("#brgWd{$vo.pigcms_id}").css("display","block");
+							$("#showdivWd{$vo.pigcms_id}").css("display","block");
+						});
+
+						$(".pop_close").click(function(){
+							$(".pop_brg").css("display","none");
+							$(".pop_showdiv").css("display","none");
+						});
+					});
+				</script>
+				<if condition="$Think.session.is_syn eq 1">
+					<!-- 电商调用 start -->
+
+					<tr>
+						<td>
+							<img src="{$vo.logoimg1}" style="max-height:100px;max-width: 100px;">
+							<br>
+							{$vo.name}
+						</td>
+						<td>初始价：{$vo.original}元<br/>最低价：{$vo.minimum}元</td>
+						<td>{$vo.inventory}</td>
+						<td>参与：{$vo.count_canyu}<br/>购买：{$vo.count_pay}</td>
+						<td>{$vo.addtime|date="Y-m-d H:i:s",###}</td>
+						<if condition="$vo.state eq 1">
+							<td><a href="javascript:state({$vo.pigcms_id})"><img id="state{$vo.pigcms_id}" src="__PUBLIC__/web/js/bargain/images/start.png" width="60px"/></a></td>
+						<else />
+							<td><a href="javascript:state({$vo.pigcms_id})"><img id="state{$vo.pigcms_id}" src="__PUBLIC__/web/js/bargain/images/stop.png" width="60px"/></a></td>
+						</if>
+						<td class="norightborder" style="border-right:1px solid #eee">
+							<a href="{:U('Bargain/update',array('token'=>$token,'id'=>$vo['pigcms_id']))}">修改</a>
+							<a href="javascript:drop_confirm('您确定要删除【{$vo.name}】吗?', '{:U('Bargain/operate',array('token'=>$token,'id'=>$vo['pigcms_id'],'type'=>'del'))}')">删除</a>
+							<a href="javascript:void(0)" onclick="showWdCode({$vo.pigcms_id})">直接推广</a>
+						</td>
+					</tr>
+					
+					<!-- 电商调用 end -->
+				<else/>
+
+					<tr>
+						<td>{$vo.name}</td>
+						<if condition="$_SESSION['is_syn'] eq 0">
+							<td>{$vo.keyword}</td>
+						</if>
+						<td>原价：{$vo.original}元<br/>底价：{$vo.minimum}元<br/>库存：{$vo.inventory}</td>
+						<td>参与：{$vo.count_canyu}<br/>购买：{$vo.count_pay}</td>
+						<td><?php if($vo['is_new'] == 1){echo "<span style='color:blue'>旧版</span>";}elseif($vo['is_new'] == 2){echo "<span style='color:green'>新版</span>";}?></td>
+						<if condition="$vo.state eq 1">
+							<td><a href="javascript:state({$vo.pigcms_id})"><img id="state{$vo.pigcms_id}" src="__PUBLIC__/web/js/bargain/images/start.png" width="60px"/></a></td>
+						<else />
+							<td><a href="javascript:state({$vo.pigcms_id})"><img id="state{$vo.pigcms_id}" src="__PUBLIC__/web/js/bargain/images/stop.png" width="60px"/></a></td>
+						</if>
+						<td class="norightborder" style="border-right:1px solid #eee">
+
+							<div id="brg{$vo.pigcms_id}" class="pop_brg"></div>
+							<div id="showdiv{$vo.pigcms_id}" class="pop_showdiv">
+								<div id="close{$vo.pigcms_id}" class="pop_close">您想关闭就点我吧</div>
+								<div id="testdiv{$vo.pigcms_id}" class="pop_testdiv"><img src="{$Think.session.source_domain}/wap.php?c=Wxapp&a=qrcode&id={$vo.pigcms_id}&modle=Bargain" width="300" height="300" class="cateimg_small"></div>
+							</div>
+
+							<if condition="$Think.session.is_syn eq 2">
+								<if condition="$usertplid neq 2">
+									<a id="lay{$vo.pigcms_id}" style="width:150px;">查看二维码</a><br>
+								</if>
+							</if>
+
+							<a href="{:U('Bargain/update',array('token'=>$token,'id'=>$vo['pigcms_id']))}">修改</a>
+							<a href="javascript:drop_confirm('您确定要删除【{$vo.name}】吗?', '{:U('Bargain/operate',array('token'=>$token,'id'=>$vo['pigcms_id'],'type'=>'del'))}')">删除</a>
+							<a href="{:U('Bargain/order',array('token'=>$token,'id'=>$vo['pigcms_id']))}">查看此商品订单</a>
+							<!-- <a href="{:U('Bargain/rank',array('token'=>$token,'id'=>$vo['pigcms_id']))}">排行</a> -->
+							
+						</td>
+						<td  style="border-right:0">{$vo.addtime|date="Y-m-d H:i:s",###}</td>
+					</tr>
+
+				</if>
+
+				</volist>
+			</tbody>
+		</table>
+	</div>
+	<div class="cLine">
+		<div class="pageNavigator right">
+			<div class="pages">{$page}</div>
+		</div>
+		<div class="clr"></div>
+	</div>
+</div>
+<script>
+	$(document).ready(function(){
+		
+	});
+	function state(id){
+		$.ajax({
+			type:"POST",
+			url:"{:U('Bargain/ajax',array('token'=>$token))}",
+			dataType:"json",
+			data:{
+				type:"state",
+				id:id,
+				token:"{$token}"
+			},
+			success:function(data){
+				if(data.error == 0){
+					$("#state"+id).attr("src","__PUBLIC__/web/js/bargain/images/stop.png");
+				}else if(data.error == 1){
+					$("#state"+id).attr("src","__PUBLIC__/web/js/bargain/images/start.png");
+				}
+			}
+		});
+	}
+	function seach(){
+		var name = $("#name").val();
+		if(name != ""){
+			window.location.href="{:U('Bargain/index',array('token'=>$token))}&name="+name;
+		}else{
+			window.location.href="{:U('Bargain/index',array('token'=>$token))}";
+		}
+	}
+</script>
+<include file="Public:footer"/>
